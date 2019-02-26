@@ -1,0 +1,71 @@
+#logo{
+	width: 80%;
+	margin-bottom: 2%;
+	margin-top: 2%;
+	border: 1px solid black;
+}
+
+#caixaLogin{
+	margin-top: 5%;
+	border: 1px solid black;
+	border-radius: 10px;
+	width: 70%;
+	float: right;
+}
+
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+
+#botaoLogin{
+	width: 100%;
+	margin-top: 1%;
+}
+
+#menu{
+	border-top: 2px solid black;
+	background: #ccc;
+}
+
+#itemMenu{
+	text-align: center;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	padding: 1.5%;
+
+}
+
+.conteudo{
+	border: 2px solid black;
+}
+
+.imgConteudo{
+	width: 100%;
+	height: 50%;
+	border-bottom: 2px solid black;
+	margin-bottom: 5%;
+}
+
+.textoConteudo{
+	margin-left: 2%;
+}
+
+
+
+.imgrdp{
+	 border: 2px solid black;
+}
+.rodapeback{
+	margin-top: 10%;
+	padding-bottom: 2%; 
+	padding-top: 2%;
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: #ccc;
+
+}
