@@ -36,12 +36,12 @@
 			</div>
 		</div>
 		<div class="row" id="menu">
-			<div class="col-2" id="itemMenu"><a href="index.php"><h5>Home</h5></a></div>
-			<div class="col-2" id="itemMenu"><a href="categorias.php"><h5>Categorias</h5></a></div>
-			<div class="col-2" id="itemMenu"><a href="cadastrarProduto.php"><h5>Cadastrar Produto</h5></a></div>
-			<div class="col-2" id="itemMenu"><a href="maisRecentes.php"><h5>Mais Recentes</h5></a></div>
-			<div class="col-2" id="itemMenu"><a href="suporteTecnico.php"><h5>Suporte Técnico</h5></a></div>
-			<div class="col-2" id="itemMenu"><a href="configDeConta"><h5>Sua conta</h5></a></div>
+			<a href="index.php"  class="col-2" id="itemMenu"><h5>Home</h5></a>
+			<a href="categorias.php" class="col-2" id="itemMenu"><h5>Categorias</h5></a>
+			<a href="cadastrarProduto.php"  class="col-2" id="itemMenu"><h5>Cadastrar Produto</h5></a>
+			<a href="maisRecentes.php" class="col-2" id="itemMenu"><h5>Mais Recentes</h5></a>
+			<a href="suporteTecnico.php"  class="col-2" id="itemMenu"><h5>Suporte Técnico</h5></a>
+			<a href="configDeConta" class="col-2" id="itemMenu"><h5>Sua conta</h5></a>
 		</div>
 	</nav>
 </head>
