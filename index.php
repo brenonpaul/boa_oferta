@@ -4,153 +4,26 @@
 
 <body>
 	<div class="container" style="margin-top: 3%">
-		<div class="row">
-			<div class="col conteudo">
-				<div class="row">
-					<img src="imagens/maca.jpg" class="imgConteudo">
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Produto: Maça</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Preço: R$5,00/kilo</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Mercado: BIG</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Postado por: Girlberto</h6>
-				</div>
-			</div>
-			<div class="col-1"></div>
-			<div class="col conteudo">
-				<div class="row">
-					<img src="imagens/maca.jpg" class="imgConteudo">
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Produto: Maça</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Preço: R$5,00/kilo</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Mercado: BIG</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Postado por: Girlberto</h6>
-				</div>
-			</div>
-			<div class="col-1"></div>
-			<div class="col conteudo">
-				<div class="row">
-					<img src="imagens/maca.jpg" class="imgConteudo">
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Produto: Maça</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Preço: R$5,00/kilo</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Mercado: BIG</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Postado por: Girlberto</h6>
-				</div>
-			</div>
-			<div class="col-1"></div>
-			<div class="col conteudo">
-				<div class="row">
-					<img src="imagens/maca.jpg" class="imgConteudo">
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Produto: Maça</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Preço: R$5,00/kilo</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Mercado: BIG</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Postado por: Girlberto</h6>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container" style="margin-top: 6%; margin-bottom: 10%;">
-		<div class="row">
-			<div class="col conteudo">
-				<div class="row">
-					<img src="imagens/maca.jpg" class="imgConteudo">
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Produto: Maça</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Preço: R$5,00/kilo</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Mercado: BIG</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Postado por: Girlberto</h6>
-				</div>
-			</div>
-			<div class="col-1"></div>
-			<div class="col conteudo">
-				<div class="row">
-					<img src="imagens/maca.jpg" class="imgConteudo">
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Produto: Maça</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Preço: R$5,00/kilo</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Mercado: BIG</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Postado por: Girlberto</h6>
-				</div>
-			</div>
-			<div class="col-1"></div>
-			<div class="col conteudo">
-				<div class="row">
-					<img src="imagens/maca.jpg" class="imgConteudo">
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Produto: Maça</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Preço: R$5,00/kilo</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Mercado: BIG</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Postado por: Girlberto</h6>
-				</div>
-			</div>
-			<div class="col-1"></div>
-			<div class="col conteudo">
-				<div class="row">
-					<img src="imagens/maca.jpg" class="imgConteudo">
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Produto: Maça</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Preço: R$5,00/ilo</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Mercado: BIG</h6>
-				</div>
-				<div class="row textoConteudo">
-					<h6>- Postado por: Girlberto</h6>
-				</div>
-			</div>
+		<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    		<div class="carousel-inner">
+    			<div class="carousel-item active">
+      				<img src="imagens/maca.jpg" class="d-block w-100" >
+    			</div>
+   			<div class="carousel-item">
+      			<img src="imagens/pera.jpg" class="d-block w-100" >
+    		</div>
+    		<div class="carousel-item">
+     			 <img src="imagens/maca.jpg" class="d-block w-100" >
+    		</div>
+ 		</div>
+  		<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+    		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    		<span class="sr-only">Previous</span>
+  		</a>
+  		<a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+    		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+   			<span class="sr-only">Next</span>
+  		</a>
 		</div>
 	</div>
 

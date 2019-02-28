@@ -3,6 +3,7 @@
 <head>
 	<title>Boas Ofertas</title>
 	<meta charset="utf-8">
+	<script type="js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<nav style="border: 2px solid black">
@@ -41,7 +42,7 @@
 			<a href="cadastrarProduto.php"  class="col-2" id="itemMenu"><h5>Cadastrar Produto</h5></a>
 			<a href="maisRecentes.php" class="col-2" id="itemMenu"><h5>Mais Recentes</h5></a>
 			<a href="suporteTecnico.php"  class="col-2" id="itemMenu"><h5>Suporte Técnico</h5></a>
-			<a href="configDeConta" class="col-2" id="itemMenu"><h5>Sua conta</h5></a>
+			<a href="configDeConta" class="col-2" id="itemMenu"><h5>Seu Perfil</h5></a>
 		</div>
 	</nav>
 </head>
