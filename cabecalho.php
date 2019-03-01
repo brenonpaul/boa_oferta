@@ -2,8 +2,12 @@
 <html>
 <head>
 	<title>Boas Ofertas</title>
-	<meta charset="utf-8">
-	<script type="js/bootstrap.bundle.min.js"></script>
+	<meta charset="utf-8">	
+	<!-- os 3 scrips abaixo são necessários por conta do carousel da página index -->
+	<script src="js/jquery_3_3_1.js"></script>
+    <script src="js/popper_1_14_7.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  	<script type="js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<nav style="border: 2px solid black">
