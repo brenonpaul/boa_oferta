@@ -7,9 +7,12 @@
 
 #caixaLogin{
 	margin-top: 5%;
-	border: 1px solid black;
+	background: #ff8c00;
+	border: 3px solid black;
 	width: 70%;
 	float: right;
+	border-radius: 5px;
+
 }
 
 .btnSubmit
@@ -22,13 +25,15 @@
 
 #botaoLogin{
 	width: 100%;
-	background-color: #ccc;
+	color: white;
+	background-color: #b22222;
+	text-align: center;
 	
 }
 
 #menu{
 	border-top: 2px solid black;
-	background: #ccc;
+	background: #a52a2a;
 }
 
 #itemMenu{
@@ -36,6 +41,7 @@
 	border-right: 1px solid black;
 	border-left: 1px solid black;
 	padding: 1.5%;
+	color: white;
 
 }
 

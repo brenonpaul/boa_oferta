@@ -10,7 +10,7 @@
   	<script type="js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<nav style="border: 2px solid black">
+	<nav style="border: 2px solid black; background: #fd7e14;">
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-3">
@@ -19,9 +19,9 @@
 			<div class="col-4" style="margin-top: 3%">
 				<form>
 					<div class="input-group mb-4">
-		  				<input type="search" class="form-control" style="padding: 8%" placeholder="Busque por um alimento, supermercado, etc..." aria-label="Recipient's username" aria-describedby="button-addon2">
+		  				<input type="search" class="form-control" style="padding: 8%; border: 2px solid black;" placeholder="Busque por um alimento, supermercado, etc..." aria-label="Recipient's username" aria-describedby="button-addon2">
 		  				<div class="input-group-append">
-		   				 	<button class="btn btn-outline-secondary" type="button" id="button-addon2" value="buscar">Buscar</button>
+		   				 	<button class="btn btn-outline-secondary" type="button" id="button-addon2" value="buscar" style="border: 2px solid black; background-color: #b22222; color: white;">Buscar</button>
 		  				</div>
 					</div>
 				</form>
@@ -29,13 +29,13 @@
 			<div class="col-3">
 				<form id="caixaLogin">     
 					<div class="form-group">
-                           <input type="submit" class="btnSubmit" id="botaoLogin" value="Login" />
+                           <input type="s" class="btnSubmit" id="botaoLogin" value="Login" />
                     </div>
                     <div class="form-group" style="margin-left: 3%">
-                        <a href="#" class="ForgetPwd">Cadastrar-se</a>
+                        <a href="#" class="ForgetPwd" style="color: black">Cadastrar-se</a>
                     </div>
                     <div class="form-group" style="margin-left: 3%">
-                        <a href="#" class="ForgetPwd">Esqueceu sua senha?</a>
+                        <a href="#" class="ForgetPwd" style="color: black">Esqueceu sua senha?</a>
                     </div>
                 </form>				
 			</div>

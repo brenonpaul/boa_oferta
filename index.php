@@ -3,7 +3,7 @@
 ?>
 
 <body>
-  <div class="container">
+  <div class="container" style="background: #ccc; padding-top: 3%; padding-bottom: 5%; margin-top: 3%;">
 	 <div id="demo" class="carousel slide carouselIndex" data-ride="carousel">
 
   <!-- Indicators -->
