@@ -19,7 +19,7 @@
 			<div class="col-4" style="margin-top: 3%">
 				<form>
 					<div class="input-group mb-4">
-		  				<input type="search" class="form-control" style="padding: 8%; border: 2px solid black;" placeholder="Busque por um alimento, supermercado, etc..." aria-label="Recipient's username" aria-describedby="button-addon2">
+		  				<input type="search" class="form-control" style="padding: 8%; border: 2px solid black;" placeholder="Busque por um alimento, produto, etc..." aria-label="Recipient's username" aria-describedby="button-addon2">
 		  				<div class="input-group-append">
 		   				 	<button class="btn btn-outline-secondary" type="button" id="button-addon2" value="buscar" style="border: 2px solid black; background-color: #b22222; color: white;">Buscar</button>
 		  				</div>
@@ -29,7 +29,9 @@
 			<div class="col-3">
 				<form id="caixaLogin">     
 					<div class="form-group">
-                           <input type="s" class="btnSubmit" id="botaoLogin" value="Login" />
+						<a href="login.php">
+                           <input type="button" class="btnSubmit" id="botaoLogin" value="Login"/>
+                        </a>
                     </div>
                     <div class="form-group" style="margin-left: 3%">
                         <a href="#" class="ForgetPwd" style="color: black">Cadastrar-se</a>
@@ -42,7 +44,14 @@
 		</div>
 		<div class="row" id="menu">
 			<a href="index.php"  class="col-2" id="itemMenu"><h5>Home</h5></a>
-			<a href="categorias.php" class="col-2" id="itemMenu"><h5>Categorias</h5></a>
+			<a class="nav-link dropdown-toggle col-2" id="itemMenu" data-toggle="dropdown" href="categorias.php" role="button" aria-haspopup="true" aria-expanded="false"><h5>Categorias</h5></a>
+    		<div class="dropdown-menu">
+      			<a class="dropdown-item" href="#">Action</a>
+      			<a class="dropdown-item" href="#">Another action</a>
+     			<a class="dropdown-item" href="#">Something else here</a>
+      			<div class="dropdown-divider"></div>
+      			<a class="dropdown-item" href="#">Separated link</a>
+    		</div>
 			<a href="cadastrarProduto.php"  class="col-2" id="itemMenu"><h5>Cadastrar Produto</h5></a>
 			<a href="maisRecentes.php" class="col-2" id="itemMenu"><h5>Mais Recentes</h5></a>
 			<a href="suporteTecnico.php"  class="col-2" id="itemMenu"><h5>Suporte Técnico</h5></a>
