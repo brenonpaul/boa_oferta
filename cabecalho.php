@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-3">
-				<img src="imagens/logo.jpg" id="logo">
+				<img src="imagens/logoOficial.jpg" id="logo">
 			</div>
 			<div class="col-4" style="margin-top: 3%">
 				<form>
@@ -34,7 +34,7 @@
                         </a>
                     </div>
                     <div class="form-group" style="margin-left: 3%">
-                        <a href="#" class="ForgetPwd" style="color: black">Cadastrar-se</a>
+                        <a href="cadastro.php" class="ForgetPwd" style="color: black">Cadastrar-se</a>
                     </div>
                     <div class="form-group" style="margin-left: 3%">
                         <a href="#" class="ForgetPwd" style="color: black">Esqueceu sua senha?</a>

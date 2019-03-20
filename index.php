@@ -2,8 +2,8 @@
 	require_once "cabecalho.php";
 ?>
 
-<body>
-  <div class="container" style="background: #ccc; padding-top: 3%; padding-bottom: 5%; margin-top: 3%;">
+<body style="background: #DCDCDC">
+  <div class="container" style=" background: white ; padding-top: 3%; padding-bottom: 5%; border: 3px solid black; border-radius: 10px; margin-top: 2%;">
 	 <div id="demo" class="carousel slide carouselIndex" data-ride="carousel">
 
   <!-- Indicators -->

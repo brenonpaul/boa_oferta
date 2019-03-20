@@ -8,39 +8,39 @@
 			$cont= 0;
 			while ($cont <3) {
 				$cont++;
-				echo ('<div class="col conteudo">
+				echo ('<div class="col recentes">
 							<div class="row">
-								<img src="imagens/pera.jpg" class="imgConteudo">
+								<img src="imagens/pera.jpg" class="imgRecentes">
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Produto: Pera</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Preço: R$5,00/kilo</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Mercado: BIG</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Postado por: Girlberto</h6>
 							</div>
 					</div>
 					<div class="col-1"></div>');
 				if ($cont ===3) {	
-					echo ('<div class="col conteudo">
+					echo ('<div class="col recentes">
 							<div class="row">
-								<img src="imagens/pera.jpg" class="imgConteudo">
+								<img src="imagens/pera.jpg" class="imgRecentes">
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Produto: Pera</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Preço: R$5,00/kilo</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Mercado: BIG</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Postado por: Girlberto</h6>
 							</div>
 						</div>');
@@ -55,39 +55,39 @@
 			$cont= 0;
 			while ($cont <3) {
 				$cont++;
-				echo ('<div class="col conteudo">
+				echo ('<div class="col recentes">
 							<div class="row">
-								<img src="imagens/pera.jpg" class="imgConteudo">
+								<img src="imagens/pera.jpg" class="imgRecentes">
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Produto: Pera</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Preço: R$5,00/kilo</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Mercado: BIG</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Postado por: Girlberto</h6>
 							</div>
 					</div>
 					<div class="col-1"></div>');
 				if ($cont ===3) {	
-					echo ('<div class="col conteudo">
+					echo ('<div class="col recentes">
 							<div class="row">
-								<img src="imagens/pera.jpg" class="imgConteudo">
+								<img src="imagens/pera.jpg" class="imgRecentes">
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Produto: Pera</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Preço: R$5,00/kilo</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Mercado: BIG</h6>
 							</div>
-							<div class="row textoConteudo">
+							<div class="row textoMaisRecentes">
 								<h6>- Postado por: Girlberto</h6>
 							</div>
 						</div>');
