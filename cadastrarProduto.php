@@ -3,7 +3,7 @@
 ?>
 
 
-<body>
+
 	<div class="container">
 		<h3 class="mt-5" style="text-align: center;">Cadastrar Produto</h3>
 		<div class="row col-7 ml-5">
@@ -51,7 +51,7 @@
 			<button type="submit" class="btn btn-primary">Enviar</button>
 		</div>
 	</div>
-</body>
+
 
 
 

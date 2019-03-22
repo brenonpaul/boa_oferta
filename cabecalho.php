@@ -14,14 +14,14 @@
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-3">
-				<img src="imagens/logoOficial.jpg" id="logo">
+				<img src="imagens/logo.png" id="logo">
 			</div>
 			<div class="col-4" style="margin-top: 3%">
 				<form>
 					<div class="input-group mb-4">
 		  				<input type="search" class="form-control" style="padding: 8%; border: 2px solid black;" placeholder="Busque por um alimento, produto, etc..." aria-label="Recipient's username" aria-describedby="button-addon2">
 		  				<div class="input-group-append">
-		   				 	<button class="btn btn-outline-secondary" type="button" id="button-addon2" value="buscar" style="border: 2px solid black; background-color: #b22222; color: white;">Buscar</button>
+		   				 	<button class="btn btn-outline-secondary" id="buscar" type="button" id="button-addon2" value="buscar">Buscar</button>
 		  				</div>
 					</div>
 				</form>

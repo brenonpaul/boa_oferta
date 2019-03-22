@@ -3,7 +3,7 @@
 ?>
 
 <body style="background: #DCDCDC">
-  <div class="container" style=" background: white ; padding-top: 3%; padding-bottom: 5%; border: 3px solid black; border-radius: 10px; margin-top: 2%;">
+  <div class="container" style=" background-image: url(imagens/conjuntoFrutas.jpg);  padding-top: 3%; padding-bottom: 5%; border: 3px solid black; border-radius: 10px; margin-top: 2%;">
 	 <div id="demo" class="carousel slide carouselIndex" data-ride="carousel">
 
   <!-- Indicators -->
