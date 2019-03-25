@@ -1,111 +1,144 @@
-#logo{
-	width: 80%;
-	margin-bottom: 2%;
-	margin-top: 7%;
-	border-radius: 10px;
-	padding-bottom: 1%;
+#logo {
+    width: 80%;
+    margin-bottom: 2%;
+    margin-top: 7%;
+    border-radius: 10px;
+    padding-bottom: 1%;
 }
 
-#caixaLogin{
-	margin-top: 5%;
-	background: #ff8c00;
-	border: 3px solid black;
-	width: 70%;
-	float: right;
-	border-radius: 5px;
+#caixaLogin {
+   
+    background: #ff8c00;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    width: 70%;
+    float: right;
+    padding-bottom: 3%;
+  
 }
 
-.btnSubmit
-{
+.btnSubmit {
     width: 50%;
     padding: 1.5%;
     border: none;
     cursor: pointer;
 }
 
-#botaoLogin{
-	width: 100%;
-	color: white;
-	background-color: #b22222;
-	text-align: center;
-	border-bottom: 1px solid black;
-}
-#botaoLogin:hover{
-	background-color: red;
+#botaoLogin {
+    width: 100%;
+    color: white;
+    background-color: #b22222;
+    text-align: center;
+    border-bottom: 1px solid black;
 }
 
-#menu{
-	border-top: 2px solid black;
-	background: #a52a2a;
-	margin-right: 0px;
+#botaoLogin:hover {
+    background-color: red;
 }
 
-#itemMenu{
-	text-align: center;
-	border-right: 1px solid black;
-	border-left: 1px solid black;
-	padding-top: 1.5%;
-	padding-left: 1.5%;
-	padding-right: 1.5%;
-	color: white;
-	text-decoration: none;
-}
-#itemMenu:hover{
-	background-color: red;
+#menu {
+    border-top: 2px solid black;
+    background: #a52a2a;
+    margin-right: 0px;
 }
 
-#buscar{
-	border: 2px solid black; 
-	background-color: #b22222; 
-	color: white;
+#itemMenu {
+    text-align: center;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding-top: 1.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    color: white;
+    text-decoration: none;
 }
-#buscar:hover{
-	background-color: red;
+
+#itemMenu:hover {
+    background-color: red;
+}
+
+#buscar {
+    border: 2px solid black;
+    background-color: #b22222;
+    color: white;
+}
+
+#buscar:hover {
+    background-color: red;
+}
+
+#fundoCarousel{
+    background-image: url(../imagens/conjuntoFrutas.jpg);
+    padding-top: 3%;
+    padding-bottom: 5%;
+    border: 3px solid black;
+    border-radius: 10px; 
+    margin-top: 2%; 
+    width: 80%;
 }
 
 .carousel-inner img {
-      width: 100%;
-      height: 100%;
-  }
-  
-.carouselIndex{
-	width: 60%;
-	margin-left: 17%;
-	margin-top: 3%;
-	border: 2px solid black;
-	border-radius: 10px;
+    width: 100%;
+    height: 100%;
 }
 
-.recentes{
-	border: 2px solid black;
+.imgCarousel {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 3%;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
-.imgRecentes{
-	width: 100%;
-	height: 50%;
-	border-bottom: 2px solid black;
-	margin-bottom: 5%;
+
+.recentes {
+    border: 2px solid black;
 }
 
-.textoMaisRecentes{
-	margin-left: 2%;
+.imgRecentes {
+    width: 100%;
+    height: 50%;
+    border-bottom: 2px solid black;
+    margin-bottom: 5%;
 }
 
-.cadastrarProdutoInput{
-	width: 10%;
+.textoMaisRecentes {
+    margin-left: 2%;
 }
 
-.imgrdp{
-	 border: 2px solid black;
+.caixaDeInputs{
+    width: 70%;
+    border: 2px solid black;
+    margin-left: 15%;
+    padding-left: 13.5%;
+    padding-top: 2%; 
+    padding-bottom: 2%;
+    background-color: #ddd;
+    border-radius: 5px;
 }
 
-.rodapeback{
-	margin-top: 10%;
-	padding-bottom: 2%; 
-	padding-top: 2%;
-	border: 2px solid black;
-	border-radius: 5px;
-	background-color: #ccc;
+#caixaDeInputsCadProd{
+    margin-left: 9%;
+    margin-top: 3%;
+    width: 80%;
+    padding-left: 15%;
+}
+
+.cadastrarProdutoInput {
+    width: 10%;
+}
+
+.imgrdp {
+    border: 2px solid black;
+}
+
+.rodapeback {
+    margin-top: 10%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #ccc;
 }
 
 

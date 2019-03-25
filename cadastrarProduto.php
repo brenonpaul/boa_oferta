@@ -6,6 +6,9 @@
 
 	<div class="container">
 		<h3 class="mt-5" style="text-align: center;">Cadastrar Produto</h3>
+
+		<div class="caixaDeInputs" id="caixaDeInputsCadProd">
+
 		<div class="row col-7 ml-5">
 			<div class="input-group mb-3 mt-5">
 				<div class="input-group-prepend">
@@ -13,7 +16,7 @@
   				</div>
   			<div class="custom-file">
     			<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-    			<label class="custom-file-label" for="inputGroupFile01">Clique aqui para selecionar a imagem do produto</label>
+    			<label class="custom-file-label" for="inputGroupFile01">Adicionar Imagem</label>
   			</div>
 			</div>
 		</div>
@@ -51,6 +54,10 @@
 			<button type="submit" class="btn btn-primary">Enviar</button>
 		</div>
 	</div>
+
+</div>
+
+</div>
 
 
 
