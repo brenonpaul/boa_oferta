@@ -2,7 +2,7 @@
 require_once "cabecalho.php";
 ?>
 
-<body style="background: #DCDCDC">
+
 <div class="container" id="fundoCarousel">
     <div id="demo" class="carousel slide imgCarousel" data-ride="carousel">
 
@@ -35,7 +35,7 @@ require_once "cabecalho.php";
         </a>
     </div>
 </div>
-</body>
+
 
 <?php
 require_once "rodape.php";

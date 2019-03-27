@@ -31,7 +31,7 @@
                 </form>
             </div>
             <div class="col-3">
-                <form id="caixaLogin">
+                <form id="caixaLogin" >
                     <div class="form-group">
                         <a href="login.php">
                             <input type="button" class="btnSubmit" id="botaoLogin" value="Login"/>
@@ -48,9 +48,9 @@
             <div class="col-1"></div>
         </div>
         <div class="row" id="menu">
-            <a href="index.php" class="col-2" id="itemMenu"><h5>Home</h5></a>
+            <a href="index.php" class="col-2" id="itemMenu"><h5 style="margin-top: 14%;">Home</h5></a>
             <a class="nav-link dropdown-toggle col-2" id="itemMenu" data-toggle="dropdown" href="categorias.php"
-               role="button" aria-haspopup="true" aria-expanded="false"><h5>Categorias</h5></a>
+               role="button" aria-haspopup="true" aria-expanded="false"><h5 style="margin-top: 9%;">Categorias</h5></a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
@@ -58,10 +58,11 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Separated link</a>
             </div>
-            <a href="cadastrarProduto.php" class="col-2" id="itemMenu"><h5>Cadastrar Produto</h5></a>
-            <a href="maisRecentes.php" class="col-2" id="itemMenu"><h5>Mais Recentes</h5></a>
-            <a href="suporteTecnico.php" class="col-2" id="itemMenu"><h5>Suporte Técnico</h5></a>
-            <a href="configDeConta" class="col-2" id="itemMenu"><h5>Seu Perfil</h5></a>
+            <a href="cadastrarProduto.php" class="col-2" id="itemMenu"><h5 style="margin-top: 14%;">Cadastrar Produto</h5></a>
+            <a href="maisRecentes.php" class="col-2" id="itemMenu"><h5 style="margin-top: 14%;">Mais Recentes</h5></a>
+            <a href="suporteTecnico.php" class="col-2" id="itemMenu"><h5 style="margin-top: 14%;">Suporte Técnico</h5></a>
+            <a href="configDeConta" class="col-2" id="itemMenu"><h5 style="margin-top: 14%;">Seu Perfil</h5></a>
         </div>
     </nav>
 </head>
+<body style="background: #DCDCDC">

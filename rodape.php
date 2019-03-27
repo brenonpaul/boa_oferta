@@ -1,3 +1,4 @@
+</body>
 <footer class="rodapeback">
 		<h4 style="margin-left: 40%">Boas Ofertas ® todos os direitos reservados</h4>
 			<div class="divisor"></div>
