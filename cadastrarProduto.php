@@ -9,17 +9,17 @@
 
 		<div class="caixaDeInputs" id="caixaDeInputsCadProd">
 
-		<div class="row col-7 ml-5">
-			<div class="input-group mb-3 mt-5">
-				<div class="input-group-prepend">
-    					<span class="input-group-text" id="inputGroupFileAddon01"><img src="#"></span>
-  				</div>
-  			<div class="custom-file">
-    			<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-    			<label class="custom-file-label" for="inputGroupFile01">Adicionar Imagem</label>
-  			</div>
+			<div class="row col-7 ml-5">
+				<div class="input-group mb-3 mt-5">
+					<div class="input-group-prepend">
+	    					<span class="input-group-text" id="inputGroupFileAddon01"><img src="#"></span>
+	  				</div>
+	  			<div class="custom-file">
+	    			<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+	    			<label class="custom-file-label" for="inputGroupFile01" style="z-index: 0;">Adicionar Imagem</label>
+	  			</div>
+				</div>
 			</div>
-		</div>
 		<div class="row col-7 ml-5">
 			<div class="input-group mb-3">
   				<div class="input-group-prepend">

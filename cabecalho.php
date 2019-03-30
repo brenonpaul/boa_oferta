@@ -10,40 +10,39 @@
     <script type="js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <nav style="border: 2px solid black; background: #fd7e14;">
+    <nav style="background: #fd7e14;">
         <div class="row" style="width: 100%;">
             <div class="col-1"></div>
             <div class="col-3">
-                <img src="imagens/logo.png" id="logo">
+                <img src="imagens/logo.png" id="logo" class="mt-4 mb-4">
             </div>
-            <div class="col-4 mt-5">
+            <div class="col-4 mt-4">
                 <form>
-                    <div class="input-group mb-4">
-                        <input type="search" class="form-control" style="padding: 8%; border: 2px solid black;"
+                    <div class="input-group mb-4 mt-2">
+                        <input type="search" class="form-control" style="padding: 8%;"
                                placeholder="Busque por um alimento, produto, etc..." aria-label="Recipient's username"
                                aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" id="buscar" type="button" id="button-addon2"
+                            <button class="btn-outline-secondary" id="buscar" type="button" id="button-addon2"
                                     value="buscar">Buscar
                             </button>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="col-3">
-                <form id="caixaLogin" >
-                    <div class="form-group">
-                        <a href="telaLogin.php">
-                            <input type="button" class="btnSubmit" id="botaoLogin" value="Login"/>
-                        </a>
-                    </div>
-                    <div class="form-group ml-2">
-                        <a href="cadastro.php" class="ForgetPwd" style="color: black">Cadastrar-se</a>
-                    </div>
-                    <div class="form-group ml-2">
-                        <a href="#" class="ForgetPwd" style="color: black">Esqueceu sua senha?</a>
-                    </div>
-                </form>
+            <!--toda essa div é para o Login -->
+            <div class="col-3 mt-4">
+              
+              
+              <div id="caixaLogin" class="mt-2" >
+                <button onclick="document.getElementById('id01').style.display='block'" id="botaoLogin">Login</button>
+                <!--Página que será aberta após clicar no botao 'Login' -->
+              <?php require_once("telaLogin.php"); ?>
+                <!-- -->
+                  <div class="form-group">
+                      <a href="cadastro.php" class="ForgetPwd" style="color: black; text-decoration:underline; margin-left: 28%;">Cadastrar-se</a>
+                  </div>
+                </div>
             </div>
             <div class="col-1"></div>
         </div>

@@ -1,39 +1,21 @@
-<?php
-	require_once "cabecalho.php";
-?>
-
-	<div class="container">
-		<h3 class="mt-5" style="text-align: center; margin-bottom: 2%;">Entrar</h3>		
-		<div class="caixaDeInputs">
-			<div>
-				<div class="row col-7 ml-5">
-					<div class="input-group mb-2" style="border: 2px solid  ; border-radius: 5px;">
-		  				<div class="input-group-prepend">
-		    				<span class="input-group-text" id="inputGroup-sizing-default">Usuário:</span>
-		  				</div>
-		  				<input type="text" class="form-control">
-					</div>
-				</div>
-				
-				
-				
-	
-				<div class="row col-7 ml-5">
-					<div class="input-group mb-3"  style="border: 2px solid ; border-radius: 5px;">
-		  				<div class="input-group-prepend">
-		    				<span class="input-group-text" id="inputGroup-sizing-default">Senha:</span>
-		  				</div>
-		  				<input type="password" class="form-control">
-					</div>
-				</div>
-				<div class="row col-5 ml-5">		
-					<button type="submit" class="btn btn-primary">Enviar</button>
-				</div>
-			</div>	
-		</div>
- 	</div>
-
-
-<?php
-	require_once "rodape.php";
-?>
+              <div id="id01" class="modal">
+                <form class="modal-content animate">
+                  <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>         
+                    </div>
+                  <div class="container">
+                    <label for="uname"><b>Usuário</b></label>
+                    <input type="text" placeholder="Nome de Usuário" name="uname" required class="form-control">
+                    <label for="psw"><b>Senha</b></label>
+                    <input type="password" placeholder="Senha" name="psw" required class="form-control">
+                    <button type="submit" class="btn btn-primary" style="background-color: #4CAF50;">Entrar</button>
+                    <label>
+                      <input type="checkbox" checked="checked" name="remember"> lembrar senha
+                    </label>
+                  </div>
+                  <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <span class="psw"><a href="#">Esqueceu sua Senha?</a></span>
+                  </div>
+                </form>
+              </div>
