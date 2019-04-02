@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Boas Ofertas</title>
+    <title>Boa Oferta</title>
     <meta charset="utf-8">
     <!-- os 3 scrips abaixo são necessários por conta do carousel da página index -->
     <script src="js/jquery_3_3_1.js"></script>
@@ -19,7 +19,7 @@
             <div class="col-4 mt-4">
                 <form>
                     <div class="input-group mb-4 mt-2">
-                        <input type="search" class="form-control" style="padding: 8%;"
+                        <input type="search" class="form-control" style="padding: 7%;"
                                placeholder="Busque por um alimento, produto, etc..." aria-label="Recipient's username"
                                aria-describedby="button-addon2">
                         <div class="input-group-append">
@@ -40,7 +40,7 @@
               <?php require_once("telaLogin.php"); ?>
                 <!-- -->
                   <div class="form-group">
-                      <a href="cadastro.php" class="ForgetPwd" style="color: black; text-decoration:underline; margin-left: 28%;">Cadastrar-se</a>
+                      <a href="cadastro.php" class="ForgetPwd" style="color: black; margin-left: 28%;">Cadastrar-se</a>
                   </div>
                 </div>
             </div>
