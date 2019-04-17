@@ -59,8 +59,8 @@
             </div>
             <a href="cadastrarProduto.php" class="col-2" id="itemMenu"><h5>Cadastrar Produto</h5></a>
             <a href="maisRecentes.php" class="col-2" id="itemMenu"><h5>Mais Recentes</h5></a>
-            <a href="suporteTecnico.php" class="col-2" id="itemMenu"><h5>Suporte Técnico</h5></a>
-            <a href="configDeConta" class="col-2" id="itemMenu"><h5>Seu Perfil</h5></a>
+            <a href="suporte.php" class="col-2" id="itemMenu"><h5>Suporte Técnico</h5></a>
+            <a href="seuPerfil.php" class="col-2" id="itemMenu"><h5>Seu Perfil</h5></a>
         </div>
     </nav>
 </head>
