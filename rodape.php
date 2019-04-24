@@ -1,10 +1,10 @@
 </body>
 <footer class="rodapeback">
-		<h4 style="margin-left: 40%">Boa Oferta ® todos os direitos reservados</h4>
+		<h4 style="text-align: center;">Boa Oferta ® todos os direitos reservados</h4>
 			<div class="divisor"></div>
-			<section  style="margin-left: 44%">
-			<img src="imagens/rodape1.png" class="imgrdp">
-			<img src="imagens/rodape2.png" class="imgrdp">
+			<section  style="text-align: center;">
+			<img src="imagens/instagram.svg" class="imgrdp">
+			<img src="imagens/facebook.svg" class="imgrdp">
 		</section>
 	</footer>
 </html>
