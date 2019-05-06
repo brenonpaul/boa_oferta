@@ -12,3 +12,8 @@
 
 6- Ainda dentro da pasta "modelo_fisico" copie o conteudo do arquivo 'population.sql' e cole no phpmyadmin na aba SQL
 
+7- Para realizar o login no site, pode usar qualquer uma das contas já cadastradas, como exemplo:
+email: jj.s.a.o@gmail.com
+senha: wudLGDOR
+
+8- Após esses passos, pode-se usar o site
