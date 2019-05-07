@@ -17,3 +17,5 @@ email: jj.s.a.o@gmail.com
 senha: wudLGDOR
 
 8- Após esses passos, pode-se usar o site
+
+9- A parte de cadastro e login está 80% finalizada, logo adicionaremos ao software!
