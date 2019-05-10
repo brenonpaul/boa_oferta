@@ -61,7 +61,7 @@ if(isset($_POST['login'])){
                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>         
                   <div class="containerLogin">
                     <h3 style="text-align: center; margin-bottom: 10%;">Olá, seja bem vindo!</h3>
-                    <input type="text" placeholder="Nome de Usuário" required class="form-control ml-3" id="inputsLogin">
+                    <input type="text" placeholder="Seu e-mail" required class="form-control ml-3" id="inputsLogin">
                     <input type="password" placeholder="Senha" required class="form-control ml-3" id="inputsLogin">
                     <button type="submit" class="btn btn-primary ml-3 mt-4 mb-2" id="botaoEntrarLogin">Entrar</button>
                     <label>

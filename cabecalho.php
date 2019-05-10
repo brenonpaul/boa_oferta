@@ -54,15 +54,20 @@ if(!isset($_SESSION))
         </div>
         <div class="row" id="menu">
             <a href="index.php" class="col-2" id="itemMenu"><h5>Home</h5></a>
-            <a class="nav-link dropdown-toggle col-2" id="itemMenu" data-toggle="dropdown" href="categorias.php"
-               role="button" aria-haspopup="true" aria-expanded="false" style="padding-bottom: 0%;"><h5>Categorias</h5></a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-            </div>
+
+
+            <a href="Categorias.php" style="text-decoration: none;">
+                <div class="dropdown col-2" id="itemMenu">
+                    <h5 style="color: white;">Categorias</h5>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                    </div>
+                </div>
+            </a>
+          
+
             <a href="cadastrarProduto.php" class="col-2" id="itemMenu"><h5>Cadastrar Produto</h5></a>
             <a href="maisRecentes.php" class="col-2" id="itemMenu"><h5>Mais Recentes</h5></a>
             <a href="suporte.php" class="col-2" id="itemMenu"><h5>Suporte Técnico</h5></a>
