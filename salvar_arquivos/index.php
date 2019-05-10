@@ -16,13 +16,13 @@ require_once "cabecalho.php";
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="imagens/img1.jpg" style="border-radius: 10px;">
+                <img src="imagens/pera.jpg" style="border-radius: 10px;">
             </div>
             <div class="carousel-item">
-                <img src="imagens/img2.jpg" style="border-radius: 10px;"> 
+                <img src="imagens/maca.jpg" style="border-radius: 10px;"> 
             </div>
             <div class="carousel-item">
-                <img src="imagens/img3.jpg" style="border-radius: 10px;">
+                <img src="imagens/pera.jpg" style="border-radius: 10px;">
             </div>
         </div>
 
