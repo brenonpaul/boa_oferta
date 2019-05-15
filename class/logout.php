@@ -1,6 +1,6 @@
 <?php
 session_start();
-unset($_SESSION[UsuarioLogado]);
+unset($_SESSION['UsuarioLogado']);
 session_destroy();
 ?>
 <script>location.href='../login.php';</script> 

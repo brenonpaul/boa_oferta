@@ -1,4 +1,4 @@
 <?php
 // <?php include()
 ?>
-<a href="index.php">Logout</a>
+<a href="class/logout.php">Logout</a>

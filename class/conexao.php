@@ -1,8 +1,8 @@
 <?php
 
 $host = "localhost";
-$usuario = "root";
-$senha = "";
+$usuario = "aluno";
+$senha = "aluno";
 $bd = "boa-oferta";
 
 $mysqli = new mysqli($host, $usuario, $senha, $bd);

@@ -1,10 +1,13 @@
 <?php
 require_once "cabecalho.php";
+
+if(!isset($_SESSION))
+    session_start();
 ?>
 
 
 <div class="container" id="fundoCarousel">
-    <div id="demo" class="carousel slide imgCarousel" data-ride="carousel">
+    <div id="demo" class="carousel slide imgCarousel" data-ride="carousel" style="position: relative;">
 
         <!-- Indicators -->
         <ul class="carousel-indicators">
@@ -14,7 +17,7 @@ require_once "cabecalho.php";
         </ul>
 
         <!-- The slideshow -->
-        <div class="carousel-inner">
+        <div class="carousel-inner" style="position: relative;">
             <div class="carousel-item active">
                 <img src="imagens/carousel1.jpg" style="border-radius: 10px;">
             </div>
