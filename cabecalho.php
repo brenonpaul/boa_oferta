@@ -60,9 +60,9 @@ if(!isset($_SESSION))
                 <div class="dropdown col-2" id="itemMenu">
                     <h5 style="color: white;">Categorias</h5>
                     <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
+                        <a href="#"><h6>Link 1</h6></a>
+                            <a href="#"><h6>Link 2</h6></a>
+                            <a href="#"><h6>Link 3</h6></a>
                     </div>
                 </div>
             </a>
@@ -75,4 +75,4 @@ if(!isset($_SESSION))
         </div>
     </nav>
 </head>
-<body style="background: #DCDCDC">
+<body style="background: #f8f9fa">

@@ -124,28 +124,27 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  z-index: 1;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  margin-top: 7%;
-  margin-left: -9%;
+  background-color: #a52a2a;
   width: 100%;
-  border-radius: 50px;
+  margin-left: -9%;
+  z-index: 1;
+  margin-top: 7%;
+  border-radius: 0px 0px 10px 10px;
+  border: 1px solid #660000;
 }
 
 .dropdown-content a {
-  color: black;
-  background-color: #a52a2a;
-  padding: 1%;
+  color: white;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;}
+.dropdown-content a:hover {background-color: #660000;}
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -213,6 +212,7 @@
 }
 
 #caixaDeInputsCadProd{
+    border: 0;
     margin-left: 9%;
     margin-top: 3%;
     width: 80%;
@@ -227,6 +227,35 @@
   width: 100%;
   height: 200%;
 }
+
+#fundoImgPerfil{
+  margin-left: -8%;
+  width: 80%;
+  height: 100%;
+}
+
+#imgPerfil{
+  width: 100%;
+  margin-bottom: 3%;
+}
+
+.infosPerfil{
+  border: 1px solid black;
+  width: 100%;
+  color: white;
+  background-color: #a52a2a;
+  word-wrap: break-word;
+}
+
+ .estrela {
+        margin-top: -5%;
+        padding-bottom: 0;
+        font-size: 50px;
+        color: yellow;
+        text-shadow: 1px 1px 1px #000;
+        text-decoration: none;
+}
+
 
 .imgrdp {
 

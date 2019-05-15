@@ -8,7 +8,6 @@
 		<h3 class="mt-5" style="text-align: center;">Cadastrar Produto</h3>
 
 		<div class="caixaDeInputs" id="caixaDeInputsCadProd">
-
 			<div class="row col-7 ml-5">
 				<div class="input-group mb-3 mt-5">
 					<div class="input-group-prepend">
