@@ -37,7 +37,7 @@ if(isset($_POST['login'])){
             $erro[] = "<strong>Senha</strong> incorreta.";
 
         if(count($erro) == 0){
-            echo "<script>location.href='teste.php';</script>";
+            echo "<script>location.href='teste.php?';</script>";
             exit();
             unset($_SESSION['email']);
         }
@@ -95,7 +95,7 @@ if(isset($_POST['login'])){
                             <?php 
                             }
                             ?>
-                        <form method="post" action="teste.php" role="form">
+                        <form method="post" action="" role="form">
                             <fieldset>
                                 <div class="form-group">
                                     <input value="<?php if(isset($_SESSION['email'])) echo $_SESSION['email']; ?>" class="form-control" placeholder="E-mail" name="email" type="email" autofocus>

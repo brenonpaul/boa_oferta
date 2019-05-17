@@ -41,7 +41,9 @@ if(!isset($_SESSION))
               
               
               <div id="caixaLogin" class="mt-2" >
+                <a href="login.php">
                 <button onclick="document.getElementById('id01').style.display='block'" id="botaoLogin">Login</button>
+            </a>
                 <!--Página que será aberta após clicar no botao 'Login' -->
               <?php require_once("telaLogin.php"); ?>
                 <!-- -->
