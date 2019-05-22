@@ -37,7 +37,7 @@ if(isset($_POST['login'])){
             $erro[] = "<strong>Senha</strong> incorreta.";
 
         if(count($erro) == 0){
-            echo "<script>location.href='teste.php?';</script>";
+            echo "<script>location.href='index.php';</script>";
             exit();
             unset($_SESSION['email']);
         }

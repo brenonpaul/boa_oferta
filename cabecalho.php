@@ -1,8 +1,6 @@
 <?php
 if(!isset($_SESSION))
     session_start();
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,17 +37,36 @@ if(!isset($_SESSION))
             <!--toda essa div é para o Login -->
             <div class="col-3 mt-4">
               
-              
               <div id="caixaLogin" class="mt-2" >
-                <a href="login.php">
+               
+                    <?php 
+                    if(isset($_SESSION['UsuarioLogado'])){
+                ?>
+                <a href="class/logout.php">
+             <button id="botaoLogin">Logout</button>
+                </a>
+             <?php
+                    }else{
+                    ?>
+                    <a href="login.php">
                 <button onclick="document.getElementById('id01').style.display='block'" id="botaoLogin">Login</button>
+                 
+                <?php
+            }
+                ?>
             </a>
                 <!--Página que será aberta após clicar no botao 'Login' -->
               <?php require_once("telaLogin.php"); ?>
                 <!-- -->
+                <?php
+                 if(!isset($_SESSION['UsuarioLogado'])){
+                ?>
                   <div class="form-group">
                       <a href="cadastro.php" class="ForgetPwd" style="color: black; margin-left: 28%;">Cadastrar-se</a>
                   </div>
+                  <?php
+              }
+                  ?>
                 </div>
             </div>
             <div class="col-1"></div>
