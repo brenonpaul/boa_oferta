@@ -1,11 +1,3 @@
-CREATE TABLE usuario (
-cpf varchar(14) PRIMARY KEY NOT NULL,
-apelido varchar(25) NOT NULL,
-nome_completo varchar(150) NOT NULL,
-email varchar(250) NOT NULL,
-senha varchar(25) NOT NULL,
-foto_usuario varchar(150)
-);
 
 CREATE TABLE endereco (
 cep varchar(9) PRIMARY KEY NOT NULL,
@@ -13,15 +5,25 @@ logradouro varchar(250),
 complemento varchar(250),
 bairro varchar(250),
 localidade varchar(250),
-uf varchar(2),
-CONSTRAINT fk_endereco_id_bairro FOREIGN KEY(id_bairro) REFERENCES bairro (id_bairro)
+uf varchar(2)
+);
+
+CREATE TABLE usuario (
+cpf varchar(14) PRIMARY KEY NOT NULL,
+cep varchar(9),
+apelido varchar(25) NOT NULL,
+nome_completo varchar(150) NOT NULL,
+email varchar(250) NOT NULL,
+senha varchar(25) NOT NULL,
+foto_usuario varchar(150),
+CONSTRAINT fk_usuario_cep FOREIGN KEY(cep) REFERENCES endereco (cep)
 );
 
 CREATE TABLE mercados (
 id_mercado int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-id_endereco int,
+cep varchar(9),
 nome_mercado varchar(150),
-CONSTRAINT fk_mercados_id_endereco FOREIGN KEY(id_endereco) REFERENCES endereco (id_endereco)
+CONSTRAINT fk_mercados_cep FOREIGN KEY(cep) REFERENCES endereco (cep)
 );
 
 CREATE TABLE produto (
