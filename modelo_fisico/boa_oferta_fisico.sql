@@ -1,32 +1,33 @@
 
-CREATE TABLE endereco (
+CREATE TABLE enderecos (
 cep varchar(9) PRIMARY KEY NOT NULL,
-logradouro varchar(250),
+logradouro varchar(250) NOT NULL,
 complemento varchar(250),
-bairro varchar(250),
-localidade varchar(250),
-uf varchar(2)
+bairro varchar(250) NOT NULL,
+localidade varchar(250) NOT NULL,
+uf varchar(2) NOT NULL
 );
 
-CREATE TABLE usuario (
+
+CREATE TABLE usuarios (
 cpf varchar(14) PRIMARY KEY NOT NULL,
-cep varchar(9),
+cep_usuario varchar(9),
 apelido varchar(25) NOT NULL,
 nome_completo varchar(150) NOT NULL,
 email varchar(250) NOT NULL,
 senha varchar(25) NOT NULL,
 foto_usuario varchar(150),
-CONSTRAINT fk_usuario_cep FOREIGN KEY(cep) REFERENCES endereco (cep)
+CONSTRAINT fk_usuario_cep FOREIGN KEY(cep_usuario) REFERENCES endereco (cep)
 );
 
 CREATE TABLE mercados (
 id_mercado int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-cep varchar(9),
+cep_mercado varchar(9),
 nome_mercado varchar(150),
-CONSTRAINT fk_mercados_cep FOREIGN KEY(cep) REFERENCES endereco (cep)
+CONSTRAINT fk_mercados_cep FOREIGN KEY(cep_mercado) REFERENCES endereco (cep)
 );
 
-CREATE TABLE produto (
+CREATE TABLE produtos (
 id_produto int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 cpf varchar(14),
 id_mercado int,
@@ -42,7 +43,7 @@ id_categoria int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nome_categoria varchar(50)
 );
 
-CREATE TABLE tipo_usuario (
+CREATE TABLE tipo_usuarios (
 id_tipo int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 descricao_tipo varchar(250)
 );
