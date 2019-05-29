@@ -2,9 +2,9 @@
 
 1- Entrar na pasta public_html ou htdocs
 
-2- Entrar pelo terminal no public_html/htdocs e executar o git clone do link https://github.com/brenonpaul/boa-oferta.git
+2- Entrar pelo terminal no public_html/htdocs e executar o git clone do link https://github.com/brenonpaul/boa_oferta.git
 
-3 -Entre no phpmyadmin clique em Novo BD coloque o nome do novo banco como "boa-oferta" em "colação" selecione a opção "utf8_general_ci" e clique em criar
+3 -Entre no phpmyadmin clique em Novo BD coloque o nome do novo banco como "boa_oferta" em "colação" selecione a opção "utf8_general_ci" e clique em criar
 
 4- Entrar na pasta "boa-oferta", e acessar "modelo_fisico" e copiar o texto que tem dentro do arquivo 'gilberto_grr_fisico.sql'
 
