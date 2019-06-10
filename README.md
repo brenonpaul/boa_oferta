@@ -19,3 +19,12 @@ senha: wudLGDOR
 8- Após esses passos, pode-se usar o site
 
 9- A parte de cadastro e login está 80% finalizada, logo adicionaremos ao software!
+
+
+//////////////////////////////////////////
+
+comandos para o Ivo:
+
+select nome, email, ds_bairro_nome, ds_cidade_nome, ds_logradouro_nome from cad_usuario, cidades, logradouro, bairros where bairros_cd_bairro = cd_bairro and cidade_cd_cidade = cd_cidade and cd_logradouro = log_cd_tip_log and cpf = 09582746512;
+
+update cad_usuario set nome = 'novo nome' where cpf = 1111111111;
