@@ -22,8 +22,8 @@ if(isset($_POST['login'])){
 
     if(count($erro) == 0){
 
-        $sql = "SELECT pwd as senha, cpf as valor 
-        FROM cad_usuario 
+        $sql = "SELECT senha as senha, cpf as valor 
+        FROM usuarios 
         WHERE email = '$_SESSION[email]'";
         $que = $mysqli->query($sql) or die($mysqli->error);
         $dado = $que->fetch_assoc();
