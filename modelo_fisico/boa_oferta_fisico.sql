@@ -20,7 +20,8 @@ sigla_estado varchar(2) NOT NULL
 
 CREATE TABLE categorias (
 id_categoria int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-nome_categoria varchar(50)
+nome_categoria varchar(50),
+foto_categoria varchar(150)
 );
 
 CREATE TABLE cidades (
@@ -263,12 +264,12 @@ INSERT INTO bairros (nome_bairro, fk_id_cidade) Values
 ('Itinga',(select id_cidade from cidades where nome_cidade = 'Araquari')),
 ('Porto Grande',(select id_cidade from cidades where nome_cidade = 'Araquari'));
 
-INSERT INTO categorias (id_categoria, nome_categoria) Values
-(1, 'Bebidas'),
-(2, 'Carnes'),
-(3, 'Frios'),
-(4, 'Frutas, verduras e legumes'),
-(5, 'Congelados');
+INSERT INTO categorias (nome_categoria) Values
+('Bebidas'),
+('Carnes'),
+('Frios'),
+('Frutas, verduras e legumes'),
+('Congelados');
 
 INSERT INTO ruas (fk_id_bairro, nome_rua) Values 
 (1, 'Av. Alvino Hansen'),
