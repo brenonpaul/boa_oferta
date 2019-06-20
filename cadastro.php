@@ -1,5 +1,6 @@
 <?php
 require_once "cabecalho.php";
+require_once "class/conexao.php";
 ?>
 	<div class="container">
 		<h3 class="mt-5" style="text-align: center; margin-bottom: 2%;">Criar Conta</h3>		
@@ -34,12 +35,20 @@ require_once "cabecalho.php";
 		  				<div class="input-group-prepend">
 		    				<span class="input-group-text" id="inputGroup-sizing-default">Estado:</span>
 		  				</div>
-		  				<select class="form-control" id="exampleFormControlSelect1">
-		     				<option>1</option>
-		      				<option>2</option>
-						    <option>3</option>
-						    <option>4</option>
-						    <option>5</option>
+		  				<select class="form-control" id="exampleFormControlSelect1">		     						
+		     			<?php 
+		     				$sql = 'select nome_estado from estados;';
+		     				$resultado = $mysqli->query($sql) OR trigger_error($mysqli->error, E_USER_ERROR);
+		     				while($consulta = $resultado->fetch_object()){
+		     			?>
+		     			<option>
+		     				<?php
+		     					echo $consulta->nome_estado;
+		     				?>
+		     			</option>
+		     			<?php
+		     				}
+		     			?>
 						</select>
 					</div>
 				</div>
