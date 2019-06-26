@@ -35,7 +35,7 @@ require_once "class/conexao.php";
 		  				<div class="input-group-prepend">
 		    				<span class="input-group-text" id="inputGroup-sizing-default">Estado:</span>
 		  				</div>
-		  				<select class="form-control" id="exampleFormControlSelect1">		     						
+		  				<select class="form-control" id="exampleFormControlSelect1" name="nome_estado">		     						
 		     			<?php 
 		     				$sql = 'select nome_estado from estados;';
 		     				$resultado = $mysqli->query($sql) OR trigger_error($mysqli->error, E_USER_ERROR);
@@ -50,6 +50,9 @@ require_once "class/conexao.php";
 		     				}
 		     			?>
 						</select>
+
+
+
 					</div>
 				</div>
 				<div class="row col-7 ml-5">
