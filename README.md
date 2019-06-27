@@ -1,4 +1,4 @@
-# boa-oferta
+# boa_oferta
 
 1- Entrar na pasta public_html ou htdocs
 
