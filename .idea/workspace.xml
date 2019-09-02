@@ -3,32 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4fdb3794-fd19-480b-9aae-39e61b3101d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/cabecalho.php" beforeDir="false" afterPath="$PROJECT_DIR$/cabecalho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastrarProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/cadastrarProduto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro.php" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categorias.php" beforeDir="false" afterPath="$PROJECT_DIR$/categorias.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/estilo.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/estilo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery_3_3_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery_3_3_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/popper_1_14_7.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/popper_1_14_7.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maisRecentes.php" beforeDir="false" afterPath="$PROJECT_DIR$/maisRecentes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/database/pdo.sql" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/database/pdo.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rodape.php" beforeDir="false" afterPath="$PROJECT_DIR$/rodape.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seuPerfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/seuPerfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suporte.php" beforeDir="false" afterPath="$PROJECT_DIR$/suporte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/telaLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens/carousel1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagens/carousel1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens/carousel2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagens/carousel2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens/carousel3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagens/carousel3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens/carousel4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagens/carousel4.jpg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +51,15 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-304296777">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -79,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/cabecalho.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -88,12 +76,12 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="75" selection-start-line="6" selection-start-column="75" selection-end-line="6" selection-end-column="75" />
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/estilo.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -105,15 +93,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="62713">
               <caret line="3689" column="2" selection-start-line="3689" selection-start-column="2" selection-end-line="3699" selection-end-column="25" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tmp/5ccb416cd6a22/teste.php">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -204,16 +187,17 @@
       <workItem from="1553308368230" duration="889000" />
       <workItem from="1553913481963" duration="1331000" />
       <workItem from="1557460797859" duration="10000" />
+      <workItem from="1567467222101" duration="10000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2230000" />
+    <option name="totallyTimeSpent" value="2240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -241,17 +225,25 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/tmp/5ccb416cd6a22/teste.php" />
     <entry file="file://$PROJECT_DIR$/cabecalho.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="75" selection-start-line="6" selection-start-column="75" selection-end-line="6" selection-end-column="75" />
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62713">
+          <caret line="3689" column="2" selection-start-line="3689" selection-start-column="2" selection-end-line="3699" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -261,16 +253,6 @@
           <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="3689" column="2" selection-start-line="3689" selection-start-column="2" selection-end-line="3699" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/5ccb416cd6a22/teste.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

@@ -23,7 +23,7 @@ if(!isset($_SESSION))
             <div class="col-4 mt-4">
                 <form>
                     <div class="input-group mb-4 mt-2">
-                        <input type="search" class="form-control" style="padding: 7%;"
+                        <input type="search" class="form-control" style="padding: 5%;"
                                placeholder="Busque por um alimento, produto, etc..." aria-label="Recipient's username"
                                aria-describedby="button-addon2">
                         <div class="input-group-append">
@@ -37,7 +37,7 @@ if(!isset($_SESSION))
             <!--toda essa div é para o Login -->
             <div class="col-3 mt-4">
               
-              <div id="caixaLogin" class="mt-2" >
+              <div id="caixaLogin">
                
                     <?php 
                     if(isset($_SESSION['UsuarioLogado'])){

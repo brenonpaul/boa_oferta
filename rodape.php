@@ -1,6 +1,6 @@
 </body>
 <footer class="rodapeback">
-		<h4 style="text-align: center;">Boa Oferta ® todos os direitos reservados</h4>
+		<h5 style="text-align: center;">Boa Oferta ® todos os direitos reservados</h5>
 			<div class="divisor"></div>
 			<section  style="text-align: center;">
 			<img src="imagens/instagram.svg" class="imgrdp">
