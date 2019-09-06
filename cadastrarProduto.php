@@ -44,12 +44,12 @@
   				<select class="form-control" id="exampleFormControlSelect1">		     						
 		     			<?php 
 		     				$sql = 'select nome_mercado from mercados;';
-		     				$resultado = $mysqli->query($sql) OR trigger_error($mysqli->error, E_USER_ERROR);
+		     				$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 		     				while($consulta = $resultado->fetch_object()){
 		     			?>
 		     			<option>
 		     				<?php
-		     					echo $consulta->nome_mercado;
+		     					echo utf8_encode($consulta->nome_mercado);
 		     				?>
 		     			</option>
 		     			<?php

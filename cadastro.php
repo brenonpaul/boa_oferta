@@ -38,12 +38,12 @@ require_once "class/conexao.php";
 		  				<select class="form-control" id="exampleFormControlSelect1" name="nome_estado">		     						
 		     			<?php 
 		     				$sql = 'select nome_estado from estados;';
-		     				$resultado = $mysqli->query($sql) OR trigger_error($mysqli->error, E_USER_ERROR);
+		     				$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 		     				while($consulta = $resultado->fetch_object()){
 		     			?>
 		     			<option>
 		     				<?php
-		     					echo $consulta->nome_estado;
+		     					echo utf8_encode($consulta->nome_estado);
 		     				?>
 		     			</option>
 		     			<?php

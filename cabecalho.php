@@ -1,4 +1,5 @@
 <?php
+
 if(!isset($_SESSION))
     session_start();
 ?>
@@ -17,13 +18,14 @@ if(!isset($_SESSION))
     <nav style="background: #fd7e14;">
         <div class="row" style="width: 100%;">
             <div class="col-1"></div>
-            <div class="col-3">
+            <div class="col-2">
                 <img src="imagens/logo.png" id="logo" class="mt-4 mb-4">
             </div>
-            <div class="col-4 mt-4">
+            <div class="col-1"></div>
+            <div class="col-5 mt-4">
                 <form>
-                    <div class="input-group mb-4 mt-2">
-                        <input type="search" class="form-control" style="padding: 5%;"
+                    <div class="input-group mb-4 mt-2" style="width: 90%;">
+                        <input type="search" class="form-control" style="padding: 4%;"
                                placeholder="Busque por um alimento, produto, etc..." aria-label="Recipient's username"
                                aria-describedby="button-addon2">
                         <div class="input-group-append">
@@ -35,41 +37,30 @@ if(!isset($_SESSION))
                 </form>
             </div>
             <!--toda essa div é para o Login -->
-            <div class="col-3 mt-4">
+        
+            <div class="col-3 mt-3">
               
-              <div id="caixaLogin">
-               
-                    <?php 
-                    if(isset($_SESSION['UsuarioLogado'])){
-                ?>
+                <?php
+                    if(isset($_SESSION['usuario'])) {    
+                ?>     
+              <div id="caixaLogin" class="mt-3">
                 <a href="class/logout.php">
              <button id="botaoLogin">Logout</button>
                 </a>
-             <?php
-                    }else{
-                    ?>
-                    <a href="login.php">
-                <button onclick="document.getElementById('id01').style.display='block'" id="botaoLogin">Login</button>
-                 
-                <?php
-            }
-                ?>
+            <?php
+               }else{
+            ?>     
+                 <div id="caixaLogin">
+                    <a href="telaLogin.php">
+                <button onclick="document.getElementById('id01').style.display='block'" id="botaoLogin">Login</button>    
             </a>
-                <!--Página que será aberta após clicar no botao 'Login' -->
-              <?php require_once("telaLogin.php"); ?>
-                <!-- -->
-                <?php
-                 if(!isset($_SESSION['UsuarioLogado'])){
-                ?>
+            
                   <div class="form-group">
                       <a href="cadastro.php" class="ForgetPwd" style="color: black; margin-left: 28%;">Cadastrar-se</a>
                   </div>
-                  <?php
-              }
-                  ?>
+    <?php    } ?>
                 </div>
             </div>
-            <div class="col-1"></div>
         </div>
         <div class="row" id="menu">
             <a href="index.php" class="col-2" id="itemMenu"><h5>Home</h5></a>

@@ -1,21 +1,55 @@
-<!--
-<div>
-                <form class="modal-content animate" action="">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>         
-                  <div class="containerLogin">
-                    <h3 style="text-align: center; margin-bottom: 10%;">Olá, seja bem vindo!</h3>
+<?php
+session_start();
+?>
 
-        <input name="email" type="text"  placeholder="Seu e-mail" required class="form-control ml-3" id="inputsLogin" autofocus>
-                    <input type="password" placeholder="Senha" name="password" required class="form-control ml-3" id="inputsLogin">
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boa Oferta</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bulma.min.css" />
+</head>
 
-                    <button type="submit" name="login" value="true" class="btn btn-primary ml-3 mt-4 mb-2" id="botaoEntrarLogin">Entrar</button>
-                    <label>
-                      <input type="checkbox" checked="checked" name="remember" class="ml-3"> lembrar senha
-                    </label>
-                     
-                    <span  style="float: right;"><a href="#">Esqueceu sua Senha?</a></span>
-                
-                  </div>
-                 
-                </form>
-              </div>
+<body>
+    <section class="hero is-success is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-grey">Entrar</h3>
+                    <?php
+                    if(isset($_SESSION['nao_autenticado'])):
+                    ?>
+                    <div class="notification is-danger">
+                      <p>ERRO: Usuário ou senha inválidos.</p>
+                    </div>
+                    <?php
+                    endif;
+                    unset($_SESSION['nao_autenticado']);
+                    ?>
+                    <div class="box">
+                        <form action="login.php" method="POST">
+                            <div class="field">
+                                <div class="control">
+                                    <input name="usuario" type="email" class="input is-large" placeholder="Seu e-mail" autofocus="">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <input name="senha" class="input is-large" type="password" placeholder="Sua senha">
+                                </div>
+                            </div>
+                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
