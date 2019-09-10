@@ -24,7 +24,7 @@ if(!isset($_SESSION))
             <div class="col-1"></div>
             <div class="col-5 mt-4">
                 <form>
-                    <div class="input-group mb-4 mt-2" style="width: 90%;">
+                    <div class="input-group mb-4 mt-3" style="width: 90%;">
                         <input type="search" class="form-control" style="padding: 4%;"
                                placeholder="Busque por um alimento, produto, etc..." aria-label="Recipient's username"
                                aria-describedby="button-addon2">
@@ -43,7 +43,7 @@ if(!isset($_SESSION))
                 <?php
                     if(isset($_SESSION['usuario'])) {    
                 ?>     
-              <div id="caixaLogin" class="mt-3">
+              <div id="caixaLogin" class="mt-4">
                 <a href="class/logout.php">
              <button id="botaoLogin">Logout</button>
                 </a>
