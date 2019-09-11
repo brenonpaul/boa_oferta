@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 
 <body>
@@ -56,13 +57,46 @@
 
                              <div class="field">
                                 <div class="control">
-                                   <input name="estado" type="text" class="input is-large" placeholder="Estado" autofocus>
+                                  <select class="input is-large" name="nome_estado" style="color: #696969">                                  
+                                    <?php 
+                                        $sql = 'select nome_estado from estados;';
+                                        $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+                                        while($consulta = $resultado->fetch_object()){
+                                    ?>
+                                    <option>
+                                        <?php
+                                            echo utf8_encode($consulta->nome_estado);
+                                        ?>
+                                    </option>
+                                    <?php
+                                     }
+                                       ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                  <select class="input is-large" name="nome_rua" style="color: #696969">                                  
+                                    <?php 
+                                        $sql = 'select nome_rua from ruas;';
+                                        $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+                                        while($consulta = $resultado->fetch_object()){
+                                    ?>
+                                    <option>
+                                        <?php
+                                            echo utf8_encode($consulta->nome_rua);
+                                        ?>
+                                    </option>
+                                    <?php
+                                     }
+                                       ?>
+                                    </select>
                                 </div>
                             </div>
 
                              <div class="field">
                                 <div class="control">
-                                    <input name="foto_usuario" type="text" class="input is-large" placeholder="Foto de Perfil" autofocus>
+                                    <input name="foto_usuario" type="image" class="input is-large" placeholder="Foto de Perfil" autofocus>
                                 </div>
                             </div>
 

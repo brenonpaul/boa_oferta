@@ -38,8 +38,8 @@ nome_completo varchar(150) NOT NULL,
 email varchar(250) NOT NULL,
 senha varchar(25) NOT NULL,
 foto_usuario varchar(150),
-fk_id_est_user int,
-CONSTRAINT fk_usuario_id_estado FOREIGN KEY(fk_id_est_user) REFERENCES estados (id_estado)
+fk_id_rua_user int,
+CONSTRAINT fk_usuario_id_rua FOREIGN KEY(fk_id_rua_user) REFERENCES ruas (id_rua)
 );
 
 CREATE TABLE categorias (
@@ -275,9 +275,9 @@ INSERT INTO ruas (fk_id_bairro, nome_rua) Values
 (9, 'Av. Getúlio Vargas'),
 (9, 'Rua Cel. Francisco Gomes');
 
-INSERT INTO usuarios (nome_completo,apelido,email,senha,cpf,fk_id_est_user) values 
+INSERT INTO usuarios (nome_completo,apelido,email,senha,cpf,fk_id_rua_user) values 
 ('Jhonny James','jhon','jj.s.a.o@gmail.com','wudLGDOR','12497600970', '1'),
-('admin','adm','admin@gmail.com','admin123','12345678998', '24'),
+('admin','adm','admin@gmail.com','admin123','12345678998', '2'),
 ('Tommy Taffy','tom','toninho005@gmail.com','pgDnm3F1','12345695110', '1'),
 ('Michael Jackson','mika','rusbe@gmail.com','senha123','15632478945', '1'), 
 ('Denver Duley','den','DeDmonster@gmail.com','4DfM1P6C','45678932156', '1'), 
@@ -285,7 +285,7 @@ INSERT INTO usuarios (nome_completo,apelido,email,senha,cpf,fk_id_est_user) valu
 ('Marcos Marcelo','marc','mmprofessor@gmail.com','JMGtkL6O','85236974112', '1'), 
 ('Marlos Marcos','marlo','marcosM@outlook.com','s6UzAjHm','95715345630', '1'), 
 ('Vinicius dos Santos','vini','TCCnaoVouFazer@yahoo.com','JrORX7dI','78945612513', '1'), 
-('Gilberto Filho','gaymer','Gilberzf@gmail.com','oqXPQu93','85695132122', '24'), 
+('Gilberto Filho','gamer','Gilberzf@gmail.com','oqXPQu93','85695132122', '2'), 
 ('Joao Wandall','jojo','skyrimOnline@gmail.com','mkFdjXFM','59134562501', '1');
 
 
