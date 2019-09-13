@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistema de Cadastro - PHP + MySQL - Canal TI</title>
+    <title>Cadastre-se</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css">
@@ -21,11 +21,6 @@
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
                     <h3 class="title has-text-grey">Sistema de Cadastro</h3>
-                    <h3 class="title has-text-grey"><a href="https://youtube.com/canaltioficial" target="_blank">Canal TI</a></h3>
-                    <div class="notification is-success">
-                      <p>Cadastro efetuado!</p>
-                      <p>Faça login informando o seu usuário e senha <a href="login.php">aqui</a></p>
-                    </div>
                     <div class="notification is-info">
                         <p>O usuário escolhido já existe. Informe outro e tente novamente.</p>
                     </div>
@@ -57,7 +52,7 @@
 
                              <div class="field">
                                 <div class="control">
-                                  <select class="input is-large" name="nome_estado" style="color: #696969">                                  
+                                  <select class="input is-large" name="estado" style="color: #696969">                                  
                                     <?php 
                                         $sql = 'select nome_estado from estados;';
                                         $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
@@ -74,9 +69,51 @@
                                     </select>
                                 </div>
                             </div>
+
                             <div class="field">
                                 <div class="control">
-                                  <select class="input is-large" name="nome_rua" style="color: #696969">                                  
+                                  <select class="input is-large" name="cidade" style="color: #696969">                                  
+                                    <?php 
+                                        $sql = 'select nome_cidade from cidades;';
+                                        $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+                                        while($consulta = $resultado->fetch_object()){
+                                    ?>
+                                    <option>
+                                        <?php
+                                            echo utf8_encode($consulta->nome_cidade);
+                                        ?>
+                                    </option>
+                                    <?php
+                                     }
+                                       ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                  <select class="input is-large" name="bairro" style="color: #696969">                                  
+                                    <?php 
+                                        $sql = 'select nome_bairro from bairros;';
+                                        $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+                                        while($consulta = $resultado->fetch_object()){
+                                    ?>
+                                    <option>
+                                        <?php
+                                            echo utf8_encode($consulta->nome_bairro);
+                                        ?>
+                                    </option>
+                                    <?php
+                                     }
+                                       ?>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="field">
+                                <div class="control">
+                                  <select class="input is-large" name="rua" style="color: #696969">                                  
                                     <?php 
                                         $sql = 'select nome_rua from ruas;';
                                         $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
@@ -96,7 +133,7 @@
 
                              <div class="field">
                                 <div class="control">
-                                    <input name="foto_usuario" type="image" class="input is-large" placeholder="Foto de Perfil" autofocus>
+                                    <input type="file" name="foto_usuario" class="input is-large"  accept="image/png, image/jpeg" placeholder="Foto de Perfil" multiple />
                                 </div>
                             </div>
 

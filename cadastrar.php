@@ -9,6 +9,9 @@ $apelido = mysqli_real_escape_string($conexao, trim($_POST['apelido']));
 $foto_usuario = mysqli_real_escape_string($conexao, trim($_POST['foto_usuario']));
 $senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
 $estado = mysqli_real_escape_string($conexao, trim($_POST['estado']));
+$cidade = mysqli_real_escape_string($conexao, trim($_POST['cidade']));
+$bairro = mysqli_real_escape_string($conexao, trim($_POST['bairro']));
+$rua = mysqli_real_escape_string($conexao, trim($_POST['rua']));
 
 $sql = "select count(*) as total from usuarios where cpf = '$cpf' or email = '$email' or apelido = '$apelido'";
 $result = mysqli_query($conexao, $sql);
@@ -21,7 +24,7 @@ if($row['total'] == 1) {
 }
 
 //$sql = "INSERT INTO usuario (nome, usuario, senha, data_cadastro) VALUES ('$nome', '$usuario', '$senha', NOW())";
-$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_est_user) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', $cpf, '$senha', (select id_estado from estados where nome_estado = '$estado'));";
+$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_est_user) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', $cpf, '$senha', (select id_estado from estados where nome_estado = '$estado'), (select id_cidade from cidades where nome_cidade = '$cidade'), (select id_bairro from bairros where nome_bairro = '$bairro'), (select id_rua from ruas where nome_rua = '$rua'));";
 
 if($conexao->query($sql) === TRUE) {
 	$_SESSION['status_cadastro'] = true;
