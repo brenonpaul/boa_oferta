@@ -23,8 +23,7 @@ if($row['total'] == 1) {
 	exit;
 }
 
-//$sql = "INSERT INTO usuario (nome, usuario, senha, data_cadastro) VALUES ('$nome', '$usuario', '$senha', NOW())";
-$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_est_user) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', $cpf, '$senha', (select id_estado from estados where nome_estado = '$estado'), (select id_cidade from cidades where nome_cidade = '$cidade'), (select id_bairro from bairros where nome_bairro = '$bairro'), (select id_rua from ruas where nome_rua = '$rua'));";
+$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_est_user,fk_id_cid_user, fk_id_bairro_user, fk_id_rua_user) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', $cpf, '$senha', (select id_estado from estados where nome_estado = '$estado'), (select id_cidade from cidades where nome_cidade = '$cidade'), (select id_bairro from bairros where nome_bairro = '$bairro'), (select id_rua from ruas where nome_rua = '$rua'));";
 
 if($conexao->query($sql) === TRUE) {
 	$_SESSION['status_cadastro'] = true;

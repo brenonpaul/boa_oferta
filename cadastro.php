@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once("class/conexao.php");
 ?>
 <!DOCTYPE html>
@@ -20,10 +21,19 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
-                    <h3 class="title has-text-grey">Sistema de Cadastro</h3>
+                    <h3 class="title has-text-grey">Crie sua conta</h3>
+                    <?php
+                    error_reporting(0);
+                    ini_set(“display_errors”, 0 );
+                    if ($_SESSION['usuario_existe']):  
+                    ?>
                     <div class="notification is-info">
                         <p>O usuário escolhido já existe. Informe outro e tente novamente.</p>
                     </div>
+                    <?php 
+                    endif;
+                    unset($_SESSION['usuario_existe']);
+                     ?>
                     <div class="box">
                         <form action="cadastrar.php" method="POST">
                             <div class="field">
@@ -143,6 +153,7 @@
                                 </div>
                             </div>
                             <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
+                             <a href="telaLogin.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Logar-se</button></a>
                         </form>
                     </div>
                 </div>
