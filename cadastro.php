@@ -25,15 +25,31 @@
                     <?php
                     error_reporting(0);
                     ini_set(“display_errors”, 0 );
-                    if ($_SESSION['usuario_existe']):  
+                    if ($_SESSION['cpf_existe']):  
                     ?>
                     <div class="notification is-info">
-                        <p>O usuário escolhido já existe. Informe outro e tente novamente.</p>
+                        <p>O CPF escolhido já existe. Informe outro e tente novamente.</p>
                     </div>
                     <?php 
                     endif;
-                    unset($_SESSION['usuario_existe']);
+                    unset($_SESSION['cpf_existe']);
+                    if ($_SESSION['email_existe']):
                      ?>
+                    <div class="notification is-info">
+                        <p>O E-mail escolhido já existe. Informe outro e tente novamente.</p>
+                    </div>
+                    <?php 
+                	endif;
+                	unset($_SESSION['email_existe']);
+                	if ($_SESSION['apelido_existe']):
+                     ?>
+                    <div class="notification is-info">
+                        <p>O Apelido escolhido já existe. Informe outro e tente novamente.</p>
+                    </div>
+                    <?php 
+                	endif;
+                	unset($_SESSION['apelido_existe']);
+                    ?>
                     <div class="box">
                         <form action="cadastrar.php" method="POST">
                             <div class="field">

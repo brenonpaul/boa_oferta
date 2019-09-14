@@ -13,12 +13,32 @@ $cidade = mysqli_real_escape_string($conexao, trim($_POST['cidade']));
 $bairro = mysqli_real_escape_string($conexao, trim($_POST['bairro']));
 $rua = mysqli_real_escape_string($conexao, trim($_POST['rua']));
 
-$sql = "select count(*) as total from usuarios where cpf = '$cpf' or email = '$email' or apelido = '$apelido'";
+$sql = "select count(*) as total from usuarios where cpf = '$cpf'";
 $result = mysqli_query($conexao, $sql);
-$row = mysqli_fetch_assoc($result);
+$row_cpf = mysqli_fetch_assoc($result);
 
-if($row['total'] == 1) {
-	$_SESSION['usuario_existe'] = true;
+if($row_cpf['total'] == 1) {
+	$_SESSION['cpf_existe'] = true;
+	header('Location: cadastro.php');
+	exit;
+}
+
+$sql = "select count(*) as total from usuarios where email = '$email'";
+$result = mysqli_query($conexao, $sql);
+$row_email = mysqli_fetch_assoc($result);
+
+if($row_email['total'] == 1) {
+	$_SESSION['email_existe'] = true;
+	header('Location: cadastro.php');
+	exit;
+}
+
+$sql = "select count(*) as total from usuarios where apelido = '$apelido'";
+$result = mysqli_query($conexao, $sql);
+$row_apelido = mysqli_fetch_assoc($result);
+
+if($row_apelido['total'] == 1) {
+	$_SESSION['apelido_existe'] = true;
 	header('Location: cadastro.php');
 	exit;
 }
