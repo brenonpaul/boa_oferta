@@ -38,6 +38,11 @@
   padding: 7%;
 }
 
+#labelCadastro{
+    color: rgb(74, 74, 74);
+    font-weight: bold;
+}
+
 .modal {
   display: none; 
   position: fixed; 

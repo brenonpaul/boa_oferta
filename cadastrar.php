@@ -8,10 +8,23 @@ $email = mysqli_real_escape_string($conexao, trim($_POST['email']));
 $apelido = mysqli_real_escape_string($conexao, trim($_POST['apelido']));
 $foto_usuario = mysqli_real_escape_string($conexao, trim($_POST['foto_usuario']));
 $senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
+$conf_senha = $_POST['conf_senha'];
 $estado = mysqli_real_escape_string($conexao, trim($_POST['estado']));
 $cidade = mysqli_real_escape_string($conexao, trim($_POST['cidade']));
 $bairro = mysqli_real_escape_string($conexao, trim($_POST['bairro']));
 $rua = mysqli_real_escape_string($conexao, trim($_POST['rua']));
+
+if ($senha != $conf_senha) {
+	$_SESSION['senhas_diferentes'] = true;
+	header('Location: cadastro.php');
+	exit;
+}
+
+if (empty($nome_completo) or empty($cpf) or empty($email) or empty($apelido) or empty($senha) or $estado == 'Estado residente' or $cidade == 'Cidade residente' or $bairro == 'Bairro residente' or $rua == 'Rua residente') {
+	$_SESSION['falta_info'] = true;
+	header('Location: cadastro.php');
+	exit;
+}
 
 $sql = "select count(*) as total from usuarios where cpf = '$cpf'";
 $result = mysqli_query($conexao, $sql);

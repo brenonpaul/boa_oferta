@@ -1,81 +1,31 @@
 <?php
-	require_once "cabecalho.php";
-	require_once "class/conexao.php";
-?>
+session_start();
+include("class/conexao.php");
+
+$foto_produto = mysqli_real_escape_string($conexao, trim($_POST['foto_produto']));
+$nome_produto = mysqli_real_escape_string($conexao, trim($_POST['nome_produto']));
+$preco = mysqli_real_escape_string($conexao, trim($_POST['preco']));
+$mercado = mysqli_real_escape_string($conexao, trim($_POST['mercado']));
+$categoria = mysqli_real_escape_string($conexao, trim($_POST['categoria']));
+$data_visu = mysqli_real_escape_string($conexao, trim($_POST['data_visu']));
 
 
-
-	<div class="container">
-		<h3 class="mt-5" style="text-align: center;">Cadastrar Produto</h3>
-
-		<div class="caixaDeInputs" id="caixaDeInputsCadProd" style="border: 1px solid black">
-			<div class="row col-7 ml-5">
-				<div class="input-group mb-3 mt-5">
-					<div class="input-group-prepend">
-	    					<span class="input-group-text" id="inputGroupFileAddon01"><img src="#"></span>
-	  				</div>
-	  			<div class="custom-file">
-	    			<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-	    			<label class="custom-file-label" for="inputGroupFile01" style="z-index: 0;">Adicionar Imagem</label>
-	  			</div>
-				</div>
-			</div>
-		<div class="row col-7 ml-5">
-			<div class="input-group mb-3">
-  				<div class="input-group-prepend">
-    				<span class="input-group-text" id="inputGroup-sizing-default">Nome do Produto:</span>
-  				</div>
-  				<input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
-			</div>
-		</div>
-		<div class="row col-7 ml-5">
-			<div class="input-group mb-3">
-  				<div class="input-group-prepend">
-    				<span class="input-group-text" id="inputGroup-sizing-default">Preço do Produto:</span>
-  				</div>
-  				<input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
-			</div>
-		</div>
-		<div class="row col-7 ml-5">
-			<div class="input-group mb-3">
-  				<div class="input-group-prepend">
-    				<span class="input-group-text" id="inputGroup-sizing-default">Mercado:</span>
-  				</div>
-  				<select class="form-control" id="exampleFormControlSelect1">		     						
-		     			<?php 
-		     				$sql = 'select nome_mercado from mercados;';
-		     				$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
-		     				while($consulta = $resultado->fetch_object()){
-		     			?>
-		     			<option>
-		     				<?php
-		     					echo utf8_encode($consulta->nome_mercado);
-		     				?>
-		     			</option>
-		     			<?php
-		     				}
-		     			?>
-						</select>
-			</div>
-		</div>
-		<div class="row col-5 ml-5">
-			<div class="input-group mb-3">
-  				<div class="input-group-prepend">
-    				<span class="input-group-text" id="inputGroup-sizing-default">Data de vizualização do preço:</span>
-  				</div>
-  				<input type="date" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
-			</div>
-			<button type="submit" class="btn btn-primary">Enviar</button>
-		</div>
-	</div>
-
-</div>
-
-</div>
+if (empty($nome_produto) or empty($preco) or empty($data_visu) or $mercado == 'Selecione o mercado' or $categoria == 'Selecione a categoria') {
+	$_SESSION['falta_info'] = true;
+	header('Location: cadastroProduto.php');
+	exit;
+}
 
 
+/*$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_est_user,fk_id_cid_user, fk_id_bairro_user, fk_id_rua_user) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', $cpf, '$senha', (select id_estado from estados where nome_estado = '$estado'), (select id_cidade from cidades where nome_cidade = '$cidade'), (select id_bairro from bairros where nome_bairro = '$bairro'), (select id_rua from ruas where nome_rua = '$rua'));";
+*/
+$sql = "insert into produtos (foto_produto, nome_produto, data_visu, preco, fk_id_mercado, fk_id_categoria) values ('$foto_produto', '$nome_produto', '$data_visu', $preco, (select id_mercado from mercados where nome_mercado = '$mercado'), (select id_categoria from categorias where nome_categoria = '$categoria'));";
+if($conexao->query($sql) === TRUE) {
+	$_SESSION['status_cadastro'] = true;
+}
 
+$conexao->close();
 
-<?php
-	require_once "rodape.php";
+header('Location: index.php');
+exit;
 ?>

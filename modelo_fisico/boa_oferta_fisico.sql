@@ -72,6 +72,7 @@ fk_id_categoria int,
 foto_produto varchar(150),
 nome_produto varchar(50),
 data_cadastro varchar(10),
+data_visu varchar(10),
 preco varchar(25),
 CONSTRAINT fk_produto_cpf FOREIGN KEY(fk_cpf) REFERENCES usuarios (cpf),
 CONSTRAINT fk_produto_id_mercado FOREIGN KEY(fk_id_mercado) REFERENCES mercados (id_mercado),
@@ -308,10 +309,10 @@ INSERT INTO mercados (fk_id_rua, nome_mercado) Values
 (7, 'Fort Atacadista');
 
 
-INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_cadastro, preco, fk_id_categoria) Values 
-(12345678998, 1, '', 'maça', '04/12/2018', '3.00', 4),
-(85695132122, 2, '', 'laranja', '07/11/2018', '1.40', 4),
-(12345695110, 1, '', 'Iogurte', '14/03/2019', '2.40', 3);
+INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_cadastro, data_visu, preco, fk_id_categoria) Values 
+(12345678998, 1, '', 'maça', '04/12/2018', '04-12-2018', '3.00', 4),
+(85695132122, 2, '', 'laranja', '07/11/2018', '07-11-2018', '1.40', 4),
+(12345695110, 1, '', 'Iogurte', '14/03/2019', '15-03-2019', '2.40', 3);
 
 
 

@@ -49,7 +49,8 @@ if(!isset($_SESSION))
                        <button id="botaoLogin">Logout</button>
                    </a>
                    <?php 
-                   $sql = "select nome_completo from usuarios where email = '$_SESSION[usuario]' ;";
+                   $usuario = $_SESSION['usuario'];
+                   $sql = "select nome_completo from usuarios where email = '$usuario' ;";
                    $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
                    while($consulta = $resultado->fetch_object()){
                     ?>
@@ -94,7 +95,7 @@ if(!isset($_SESSION))
     </a>
     
 
-    <a href="cadastrarProduto.php" class="col-2" id="itemMenu"><h5>Cadastrar Produto</h5></a>
+    <a href="cadastroProduto.php" class="col-2" id="itemMenu"><h5>Cadastrar Produto</h5></a>
     <a href="maisRecentes.php" class="col-2" id="itemMenu"><h5>Mais Recentes</h5></a>
     <a href="suporte.php" class="col-2" id="itemMenu"><h5>Suporte Técnico</h5></a>
     <a href="seuPerfil.php" class="col-2" id="itemMenu"><h5>Seu Perfil</h5></a>
