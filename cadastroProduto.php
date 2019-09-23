@@ -1,6 +1,18 @@
 <?php
     session_start();
     require_once("class/conexao.php");
+    if (empty($_SESSION['usuario'])) {
+        require_once("cabecalho.php");
+         echo "<h1 class='text-danger text-center mt-5' style='border: 2px dotted'>Para cadastrar um produto você deve estar logado!</h1>";
+         ?>
+         <div class="row justify-content-center mt-4">
+         <a href="telaLogin.php"><button class="btn button-center btn-success">Logar-se</button></a>
+     </div>
+     <div class="row justify-content-center mt-1">
+         <a href="cadastro.php"><button class="btn btn-primary" >Cadastrar-se</button></a>
+    </div>
+         <?php
+    }else{
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,11 +28,7 @@
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 
-<body>
-   
-
-                
-    
+<body> 
     <section class="hero is-success is-fullheight">
 
         <div class="hero-body">
@@ -54,7 +62,14 @@
                              <div class="field">
                                 <div class="control">
                                      <label id="labelCadastro">Nome do Produto</label>
-                                    <input name="nome_produto" type="text" class="input is-large" placeholder="Exemplo: Maça argentina">
+                                    <input name="nome_produto" type="text" class="input is-large" placeholder="Exemplo: Maça, Iogurte, Carne">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                     <label id="labelCadastro">Especificação do produto</label>
+                                    <input name="marca_produto" type="text" class="input is-large" placeholder="Marca, tipo, etc.">
                                 </div>
                             </div>
 
@@ -128,3 +143,4 @@
 </body>
 
 </html>
+<?php } ?>

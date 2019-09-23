@@ -310,9 +310,9 @@ INSERT INTO mercados (fk_id_rua, nome_mercado) Values
 
 
 INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_cadastro, data_visu, preco, fk_id_categoria) Values 
-(12345678998, 1, '', 'maça', '04/12/2018', '04-12-2018', '3.00', 4),
-(85695132122, 2, '', 'laranja', '07/11/2018', '07-11-2018', '1.40', 4),
-(12345695110, 1, '', 'Iogurte', '14/03/2019', '15-03-2019', '2.40', 3);
+(12345678998, 1, '', 'maça', '04/12/19', '04/12/19', '3.00', 4),
+(85695132122, 2, '', 'laranja', '07/11/19', '07/11/19', '1.40', 4),
+(12345695110, 1, '', 'Iogurte', '14/03/19', '15/03/19', '2.40', 3);
 
 
 
