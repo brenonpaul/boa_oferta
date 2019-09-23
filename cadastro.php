@@ -17,10 +17,7 @@
 </head>
 
 <body>
-   
-
                 
-    
     <section class="hero is-success is-fullheight">
 
         <div class="hero-body">
@@ -116,7 +113,6 @@
 
                              <div class="field">
                                 <div class="control">
-                                    <form>
                                   <select class="input is-large" name="estado" style="color: rgb(74, 74, 74);">    
                                     <option>Estado residente</option>                             
                                     <?php 
@@ -133,8 +129,6 @@
                                      }
                                        ?>
                                     </select>
-                                    <button type="submit">Enviar</button>
-                                </form>
                                 </div>
                             </div>
 
@@ -143,7 +137,7 @@
                                   <select class="input is-large" name="cidade" style="color: rgb(74, 74, 74);">  
                                    <option>Cidade residente</option>                               
                                     <?php 
-                                        $sql = "select nome_cidade from cidades, estados where id_estado = fk_id_estado and nome_estado = '$_POST[estado]';";
+                                        $sql = "select nome_cidade from cidades, estados where id_estado = fk_id_estado and nome_estado = 'Santa Catarina';";
                                         $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
                                         while($consulta = $resultado->fetch_object()){
                                     ?>

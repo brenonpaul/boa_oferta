@@ -96,7 +96,7 @@ if(!isset($_SESSION))
     
 
     <a href="cadastroProduto.php" class="col-2" id="itemMenu"><h5>Cadastrar Produto</h5></a>
-    <a href="maisRecentes.php" class="col-2" id="itemMenu"><h5>Mais Recentes</h5></a>
+    <a href="telaProdutos.php" class="col-2" id="itemMenu"><h5>Produtos</h5></a>
     <a href="suporte.php" class="col-2" id="itemMenu"><h5>Suporte Técnico</h5></a>
     <a href="seuPerfil.php" class="col-2" id="itemMenu"><h5>Seu Perfil</h5></a>
 </div>
