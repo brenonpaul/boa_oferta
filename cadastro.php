@@ -1,7 +1,6 @@
 <?php
 session_start();
-$conexao = new PDO("mysql:host=localhost;dbname=boa_oferta", "root", "");
-$conexao->exec('SET CHARACTER SET utf8');
+require_once("class/con.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +12,6 @@ $conexao->exec('SET CHARACTER SET utf8');
     <title>Cadastre-se</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <script type="text/javascript" src="js/jquery_3_3_1.js"></script>
 </head>
@@ -118,7 +116,7 @@ $conexao->exec('SET CHARACTER SET utf8');
                     <label id="labelCadastro">Estado residente</label>
                     <select name="estado" id="estado" class="input is-large" style="color: rgb(74, 74, 74);">  
                         <?php
-                        $select = $conexao->prepare("SELECT * FROM estados ORDER BY nome_estado ASC");
+                        $select = $con->prepare("SELECT * FROM estados ORDER BY nome_estado ASC");
                         $select->execute();
                         $fetchAll = $select->fetchAll();
                         foreach($fetchAll as $estados) {
@@ -233,8 +231,15 @@ $conexao->exec('SET CHARACTER SET utf8');
         });
     });
 
-    
-
-
-
+    $("#rua").on("change",function(){
+        var idRua = $("#rua").val();
+        $.ajax({
+            url: 'infoLog.php',
+            type: 'POST',
+            data:{id_rua:idRua}
+           
+        });
+    });
 </script>
+
+

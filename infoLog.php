@@ -1,6 +1,5 @@
 <?php
-	$con = new PDO("mysql:host=localhost;dbname=boa_oferta", "root", "");
-	$con->exec('SET CHARACTER SET utf8');
+	require_once("class/con.php");
 
 	$pegaCidades = $con->prepare("SELECT * FROM cidades, estados WHERE fk_id_estado = id_estado and id_estado = '".$_POST['id_est']."'");
 	$pegaCidades->execute();
@@ -27,6 +26,6 @@
 		$fetchAll = $pegaRuas->fetchAll();
 
 		foreach ($fetchAll as $ruas) {
-			echo '<option value="'.$ruas['nome_rua'].'">'.$ruas['nome_rua'].'</option>';
+			echo '<option value="'.$ruas['id_rua'].'">'.$ruas['nome_rua'].'</option>';
 		}
 
