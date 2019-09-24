@@ -1,4 +1,5 @@
 <?php
+	
 	require_once("class/con.php");
 
 	$pegaCidades = $con->prepare("SELECT * FROM cidades, estados WHERE fk_id_estado = id_estado and id_estado = '".$_POST['id_est']."'");

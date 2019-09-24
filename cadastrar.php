@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include("class/conexao.php");
 
 $nome_completo = mysqli_real_escape_string($conexao, trim($_POST['nome_completo']));
@@ -53,7 +54,7 @@ if($row_apelido['total'] == 1) {
 	exit;
 }
 
-$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_rua_user) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', $cpf, '$senha', (select id_rua from ruas where nome_rua = '$rua'));";
+$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_rua_user) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', $cpf, '$senha', $rua);";
 
 if($conexao->query($sql) === TRUE) {
 	$_SESSION['status_cadastro'] = true;
