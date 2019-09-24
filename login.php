@@ -3,7 +3,7 @@ session_start();
 require_once("class/conexao.php");
 
 if(empty($_POST['usuario']) || empty($_POST['senha'])) {
-    header('Location: index.php');
+    header('Location: telaLogin.php');
     exit();
 }
 

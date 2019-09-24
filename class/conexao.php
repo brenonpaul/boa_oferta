@@ -1,8 +1,9 @@
 
 <?php
 define('host', 'localhost');
-define('usuario', 'aluno');
-define('senha', 'aluno');
-define('bd', 'boa_oferta');
+define('usuario', 'root');
+define('senha', '');
+define('dbname', 'boa_oferta');
 
-$conexao = mysqli_connect(host, usuario, senha, bd) or die ('Não foi possível conectar');
+$conexao = mysqli_connect(host, usuario, senha, dbname) or die ('Não foi possível conectar');
+
