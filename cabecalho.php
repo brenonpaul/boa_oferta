@@ -24,13 +24,13 @@ if(!isset($_SESSION))
             </div>
             <div class="col-1"></div>
             <div class="col-5 mt-4">
-                <form>
+                <form action="busca.php" method="post">
                     <div class="input-group mb-4 mt-3" style="width: 90%;">
-                        <input type="search" class="form-control" style="padding: 4%;"
+                        <input type="search" name="buscar" class="form-control" style="padding: 4%;"
                         placeholder="Busque por um alimento, produto, etc..." aria-label="Recipient's username"
                         aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn-outline-secondary" id="buscar" type="button" id="button-addon2"
+                            <button class="btn-outline-secondary" id="buscar" type="submit" id="button-addon2"
                             value="buscar">Buscar
                         </button>
                     </div>
