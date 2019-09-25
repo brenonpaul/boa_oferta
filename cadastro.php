@@ -74,6 +74,16 @@ require_once("class/con.php");
                 <?php 
             endif;
             unset($_SESSION['apelido_existe']);
+            error_reporting(0);
+                    ini_set(“display_errors”, 0 );
+                    if ($_SESSION['senha_caracteres']):  
+                        ?>
+                        <div class="notification is-info">
+                            <p>A senha deve ter no minímo 8 caracteres.</p>
+                        </div>
+                        <?php 
+                    endif;
+                    unset($_SESSION['senha_caracteres']);
             ?>
             <div class="box">
                 <form action="cadastrar.php" method="POST">

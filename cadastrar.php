@@ -12,6 +12,7 @@ $senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
 $conf_senha = $_POST['conf_senha'];
 $rua = mysqli_real_escape_string($conexao, trim($_POST['rua']));
 
+
 if ($senha != $conf_senha) {
 	$_SESSION['senhas_diferentes'] = true;
 	header('Location: cadastro.php');
@@ -43,6 +44,14 @@ if($row_email['total'] == 1) {
 	header('Location: cadastro.php');
 	exit;
 }
+
+if (strlen($senha) < 8) {
+	$_SESSION['senha_caracteres'] = true;
+	header('Location: cadastro.php');
+	exit;
+}
+
+
 
 $sql = "select count(*) as total from usuarios where apelido = '$apelido'";
 $result = mysqli_query($conexao, $sql);
