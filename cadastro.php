@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once("class/con.php");
+require_once("class/conect.php");
 ?>
 <!DOCTYPE html>
 <html>
