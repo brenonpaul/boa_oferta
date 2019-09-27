@@ -2,7 +2,7 @@
 	require_once "cabecalho.php";
 ?>
 
-<div class="container" style="margin-top: 3%">
+<div class="container mt-4">
 	<div class="row">	
 		<?php
 			$cont= 0;
