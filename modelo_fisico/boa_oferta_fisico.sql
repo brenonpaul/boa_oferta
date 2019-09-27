@@ -68,6 +68,8 @@ nome_produto varchar(50),
 data_cadastro varchar(10),
 data_visu varchar(10),
 preco varchar(25),
+likes varchar(5),
+deslikes varchar(5),
 CONSTRAINT fk_produto_cpf FOREIGN KEY(fk_cpf) REFERENCES usuarios (cpf),
 CONSTRAINT fk_produto_id_mercado FOREIGN KEY(fk_id_mercado) REFERENCES mercados (id_mercado),
 CONSTRAINT fk_produto_id_categoria FOREIGN KEY(fk_id_categoria) REFERENCES categorias (id_categoria)
@@ -303,15 +305,15 @@ INSERT INTO mercados (fk_id_rua, nome_mercado) Values
 (7, 'Fort Atacadista');
 
 
-INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_cadastro, data_visu, preco, fk_id_categoria) Values 
-(12345678998, 1, 'maca.jpg', 'maça', '04/12/19', '04/12/19', '3.00', 4),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '07/10/19', '1.40', 4),
-(85695132122, 2, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '10/11/19', '1.45', 4),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Vermelha', '10/11/19', '15/11/19', '1.50', 4),
-(85695132122, 2, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '03/11/19', '1.50', 4),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '08/11/19', '1.50', 4),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Seleta', '10/11/19', '12/11/19', '1.30', 4),
-(12345695110, 1, '', 'Iogurte', '14/03/19', '15/03/19', '2.40', 3);
+INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_cadastro, data_visu, preco, fk_id_categoria, likes, deslikes) Values 
+(12345678998, 1, 'maca.jpg', 'Maça Argentina', '04/12/19', '04/09/19', '3.00', 4, '10', '0'),
+(85695132122, 1, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '07/09/19', '1.40', 4, '5', '2'),
+(85695132122, 2, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '10/08/19', '1.45', 4, '7', '1'),
+(85695132122, 1, 'laranja1.jpg', 'Laranja Vermelha', '10/11/19', '15/09/19', '1.50', 4, '5', '0'),
+(85695132122, 2, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '03/09/19', '1.50', 4, '1', '2'),
+(85695132122, 1, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '08/09/19', '1.50', 4, '1', '0'),
+(85695132122, 1, 'laranja1.jpg', 'Laranja Seleta', '10/11/19', '25/09/19', '1.30', 4, '20', '1'),
+(12345695110, 1, 'iogurte.jpg', 'Iogurte Nestle', '14/03/19', '26/09/19', '2.40', 3, '35', '2');
 
 
 
