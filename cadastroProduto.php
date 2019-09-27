@@ -75,7 +75,7 @@
                              <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">Preço do produto</label>
-                                    <input name="preco" type="number" class="input is-large" placeholder="Com vírgula. Ex.: 5,00 ou 5,50">
+                                    <input name="preco" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" class="input is-large" placeholder="Com vírgula. Ex.: 5,00 ou 5,50">
                                 </div>
                             </div>
 

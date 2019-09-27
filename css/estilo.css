@@ -175,9 +175,16 @@
     border-radius: 10px;
 }
 
-.imgRecentes {
-    width: 100%;
-    height: 50%;
+.imgProd {
+    width: 188px;
+    height: 150px;
+    border-bottom: 1px solid #282828;
+    margin-bottom: 5%;
+}
+
+.imgProdBusca {
+    width: 180px;
+    height: 150px;
     border-bottom: 1px solid #282828;
     margin-bottom: 5%;
 }
