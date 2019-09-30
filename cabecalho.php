@@ -20,7 +20,7 @@ if(!isset($_SESSION))
         <div class="row" style="width: 100%;">
             <div class="col-1"></div>
             <div class="col-2">
-                <img src="imagens/logo.png" id="logo" class="mt-4 mb-4">
+                <img src="imagens/logo/logo.png" id="logo" class="mt-4 mb-4">
             </div>
             <div class="col-1"></div>
             <div class="col-5 mt-4">
@@ -83,17 +83,7 @@ if(!isset($_SESSION))
     <a href="index.php" class="col-2" id="itemMenu"><h5>Home</h5></a>
 
 
-    <a href="Categorias.php" style="text-decoration: none;">
-        <div class="dropdown col-2" id="itemMenu">
-            <h5 style="color: white;">Categorias</h5>
-            <div class="dropdown-content">
-                <a href="#"><h6>Link 1</h6></a>
-                <a href="#"><h6>Link 2</h6></a>
-                <a href="#"><h6>Link 3</h6></a>
-            </div>
-        </div>
-    </a>
-    
+    <a href="categorias.php" class="col-2" id="itemMenu"><h5>Categorias</h5></a>
 
     <a href="cadastroProduto.php" class="col-2" id="itemMenu"><h5>Cadastrar Produto</h5></a>
     <a href="telaProdutos.php" class="col-2" id="itemMenu"><h5>Produtos</h5></a>

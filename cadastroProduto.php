@@ -33,7 +33,7 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
-                    <img src="imagens/logo.png" id="logo" style="width: 30%; margin-bottom: 1%;">
+                    <img src="imagens/logo/logo.png" id="logo" style="width: 30%; margin-bottom: 1%;">
                     <h3 class="title has-text-grey-dark">Cadastrando produto</h3>
 
                     <?php

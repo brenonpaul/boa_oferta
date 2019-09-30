@@ -19,16 +19,16 @@ if(!isset($_SESSION))
         <!-- The slideshow -->
         <div class="carousel-inner" style="position: relative;">
             <div class="carousel-item active">
-                <img src="imagens/carousel1.jpg" style="border-radius: 10px;">
+                <img src="imagens/carousel/carousel1.jpg" style="border-radius: 10px;">
             </div>
             <div class="carousel-item">
-                <img src="imagens/carousel2.jpg" style="border-radius: 10px;"> 
+                <img src="imagens/carousel/carousel2.jpg" style="border-radius: 10px;"> 
             </div>
             <div class="carousel-item">
-                <img src="imagens/carousel3.jpg" style="border-radius: 10px;">
+                <img src="imagens/carousel/carousel3.jpg" style="border-radius: 10px;">
             </div>
              <div class="carousel-item">
-                <img src="imagens/carousel4.jpg" style="border-radius: 10px;">
+                <img src="imagens/carousel/carousel4.jpg" style="border-radius: 10px;">
             </div>
         </div>
 

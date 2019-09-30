@@ -292,12 +292,15 @@ INSERT INTO usuarios (nome_completo,apelido,email,senha,cpf,fk_id_rua_user ) val
 ('Joao Wandall','jojo','skyrimOnline@gmail.com','mkFdjXFM','59134562501', '1');
 
 
-INSERT INTO categorias (nome_categoria) Values
-('Bebidas'),
-('Carnes'),
-('Frios'),
-('Frutas, verduras e legumes'),
-('Congelados');
+INSERT INTO categorias (nome_categoria, foto_categoria) Values
+('Carboidratos', 'carboidratos.jpg'),
+('Verduras e Legumes', 'verd_leg.jpg'),
+('Frutas', 'frutas.jpeg'),
+('Leite e derivados', 'leite_deriv.jpeg'),
+('Carnes e Ovos', 'carnes_ovos.jpeg'),
+('Leguminosas e oleaginosas', 'leg_oleag.jpg'),
+('Óleos e Gorduras', 'oleos_gord.png'),
+('Açúcares e Doces', 'doces.jpg');
 
 
 INSERT INTO mercados (fk_id_rua, nome_mercado) Values 
@@ -306,14 +309,14 @@ INSERT INTO mercados (fk_id_rua, nome_mercado) Values
 
 
 INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_cadastro, data_visu, preco, fk_id_categoria, likes, deslikes) Values 
-(12345678998, 1, 'maca.jpg', 'Maça Argentina', '04/12/19', '04/09/19', '3.00', 4, '10', '0'),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '07/09/19', '1.40', 4, '5', '2'),
-(85695132122, 2, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '10/08/19', '1.45', 4, '7', '1'),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Vermelha', '10/11/19', '15/09/19', '1.50', 4, '5', '0'),
-(85695132122, 2, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '03/09/19', '1.50', 4, '1', '2'),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '08/09/19', '1.50', 4, '1', '0'),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Seleta', '10/11/19', '25/09/19', '1.30', 4, '20', '1'),
-(12345695110, 1, 'iogurte.jpg', 'Iogurte Nestle', '14/03/19', '26/09/19', '2.40', 3, '35', '2');
+(12345678998, 1, 'maca.jpg', 'Maça Argentina', '04/12/19', '04/09/19', '3.00', 3, '10', '0'),
+(85695132122, 1, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '07/09/19', '1.40', 3, '5', '2'),
+(85695132122, 2, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '10/08/19', '1.45', 3, '7', '1'),
+(85695132122, 1, 'laranja1.jpg', 'Laranja Vermelha', '10/11/19', '15/09/19', '1.50', 3, '5', '0'),
+(85695132122, 2, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '03/09/19', '1.50', 3, '1', '2'),
+(85695132122, 1, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '08/09/19', '1.50', 3, '1', '0'),
+(85695132122, 1, 'laranja1.jpg', 'Laranja Seleta', '10/11/19', '25/09/19', '1.30', 3, '20', '1'),
+(12345695110, 1, 'iogurte.jpg', 'Iogurte Nestle', '14/03/19', '26/09/19', '2.40', 4, '35', '2');
 
 
 

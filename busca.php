@@ -36,7 +36,7 @@ require_once "cabecalho.php";
 				echo ("<div class='col-2 recentes mt-4 rounded border border-secondary'>
 							<div class='row'>");
 							?>
-							<img src="imagens/<?php echo $row_produto['foto_produto']?>" class='imgProdBusca'>
+							<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='imgProdBusca'>
 							<?php
 							echo ("</div>
 							<div class='row pl-2' pr-2>");
