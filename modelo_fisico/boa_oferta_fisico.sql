@@ -298,7 +298,7 @@ INSERT INTO categorias (nome_categoria, foto_categoria) Values
 ('Frutas', 'frutas.jpeg'),
 ('Leite e derivados', 'leite_deriv.jpeg'),
 ('Carnes e Ovos', 'carnes_ovos.jpeg'),
-('Leguminosas e oleaginosas', 'leg_oleag.jpg'),
+('Leguminosas e oleag.', 'leg_oleag.jpg'),
 ('Óleos e Gorduras', 'oleos_gord.png'),
 ('Açúcares e Doces', 'doces.jpg');
 

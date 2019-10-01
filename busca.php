@@ -18,7 +18,7 @@ require_once "cabecalho.php";
 
 			if($row_existe['total'] == 0) {
 				echo "<h4 class='text-center bg-danger text-white mt-5 rounded p-3'>
-				Ainda não existe nenhum produto com nome semelhante a esse. Que tal ser o primeiro?
+				Ainda não existe nenhum produto com nome semelhante a esse. Que tal ser o primeiro a cadastrar?
 				</h4>";
 				echo "<div class='row justify-content-center mt-3'>
 				<a href='cadastroProduto.php'><button class='btn button-center btn-success'>Cadastrar Produto</button></a>
