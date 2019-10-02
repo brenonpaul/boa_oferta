@@ -8,11 +8,8 @@ require_once "class/conexao.php";
 		<?php
 		$result_produto = "SELECT * FROM categorias ORDER BY nome_categoria ASC";
 		$resultado_produto = mysqli_query($conexao, $result_produto);
-
 		while($row_produto = mysqli_fetch_assoc($resultado_produto)){
-
 	
-
 			echo ("<div class='col-2 recentes mt-4 rounded border border-secondary'>
 				<div class='row'>");
 				?>
