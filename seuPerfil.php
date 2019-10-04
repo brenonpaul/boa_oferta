@@ -20,7 +20,7 @@ session_start();
 
 
 
-				<img src="imagens/<?php echo $row_usuario['foto_usuario']?>" class="caixaPerfil" style="width: 260px">
+				<img src="imagens/<?php echo $row_usuario['foto_usuario']?>" class="caixaPerfil" style="width: 110%; margin-left: -5%;">
 
 			</div>
 			<div class="col-1"></div>
@@ -108,10 +108,76 @@ session_start();
 
 
 <?php
-	
+
+	$result_produto = "SELECT * from produtos, usuarios where cpf = fk_cpf and email = '$_SESSION[usuario]'  ORDER BY data_visu DESC";
+	$resultado_produto = mysqli_query($conexao, $result_produto);
 
 
 ?>
+<div class="row">
+	<div class="col-11 mt-4" style="border: 1px solid #ccc;"></div>
+</div>
+<div class="row">	
+		<?php
+		while($row_produto = mysqli_fetch_assoc($resultado_produto)){
+			
+
+			echo ("<div class='col-3 recentes mt-4 rounded border border-secondary'>
+				<div class='row'>");
+				?>
+				<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='rounded border-secondary' style="width: 100%;">
+				<?php
+				echo ("</div>
+					<div class='row pl-2' pr-2>");
+					?>
+					<h6><strong> Produto:</strong> <?php echo utf8_encode($row_produto['nome_produto']); ?></h6>
+					<?php	
+					echo("</div>
+						<div class='row pl-2' pr-2>");
+
+						?>
+						<h6><strong> Preço:</strong> R$<?php echo $row_produto['preco']; ?> Kg</h6>
+						<?php
+						echo("</div>
+							<div class='row pl-2' pr-2>");
+							?>
+							<h6><strong> Mercado:</strong> 
+								<?php
+								$sql = "SELECT nome_mercado FROM mercados, produtos WHERE fk_id_mercado = id_mercado AND fk_id_mercado = $row_produto[fk_id_mercado];"; 
+								
+								$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+								$consulta = $resultado->fetch_object(); 
+
+								echo utf8_encode($consulta->nome_mercado);
+								?>
+							</h6>
+							<?php
+							
+							echo("</div>
+								<div class='row pl-2' pr-2>");
+								?>
+								<h6><strong> Postado por:</strong> 
+									<?php
+									$sql = "SELECT apelido FROM usuarios, produtos WHERE fk_cpf = cpf and fk_cpf = $row_produto[fk_cpf];"; 
+									
+									$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+									$consulta = $resultado->fetch_object(); 
+
+									echo utf8_encode($consulta->apelido);
+									?>
+								</h6>
+								<?php
+								echo("</div>
+									<div class='row pl-2' pr-2>");
+									?>
+									<h6><strong> Visto no dia:</strong> <?php echo $row_produto['data_visu']; ?></h6>
+									<?php
+									echo("</div>
+										</div>
+										<div class='col-1'></div>");
+								}
+								?>
+							</div>
 
 
 
