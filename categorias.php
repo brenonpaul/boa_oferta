@@ -20,7 +20,7 @@ require_once "class/conexao.php";
 						<div class='row d-flex justify-content-center'>");
 						?>
 						
-						<h6 class="text-body"><strong><?php echo utf8_encode($row_produto['nome_categoria']); ?></strong></h6></a>
+						<h6 class="text-body"><strong><?php echo ($row_produto['nome_categoria']); ?></strong></h6></a>
 						
 						<?php	
 						echo("</div>

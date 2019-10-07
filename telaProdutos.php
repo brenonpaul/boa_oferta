@@ -44,7 +44,7 @@ require_once "class/conexao.php";
 				echo ("</div>
 					<div class='row pl-2' pr-2>");
 					?>
-					<h6><strong> Produto:</strong> <?php echo utf8_encode($row_produto['nome_produto']); ?></h6>
+					<h6><strong> Produto:</strong> <?php echo ($row_produto['nome_produto']); ?></h6>
 					<?php	
 					echo("</div>
 						<div class='row pl-2' pr-2>");
@@ -62,7 +62,7 @@ require_once "class/conexao.php";
 								$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 								$consulta = $resultado->fetch_object(); 
 
-								echo utf8_encode($consulta->nome_mercado);
+								echo ($consulta->nome_mercado);
 								?>
 							</h6>
 							<?php
@@ -77,7 +77,7 @@ require_once "class/conexao.php";
 									$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 									$consulta = $resultado->fetch_object(); 
 
-									echo utf8_encode($consulta->apelido);
+									echo ($consulta->apelido);
 									?>
 								</h6>
 								<?php

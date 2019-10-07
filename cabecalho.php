@@ -57,7 +57,7 @@ if(!isset($_SESSION))
                     <p style="color: black; text-align: center;">
                         Olá 
                         <?php
-                        echo utf8_encode($consulta->nome_completo);
+                        echo ($consulta->nome_completo);
                         ?>
                         
                     </p>

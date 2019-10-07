@@ -40,7 +40,7 @@ require_once("class/conexao.php");
 				$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 				while($consulta = $resultado->fetch_object()){
 
-					echo utf8_encode($consulta->nome_estado);
+					echo $consulta->nome_estado;
 
 				}
 
@@ -56,7 +56,7 @@ require_once("class/conexao.php");
 			$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 			while($consulta = $resultado->fetch_object()){
 
-				echo utf8_encode($consulta->nome_cidade);
+				echo ($consulta->nome_cidade);
 
 			}
 
@@ -72,7 +72,7 @@ require_once("class/conexao.php");
 		$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 		while($consulta = $resultado->fetch_object()){
 
-			echo utf8_encode($consulta->nome_bairro);
+			echo ($consulta->nome_bairro);
 
 		}
 
@@ -87,7 +87,7 @@ require_once("class/conexao.php");
 	$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 	while($consulta = $resultado->fetch_object()){
 
-		echo utf8_encode($consulta->nome_rua);
+		echo ($consulta->nome_rua);
 
 	}
 
@@ -99,7 +99,9 @@ require_once("class/conexao.php");
 }	  
 ?>
 </div>
-
+<div class="col-1">
+	<button type="button" class="btn btn-danger ">Danger</button>
+</div>
 
 
 
@@ -130,7 +132,7 @@ require_once("class/conexao.php");
 				echo ("</div>
 					<div class='row pl-2' pr-2>");
 					?>
-					<h6><strong> Produto:</strong> <?php echo utf8_encode($row_produto['nome_produto']); ?></h6>
+					<h6><strong> Produto:</strong> <?php echo ($row_produto['nome_produto']); ?></h6>
 					<?php	
 					echo("</div>
 						<div class='row pl-2' pr-2>");
@@ -148,7 +150,7 @@ require_once("class/conexao.php");
 								$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 								$consulta = $resultado->fetch_object(); 
 
-								echo utf8_encode($consulta->nome_mercado);
+								echo ($consulta->nome_mercado);
 								?>
 							</h6>
 							<?php
@@ -156,16 +158,7 @@ require_once("class/conexao.php");
 							echo("</div>
 								<div class='row pl-2' pr-2>");
 								?>
-								<h6><strong> Postado por:</strong> 
-									<?php
-									$sql = "SELECT apelido FROM usuarios, produtos WHERE fk_cpf = cpf and fk_cpf = $row_produto[fk_cpf];"; 
-									
-									$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
-									$consulta = $resultado->fetch_object(); 
-
-									echo utf8_encode($consulta->apelido);
-									?>
-								</h6>
+								
 								
 								<?php
 								echo("</div>
