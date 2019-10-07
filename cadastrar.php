@@ -19,7 +19,7 @@ if ($senha != $conf_senha) {
 	exit;
 }
 
-if (empty($nome_completo) or empty($cpf) or empty($email) or empty($apelido) or empty($senha) or $estado == 'Estado residente' or $cidade == 'Cidade residente' or $bairro == 'Bairro residente' or $rua == 'Rua residente') {
+if (empty($nome_completo) or empty($cpf) or empty($email) or empty($apelido) or empty($senha) or empty($rua)) {
 	$_SESSION['falta_info'] = true;
 	header('Location: cadastro.php');
 	exit;
@@ -63,7 +63,7 @@ if($row_apelido['total'] == 1) {
 	exit;
 }
 
-$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_rua_user) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', $cpf, '$senha', $rua);";
+$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_rua_user) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', '$cpf', '$senha', $rua);";
 
 if($conexao->query($sql) === TRUE) {
 	$_SESSION['status_cadastro'] = true;

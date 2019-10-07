@@ -38,7 +38,7 @@ nome_completo varchar(150) NOT NULL,
 email varchar(250) NOT NULL,
 senha varchar(25) NOT NULL,
 foto_usuario varchar(150),
-fk_id_rua_user int,
+fk_id_rua_user int NOT NULL,
 CONSTRAINT fk_usuario_id_rua FOREIGN KEY(fk_id_rua_user) REFERENCES ruas (id_rua)
 );
 

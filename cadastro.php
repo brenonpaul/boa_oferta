@@ -15,6 +15,7 @@ require_once("class/con_reserv.php");
     <link rel="stylesheet" href="css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <script type="text/javascript" src="js/jquery_3_3_1.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 </head>
 
 <body>
@@ -43,7 +44,7 @@ require_once("class/con_reserv.php");
                     if ($_SESSION['falta_info']):  
                         ?>
                         <div class="notification is-info">
-                            <p>Existe um campo em branco! Todos eles devem ser devidamente preenchido, exceto o campo "foto de perfil".</p>
+                            <p>Existe um campo em branco! Todos eles devem ser devidamente preenchidos, exceto o campo "foto de perfil".</p>
                         </div>
                         <?php 
                     endif;
@@ -104,9 +105,20 @@ require_once("class/con_reserv.php");
                     <div class="field">
                         <div class="control">
                          <label id="labelCadastro">CPF</label>
-                         <input name="cpf" type="text" class="input is-large" placeholder="Apenas números">
+                         <input name="cpf" id="cpf" type="text" class="input is-large" placeholder="Apenas números">
                      </div>
                  </div>
+                 <script>
+                     $(document).ready(function () { 
+                        var $campoCpf = $("#cpf");
+                     });
+                </script>
+                <script>
+                    $(document).ready(function () { 
+                        var $campoCpf = $("#cpf");
+                        $campoCpf.mask('000.000.000-00', {reverse: true});
+                    });
+                </script>
 
                  <div class="field">
                     <div class="control">

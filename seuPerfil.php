@@ -1,14 +1,14 @@
 <?php
 require_once("cabecalho.php");
 require_once("class/conexao.php");
-session_start();
+
 ?>
 
 <div class="container">
 	<h2 class="mt-4 text-center mb-3">Seu Perfil</h2>
 
 	<div class="row">
-		<div class="col-3">
+		<div class="col-3 caixaPerfil">
 			<?php 
 			$result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
 			$resultado_usuario = mysqli_query($conexao, $result_usuario);
@@ -20,7 +20,7 @@ session_start();
 
 
 
-				<img src="imagens/<?php echo $row_usuario['foto_usuario']?>" class="caixaPerfil" style="width: 110%; margin-left: -5%;">
+				<img src="imagens/<?php echo $row_usuario['foto_usuario']?>" style="width: 100%;">
 
 			</div>
 			<div class="col-1"></div>
@@ -125,7 +125,7 @@ session_start();
 			echo ("<div class='col-3 recentes mt-4 rounded border border-secondary'>
 				<div class='row'>");
 				?>
-				<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='rounded border-secondary' style="width: 100%;">
+				<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='rounded border-secondary' style="width: 100%; height: 180px">
 				<?php
 				echo ("</div>
 					<div class='row pl-2' pr-2>");
@@ -166,6 +166,7 @@ session_start();
 									echo utf8_encode($consulta->apelido);
 									?>
 								</h6>
+								
 								<?php
 								echo("</div>
 									<div class='row pl-2' pr-2>");
