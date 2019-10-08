@@ -92,7 +92,7 @@
                                     ?>
                                     <option>
                                         <?php
-                                            echo utf8_encode($consulta->nome_mercado);
+                                            echo ($consulta->nome_mercado);
                                         ?>
                                     </option>
                                     <?php
@@ -114,7 +114,7 @@
                                     ?>
                                     <option>
                                         <?php
-                                            echo utf8_encode($consulta->nome_categoria);
+                                            echo ($consulta->nome_categoria);
                                         ?>
                                     </option>
                                     <?php

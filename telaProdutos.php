@@ -72,7 +72,7 @@ require_once "class/conexao.php";
 								?>
 								<h6><strong> Postado por:</strong> 
 									<?php
-									$sql = "SELECT apelido FROM usuarios, produtos WHERE fk_cpf = cpf and fk_cpf = $row_produto[fk_cpf];"; 
+									$sql = "SELECT apelido FROM usuarios, produtos WHERE fk_cpf = cpf and fk_cpf = '$row_produto[fk_cpf]';"; 
 									
 									$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 									$consulta = $resultado->fetch_object(); 
