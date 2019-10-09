@@ -1,6 +1,18 @@
 <?php
 require_once("cabecalho.php");
 require_once("class/conexao.php");
+if (empty($_SESSION['usuario'])) {
+        require_once("cabecalho.php");
+         echo "<h1 class='text-danger text-center mt-5' style='border: 2px dotted'>Para ver sua tela de perfil você deve estar logado!</h1>";
+         ?>
+         <div class="row justify-content-center mt-4">
+         <a href="telaLogin.php"><button class="btn button-center btn-success">Logar-se</button></a>
+     </div>
+     <div class="row justify-content-center mt-1">
+         <a href="cadastro.php"><button class="btn btn-primary" >Cadastrar-se</button></a>
+    </div>
+         <?php
+    }else{
 
 ?>
 
@@ -100,78 +112,74 @@ require_once("class/conexao.php");
 ?>
 </div>
 <div class="col-1">
-	<button type="button" class="btn btn-danger ">Danger</button>
+	<a href="exclusaoConta.php">
+		<button type="button" class="btn btn-danger ">Excluir Conta</button>
+	</a>
 </div>
-
-
-
 </div>
-
-
 
 <?php
 
-	$result_produto = "SELECT * from produtos, usuarios where cpf = fk_cpf and email = '$_SESSION[usuario]'  ORDER BY data_visu DESC";
-	$resultado_produto = mysqli_query($conexao, $result_produto);
-
+$result_produto = "SELECT * from produtos, usuarios where cpf = fk_cpf and email = '$_SESSION[usuario]'  ORDER BY data_visu DESC";
+$resultado_produto = mysqli_query($conexao, $result_produto);
 
 ?>
 <div class="row">
 	<div class="col-11 mt-4" style="border: 1px solid #ccc;"></div>
 </div>
 <div class="row">	
-		<?php
-		while($row_produto = mysqli_fetch_assoc($resultado_produto)){
-			
+	<?php
+	while($row_produto = mysqli_fetch_assoc($resultado_produto)){
 
-			echo ("<div class='col-3 recentes mt-4 rounded border border-secondary'>
-				<div class='row'>");
+
+		echo ("<div class='col-3 recentes mt-4 rounded border border-secondary'>
+			<div class='row'>");
+			?>
+			<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='rounded border-secondary' style="width: 100%; height: 180px">
+			<?php
+			echo ("</div>
+				<div class='row pl-2' pr-2>");
 				?>
-				<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='rounded border-secondary' style="width: 100%; height: 180px">
-				<?php
-				echo ("</div>
+				<h6><strong> Produto:</strong> <?php echo ($row_produto['nome_produto']); ?></h6>
+				<?php	
+				echo("</div>
 					<div class='row pl-2' pr-2>");
+
 					?>
-					<h6><strong> Produto:</strong> <?php echo ($row_produto['nome_produto']); ?></h6>
-					<?php	
+					<h6><strong> Preço:</strong> R$<?php echo $row_produto['preco']; ?> Kg</h6>
+					<?php
 					echo("</div>
 						<div class='row pl-2' pr-2>");
-
 						?>
-						<h6><strong> Preço:</strong> R$<?php echo $row_produto['preco']; ?> Kg</h6>
+						<h6><strong> Mercado:</strong> 
+							<?php
+							$sql = "SELECT nome_mercado FROM mercados, produtos WHERE fk_id_mercado = id_mercado AND fk_id_mercado = $row_produto[fk_id_mercado];"; 
+
+							$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+							$consulta = $resultado->fetch_object(); 
+
+							echo ($consulta->nome_mercado);
+							?>
+						</h6>
 						<?php
+
 						echo("</div>
 							<div class='row pl-2' pr-2>");
 							?>
-							<h6><strong> Mercado:</strong> 
-								<?php
-								$sql = "SELECT nome_mercado FROM mercados, produtos WHERE fk_id_mercado = id_mercado AND fk_id_mercado = $row_produto[fk_id_mercado];"; 
-								
-								$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
-								$consulta = $resultado->fetch_object(); 
 
-								echo ($consulta->nome_mercado);
-								?>
-							</h6>
+
 							<?php
-							
 							echo("</div>
 								<div class='row pl-2' pr-2>");
 								?>
-								
-								
+								<h6><strong> Visto no dia:</strong> <?php echo $row_produto['data_visu']; ?></h6>
 								<?php
 								echo("</div>
-									<div class='row pl-2' pr-2>");
-									?>
-									<h6><strong> Visto no dia:</strong> <?php echo $row_produto['data_visu']; ?></h6>
-									<?php
-									echo("</div>
-										</div>
-										<div class='col-1'></div>");
-								}
-								?>
-							</div>
+									</div>
+									<div class='col-1'></div>");
+							}
+							?>
+						</div>
 
 
 
@@ -179,10 +187,11 @@ require_once("class/conexao.php");
 
 
 
-</div>
+					</div>
 
-</div>
+				</div>
 
-<?php
-require_once("rodape.php");
-	?>
+				<?php
+				require_once("rodape.php");
+			}
+				?>
