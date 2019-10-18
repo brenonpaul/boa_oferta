@@ -3,7 +3,8 @@ require_once("class/conexao.php");
 require_once "cabecalho.php";
 ?>
 
-<div class="container">
+<div class="container">	
+	<h2 class="text-center mt-2">Buscando Produto</h2>
 <?php
 	//criar conexão
 	$buscar = filter_input(INPUT_POST, 'buscar', FILTER_SANITIZE_STRING);
@@ -41,7 +42,7 @@ require_once "cabecalho.php";
 							echo ("</div>
 							<div class='row pl-2' pr-2>");
 							?>
-							<h6><strong> Produto:</strong> <?php echo utf8_encode($row_produto['nome_produto']); ?></h6>
+							<h6><strong> Produto:</strong> <?php echo ($row_produto['nome_produto']); ?></h6>
 							<?php	
 							echo("</div>
 							<div class='row pl-2' pr-2>");

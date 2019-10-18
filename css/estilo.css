@@ -65,37 +65,9 @@
   background-color: red;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #a52a2a;
-  width: 100%;
-  margin-left: -9%;
-  z-index: 1;
-  margin-top: 4%;
-  border-radius: 0px 0px 10px 10px;
-  border: 1px solid #660000;
-}
-
-.dropdown-content a {
-  color: white;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #660000;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+li:hover{
+  background-color: #b22222;
+  border-radius: 5px;
 }
 
 #buscar {
