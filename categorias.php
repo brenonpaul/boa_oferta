@@ -4,13 +4,13 @@ require_once "class/conexao.php";
 ?>
 
 <div class="container mt-4">
-	<div class="row">	
+	<div class="row d-flex justify-content-center">	
 		<?php
 		$result_produto = "SELECT * FROM categorias ORDER BY nome_categoria ASC";
 		$resultado_produto = mysqli_query($conexao, $result_produto);
 		while($row_produto = mysqli_fetch_assoc($resultado_produto)){
 			
-			echo ("<div class='col-2 recentes mt-4 rounded border border-secondary'>
+			echo ("<div class='col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 recentes mt-4 rounded border border-secondary'>
 				<div class='row'>");
 				?>
 				<a href="telaProdutos.php?cat=<?php echo $row_produto['id_categoria']?>">

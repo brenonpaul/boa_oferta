@@ -29,15 +29,15 @@ require_once "cabecalho.php";
 
 			?>
 
-		<div class="row pl-5">
+		<div class="row d-flex justify-content-center">
 			<?php
 			while($row_produto = mysqli_fetch_assoc($resultado_produto)){
 				
 
-				echo ("<div class='col-2 recentes mt-4 rounded border border-secondary'>
-							<div class='row'>");
+				echo ("<div class='col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 recentes mt-4 rounded border border-secondary'>
+							<div class='row d-flex justify-content-center'>");
 							?>
-							<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='imgProdBusca'>
+							<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='imgProd'>
 							<?php
 							echo ("</div>
 							<div class='row pl-2' pr-2>");
@@ -70,7 +70,7 @@ require_once "cabecalho.php";
 							?>
 								<h6><strong> Postado por:</strong> 
 									<?php
-										$sql = "SELECT apelido FROM usuarios, produtos WHERE fk_cpf = cpf and fk_cpf = $row_produto[fk_cpf];"; 
+										$sql = "SELECT apelido FROM usuarios, produtos WHERE fk_cpf = cpf and fk_cpf = '$row_produto[fk_cpf]';"; 
 									
                    					$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
                  					$consulta = $resultado->fetch_object(); 

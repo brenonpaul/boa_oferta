@@ -31,13 +31,13 @@ require_once "class/conexao.php";
 
 	
 	?>
-	<div class="row">	
+	<div class="row d-flex justify-content-center">	
 		<?php
 		while($row_produto = mysqli_fetch_assoc($resultado_produto)){
 			
 
-			echo ("<div class='col-2 recentes mt-4 rounded border border-secondary'>
-				<div class='row'>");
+			echo ("<div class='col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 recentes mt-4 rounded border border-secondary'>
+				<div class='row d-flex justify-content-center'>");
 				?>
 				<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='imgProd rounded border-secondary'>
 				<?php
