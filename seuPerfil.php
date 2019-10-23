@@ -112,9 +112,17 @@ if (empty($_SESSION['usuario'])) {
 ?>
 </div>
 <div class="col-1">
-	<a href="exclusaoConta.php">
-		<button type="button" class="btn btn-danger ">Excluir Conta</button>
-	</a>
+	<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Alterar
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="alterarInfo.php">Alterar Informações</a>
+    <a class="dropdown-item bg-danger text-white" href="exclusaoConta.php">Excluir Conta</a>
+    <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+  </div>
+</div>
+	
 </div>
 </div>
 
