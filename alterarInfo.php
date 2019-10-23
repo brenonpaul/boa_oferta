@@ -146,7 +146,16 @@ require_once("class/conexao.php");
                 <div class="control">
                     <label id="labelCadastro">Estado residente</label>
                     <select name="estado" id="estado" class="input is-large" style="color: rgb(74, 74, 74);">  
+
                         <?php
+                        $sql = "SELECT nome_estado, id_estado FROM estados, cidades, bairros, ruas, usuarios WHERE id_estado = fk_id_estado AND id_cidade = fk_id_bairro AND id_bairro = fk_id_bairro AND id_rua = fk_id_rua_user AND id_rua = '$row_usuario[fk_id_rua_user]' AND apelido = '$row_usuario[apelido]'";
+                $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+                while($consulta = $resultado->fetch_object()){
+
+                    echo '<option value="'.$consulta->id_estado.'">'.$consulta->nome_estado.'</option>';
+
+                }
+                        
                         $select = $con->prepare("SELECT * FROM estados ORDER BY nome_estado ASC");
                         $select->execute();
                         $fetchAll = $select->fetchAll();
