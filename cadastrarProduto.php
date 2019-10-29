@@ -13,6 +13,7 @@ $data_visu = date('d/m/y', strtotime($data_visu));
 date_default_timezone_set('America/Sao_Paulo');
 $data_cadastro = date('d/m/y');
 
+$preco=str_replace(",",".",$preco);
 
 if (empty($nome_produto) or empty($preco) or empty($data_visu) or empty($marca_produto) or $mercado == 'Selecione o mercado' or $categoria == 'Selecione a categoria') {
 	$_SESSION['falta_info'] = true;

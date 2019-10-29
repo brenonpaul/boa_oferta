@@ -60,31 +60,31 @@ require_once("class/conexao.php");
                     endif;
                     unset($_SESSION['cpf_existe']);
                     if ($_SESSION['email_existe']):
-                     ?>
-                     <div class="notification is-info">
+                       ?>
+                       <div class="notification is-info">
                         <p>O E-mail escolhido já existe. Informe outro e tente novamente.</p>
                     </div>
                     <?php 
                 endif;
                 unset($_SESSION['email_existe']);
                 if ($_SESSION['apelido_existe']):
-                 ?>
-                 <div class="notification is-info">
+                   ?>
+                   <div class="notification is-info">
                     <p>O Apelido escolhido já existe. Informe outro e tente novamente.</p>
                 </div>
                 <?php 
             endif;
             unset($_SESSION['apelido_existe']);
             error_reporting(0);
-                    ini_set(“display_errors”, 0 );
-                    if ($_SESSION['senha_caracteres']):  
-                        ?>
-                        <div class="notification is-info">
-                            <p>A senha deve ter no minímo 8 caracteres.</p>
-                        </div>
-                        <?php 
-                    endif;
-                    unset($_SESSION['senha_caracteres']);
+            ini_set(“display_errors”, 0 );
+            if ($_SESSION['senha_caracteres']):  
+                ?>
+                <div class="notification is-info">
+                    <p>A senha deve ter no minímo 8 caracteres.</p>
+                </div>
+                <?php 
+            endif;
+            unset($_SESSION['senha_caracteres']);
             ?>
             <div class="box">
                 <form action="cadastrar.php" method="POST">
@@ -104,14 +104,14 @@ require_once("class/conexao.php");
 
                     <div class="field">
                         <div class="control">
-                         <label id="labelCadastro">CPF</label>
-                         <input name="cpf" id="cpf" type="text" class="input is-large" placeholder="Apenas números">
-                     </div>
-                 </div>
-                 <script>
-                     $(document).ready(function () { 
+                           <label id="labelCadastro">CPF</label>
+                           <input name="cpf" id="cpf" type="text" class="input is-large" placeholder="Apenas números">
+                       </div>
+                   </div>
+                   <script>
+                       $(document).ready(function () { 
                         var $campoCpf = $("#cpf");
-                     });
+                    });
                 </script>
                 <script>
                     $(document).ready(function () { 
@@ -120,7 +120,7 @@ require_once("class/conexao.php");
                     });
                 </script>
 
-                 <div class="field">
+                <div class="field">
                     <div class="control">
                         <label id="labelCadastro">E-mail</label>
                         <input name="email" type="email" class="input is-large">
@@ -129,12 +129,12 @@ require_once("class/conexao.php");
 
                 <div class="field">
                     <div class="control">
-                     <label id="labelCadastro">Apelido</label>
-                     <input name="apelido" type="text" class="input is-large" placeholder="Nome nas postagens">
-                 </div>
-             </div>
+                       <label id="labelCadastro">Apelido</label>
+                       <input name="apelido" type="text" class="input is-large" placeholder="Nome nas postagens">
+                   </div>
+               </div>
 
-             <div class="field">
+               <div class="field">
                 <div class="control">
                     <label id="labelCadastro">Estado residente</label>
                     <select name="estado" id="estado" class="input is-large" style="color: rgb(74, 74, 74);">  
@@ -147,51 +147,53 @@ require_once("class/conexao.php");
                         } 
                         ?>
                     </select>
-                    <div class="field">
-                        <div class="control">
-                            <label id="labelCadastro">Cidade residente</label>
-                            <select name="cidade" id="cidade" class="input is-large" style="color: rgb(74, 74, 74);">
-                            </select>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label id="labelCadastro">Cidade residente</label>
+                    <select name="cidade" id="cidade" class="input is-large" style="color: rgb(74, 74, 74);">
+                    </select>
+                </div>
+            </div>
 
-                    <div class="field">
-                        <div class="control">
-                            <label id="labelCadastro">Bairro residente</label>
-                            <select name="bairro" id="bairro" class="input is-large" style="color: rgb(74, 74, 74);">
-                            </select>
-                        </div>
-                    </div>
+            <div class="field">
+                <div class="control">
+                    <label id="labelCadastro">Bairro residente</label>
+                    <select name="bairro" id="bairro" class="input is-large" style="color: rgb(74, 74, 74);">
+                    </select>
+                </div>
+            </div>
 
-                    <div class="field">
-                        <div class="control">
-                            <label id="labelCadastro">Rua residente</label>
-                            <select name="rua" id="rua" class="input is-large" style="color: rgb(74, 74, 74);">
-                            </select>
-                        </div>
-                    </div>                    
+            <div class="field">
+                <div class="control">
+                    <label id="labelCadastro">Rua residente</label>
+                    <select name="rua" id="rua" class="input is-large" style="color: rgb(74, 74, 74);">
+                    </select>
+                </div>
+            </div>                    
 
 
 
-                    <div class="field">
-                        <div class="control">
-                         <label id="labelCadastro">Senha</label>
-                         <input name="senha" class="input is-large" type="password" placeholder="Senha">
-                     </div>
-                 </div>
+            <div class="field">
+                <div class="control">
+                   <label id="labelCadastro">Senha</label>
+                   <input name="senha" class="input is-large" type="password" placeholder="Senha">
+               </div>
+           </div>
 
-                 <div class="field">
-                    <div class="control">
-                     <label id="labelCadastro">Confirmar senha</label>
-                     <input name="conf_senha" class="input is-large" type="password" placeholder="Confirmar Senha">
-                 </div>
-             </div>
+           <div class="field">
+            <div class="control">
+               <label id="labelCadastro">Confirmar senha</label>
+               <input name="conf_senha" class="input is-large" type="password" placeholder="Confirmar Senha">
+           </div>
+       </div>
 
-             <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
-         </form>
-         <a href="index.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela inicial</button></a>
-     </div>
- </div>
+       <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
+   </form>
+   <a href="index.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela inicial</button></a>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -203,7 +205,7 @@ require_once("class/conexao.php");
     $("#estado").on("change",function(){
         var idEstado = $("#estado").val();
         $.ajax({
-            url: 'infoLog.php',
+            url: 'configEnd.php',
             type: 'POST',
             data:{id_est:idEstado},
             beforeSend: function(){
@@ -221,7 +223,7 @@ require_once("class/conexao.php");
     $("#cidade").on("change",function(){
         var idCidade = $("#cidade").val();
         $.ajax({
-            url: 'infoLog.php',
+            url: 'configEnd.php',
             type: 'POST',
             data:{id_cid:idCidade},
             beforeSend: function(){
@@ -239,7 +241,7 @@ require_once("class/conexao.php");
     $("#bairro").on("change",function(){
         var idBairro = $("#bairro").val();
         $.ajax({
-            url: 'infoLog.php',
+            url: 'configEnd.php',
             type: 'POST',
             data:{id_bairro:idBairro},
             beforeSend: function(){
@@ -257,10 +259,10 @@ require_once("class/conexao.php");
     $("#rua").on("change",function(){
         var idRua = $("#rua").val();
         $.ajax({
-            url: 'infoLog.php',
+            url: 'configEnd.php',
             type: 'POST',
             data:{id_rua:idRua}
-           
+            
         });
     });
 </script>

@@ -8,8 +8,7 @@
   border: 1px solid #FF6600;
   border-radius: 10px;
   width: 15%;
-  float: right;
-  margin-right: 5%;
+  float: left;
 
 }
 
@@ -141,6 +140,47 @@ li:hover{
   color: #4a4a4a;
   display: block;
  
+}
+
+#imgPerfil{
+  width: 80%;
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+#middle{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#caixaImgPerfil:hover #imgPerfil{
+  opacity: 0.3;
+}
+
+#caixaImgPerfil:hover #middle{
+  opacity: 1;
+}
+
+#textoImgPerfil {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 5%;
+  border-radius: 3px;
+}
+
+#imgEditar:hover{
+  background-color: #ccc;
+  border-radius: 3px;
 }
 
 

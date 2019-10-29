@@ -29,16 +29,14 @@ require_once("class/conexao.php");
                     <h3 class="title has-text-grey-dark">Alterar Informações</h3>
 
                     <?php
-                    error_reporting(0);
-                    ini_set(“display_errors”, 0 );
-                    if ($_SESSION['senhas_diferentes']):  
-                        ?>
-                        <div class="notification is-info">
-                            <p>As senhas não batem!</p>
-                        </div>
-                        <?php 
-                    endif;
-                    unset($_SESSION['senhas_diferentes']);
+                    $result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
+                $resultado_usuario = mysqli_query($conexao, $result_usuario);
+
+
+
+            while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
+                
+                        
                     error_reporting(0);
                     ini_set(“display_errors”, 0 );
                     if ($_SESSION['falta_info']):  
@@ -49,16 +47,6 @@ require_once("class/conexao.php");
                         <?php 
                     endif;
                     unset($_SESSION['falta_info']);
-                    error_reporting(0);
-                    ini_set(“display_errors”, 0 );
-                    if ($_SESSION['cpf_existe']):  
-                        ?>
-                        <div class="notification is-info">
-                            <p>O CPF escolhido já existe. Informe outro e tente novamente.</p>
-                        </div>
-                        <?php 
-                    endif;
-                    unset($_SESSION['cpf_existe']);
                     if ($_SESSION['email_existe']):
                      ?>
                      <div class="notification is-info">
@@ -75,58 +63,30 @@ require_once("class/conexao.php");
                 <?php 
             endif;
             unset($_SESSION['apelido_existe']);
-            error_reporting(0);
-                    ini_set(“display_errors”, 0 );
-                    if ($_SESSION['senha_caracteres']):  
-                        ?>
-                        <div class="notification is-info">
-                            <p>A senha deve ter no minímo 8 caracteres.</p>
-                        </div>
-                        <?php 
-                    endif;
-                    unset($_SESSION['senha_caracteres']);
             ?>
             <div class="box">
-                <?php
-                $result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
-                $resultado_usuario = mysqli_query($conexao, $result_usuario);
+                <form action="infoPessoal.php" method="POST">
+                    <?php
+                    if($_GET['info'] == 1) {
+                        ?>
 
+                        <div class="field">
+                        <div class="control">
+                            <label id="labelCadastro">Foto de Perfil</label>
+                            <input type="file" name="foto_usuario" class="input is-large"  accept="image/png, image/jpeg" multiple />
+                        </div>
+                    </div>
 
+                        <?php
+                    }elseif ($_GET['info'] == 2) {
 
-            while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
-                ?>
-                <form action="cadastrar.php" method="POST">
+                    ?>
                     <div class="field">
                         <div class="control">
                             <label id="labelCadastro">Nome Completo</label>
                             <input name="nome_completo" type="text" class="input is-large" placeholder="Exemplo: João da Silva" value="<?php echo $row_usuario['nome_completo']; ?>">
                         </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <label id="labelCadastro">Foto de Perfil</label>
-                            <input type="file" name="foto_usuario" class="input is-large"  accept="image/png, image/jpeg" multiple / value="<?php echo $row_usuario['foto_usuario']; ?>">
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                         <label id="labelCadastro">CPF</label>
-                         <input name="cpf" id="cpf" type="text" class="input is-large" placeholder="Apenas números" value="<?php echo $row_usuario['cpf']; ?>">
-                     </div>
-                 </div>
-                 <script>
-                     $(document).ready(function () { 
-                        var $campoCpf = $("#cpf");
-                     });
-                </script>
-                <script>
-                    $(document).ready(function () { 
-                        var $campoCpf = $("#cpf");
-                        $campoCpf.mask('000.000.000-00', {reverse: true});
-                    });
-                </script>
+                    </div>               
 
                  <div class="field">
                     <div class="control">
@@ -142,53 +102,7 @@ require_once("class/conexao.php");
                  </div>
              </div>
 
-             <div class="field">
-                <div class="control">
-                    <label id="labelCadastro">Estado residente</label>
-                    <select name="estado" id="estado" class="input is-large" style="color: rgb(74, 74, 74);">  
-
-                        <?php
-                        $sql = "SELECT nome_estado, id_estado FROM estados, cidades, bairros, ruas, usuarios WHERE id_estado = fk_id_estado AND id_cidade = fk_id_bairro AND id_bairro = fk_id_bairro AND id_rua = fk_id_rua_user AND id_rua = '$row_usuario[fk_id_rua_user]' AND apelido = '$row_usuario[apelido]'";
-                $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
-                while($consulta = $resultado->fetch_object()){
-
-                    echo '<option value="'.$consulta->id_estado.'">'.$consulta->nome_estado.'</option>';
-
-                }
-                        
-                        $select = $con->prepare("SELECT * FROM estados ORDER BY nome_estado ASC");
-                        $select->execute();
-                        $fetchAll = $select->fetchAll();
-                        foreach($fetchAll as $estados) {
-                            echo '<option value="'.$estados['id_estado'].'">'.$estados['nome_estado'].'</option>';
-                        } 
-                        ?>
-                    </select>
-                    <div class="field">
-                        <div class="control">
-                            <label id="labelCadastro">Cidade residente</label>
-                            <select name="cidade" id="cidade" class="input is-large" style="color: rgb(74, 74, 74);">
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <label id="labelCadastro">Bairro residente</label>
-                            <select name="bairro" id="bairro" class="input is-large" style="color: rgb(74, 74, 74);">
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <label id="labelCadastro">Rua residente</label>
-                            <select name="rua" id="rua" class="input is-large" style="color: rgb(74, 74, 74);">
-                            </select>
-                        </div>
-                    </div>                    
-
-
+    
 
                     <div class="field">
                         <div class="control">
@@ -197,16 +111,54 @@ require_once("class/conexao.php");
                      </div>
                  </div>
 
-                 <div class="field">
-                    <div class="control">
-                     <label id="labelCadastro">Confirmar senha</label>
-                     <input name="conf_senha" class="input is-large" type="password" placeholder="Confirmar Senha">
-                 </div>
-             </div>
+                 <?php
+             }if ($_GET['info'] == 3) {
+                 ?>
+            <div class="field">
+                <div class="control">
+                    <label id="labelCadastro">Estado residente</label>
+                    <select name="estado" id="estado" class="input is-large" style="color: rgb(74, 74, 74);">  
+                        <?php
+                        $select = $con->prepare("SELECT * FROM estados ORDER BY nome_estado ASC");
+                        $select->execute();
+                        $fetchAll = $select->fetchAll();
+                        foreach($fetchAll as $estados) {
+                            echo '<option value="'.$estados['id_estado'].'">'.$estados['nome_estado'].'</option>';
+                        } 
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label id="labelCadastro">Cidade residente</label>
+                    <select name="cidade" id="cidade" class="input is-large" style="color: rgb(74, 74, 74);">
+                    </select>
+                </div>
+            </div>
 
-             <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
+            <div class="field">
+                <div class="control">
+                    <label id="labelCadastro">Bairro residente</label>
+                    <select name="bairro" id="bairro" class="input is-large" style="color: rgb(74, 74, 74);">
+                    </select>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <label id="labelCadastro">Rua residente</label>
+                    <select name="rua" id="rua" class="input is-large" style="color: rgb(74, 74, 74);">
+                    </select>
+                </div>
+            </div>       
+            <?php 
+        }
+            ?>
+
+             <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar</button>
          </form>
-         <a href="index.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela inicial</button></a>
+         <a href="seuPerfil.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela de perfil</button></a>
          <?php
      }
          ?>
@@ -223,7 +175,7 @@ require_once("class/conexao.php");
     $("#estado").on("change",function(){
         var idEstado = $("#estado").val();
         $.ajax({
-            url: 'infoLog.php',
+            url: 'configEnd_alt.php',
             type: 'POST',
             data:{id_est:idEstado},
             beforeSend: function(){
@@ -241,7 +193,7 @@ require_once("class/conexao.php");
     $("#cidade").on("change",function(){
         var idCidade = $("#cidade").val();
         $.ajax({
-            url: 'infoLog.php',
+            url: 'configEnd_alt.php',
             type: 'POST',
             data:{id_cid:idCidade},
             beforeSend: function(){
@@ -259,7 +211,7 @@ require_once("class/conexao.php");
     $("#bairro").on("change",function(){
         var idBairro = $("#bairro").val();
         $.ajax({
-            url: 'infoLog.php',
+            url: 'configEnd_alt.php',
             type: 'POST',
             data:{id_bairro:idBairro},
             beforeSend: function(){
@@ -277,7 +229,7 @@ require_once("class/conexao.php");
     $("#rua").on("change",function(){
         var idRua = $("#rua").val();
         $.ajax({
-            url: 'infoLog.php',
+            url: 'configEnd_alt.php',
             type: 'POST',
             data:{id_rua:idRua}
            

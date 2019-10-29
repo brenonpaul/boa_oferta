@@ -42,20 +42,20 @@ require_once "class/conexao.php";
 				<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='imgProd rounded border-secondary'>
 				<?php
 				echo ("</div>
-					<div class='row pl-2' pr-2>");
+					<div class='row d-flex justify-content-center'>");
 					?>
-					<h6><strong> Produto:</strong> <?php echo ($row_produto['nome_produto']); ?></h6>
+					<h6><strong><?php echo ($row_produto['nome_produto']); ?></strong></h6>
 					<?php	
 					echo("</div>
 						<div class='row pl-2' pr-2>");
 
 						?>
-						<h6><strong> Preço:</strong> R$<?php echo $row_produto['preco']; ?> Kg</h6>
+						<h6> Preço: R$<?php echo $row_produto['preco']; ?> Kg</h6>
 						<?php
 						echo("</div>
 							<div class='row pl-2' pr-2>");
 							?>
-							<h6><strong> Mercado:</strong> 
+							<h6> Mercado: 
 								<?php
 								$sql = "SELECT nome_mercado FROM mercados, produtos WHERE fk_id_mercado = id_mercado AND fk_id_mercado = $row_produto[fk_id_mercado];"; 
 								
@@ -70,21 +70,30 @@ require_once "class/conexao.php";
 							echo("</div>
 								<div class='row pl-2' pr-2>");
 								?>
-								<h6><strong> Postado por:</strong> 
-									<?php
-									$sql = "SELECT apelido FROM usuarios, produtos WHERE fk_cpf = cpf and fk_cpf = '$row_produto[fk_cpf]';"; 
-									
-									$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
-									$consulta = $resultado->fetch_object(); 
-
-									echo ($consulta->apelido);
-									?>
-								</h6>
+								<h6> Visto em: <?php echo $row_produto['data_visu']; ?></h6>
+								
 								<?php
 								echo("</div>
 									<div class='row pl-2' pr-2>");
 									?>
-									<h6><strong> Visto no dia:</strong> <?php echo $row_produto['data_visu']; ?></h6>
+									<?php
+										$sql = "SELECT foto_usuario FROM usuarios, produtos WHERE fk_cpf = cpf and fk_cpf = '$row_produto[fk_cpf]';"; 
+
+										$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+										$consulta = $resultado->fetch_object(); 
+
+										
+										?>
+									<h6><img src="imagens/<?php echo ($consulta->foto_usuario); ?>" style="width: 15%" class="rounded-circle"> 
+										<?php
+										$sql = "SELECT apelido FROM usuarios, produtos WHERE fk_cpf = cpf and fk_cpf = '$row_produto[fk_cpf]';"; 
+
+										$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+										$consulta = $resultado->fetch_object(); 
+
+										echo ($consulta->apelido);
+										?>
+									</h6>
 									<?php
 									echo("</div>
 										</div>
