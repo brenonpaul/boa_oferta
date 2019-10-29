@@ -26,9 +26,15 @@ require_once("class/conexao.php");
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
                     <img src="imagens/logo/logo.png" id="logo" style="width: 30%; margin-bottom: 1%;">
+                    <?php
+                    if ($_GET['info'] == 4) {
+                        echo "<h3 class='title has-text-grey-dark'>Alterar Senha</h3>";
+                    }else{
+                    ?>
                     <h3 class="title has-text-grey-dark">Alterar Informações</h3>
 
                     <?php
+                }
                     $result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
                 $resultado_usuario = mysqli_query($conexao, $result_usuario);
 
@@ -154,8 +160,29 @@ require_once("class/conexao.php");
             </div>       
             <?php 
         }
+        if ($_GET['info'] ==4) {       
             ?>
-
+            <div class="field">
+                        <div class="control">
+                         <label id="labelCadastro">Antiga Senha</label>
+                         <input name="senha" class="input is-large" type="password" placeholder="Senha">
+                     </div>
+                 </div>
+                 <div class="field">
+                        <div class="control">
+                         <label id="labelCadastro">Nova Senha</label>
+                         <input name="novaSenha" class="input is-large" type="password" placeholder="Senha">
+                     </div>
+                 </div>
+                 <div class="field">
+                        <div class="control">
+                         <label id="labelCadastro">Confirmar Nova Senha</label>
+                         <input name="confNovaSenha" class="input is-large" type="password" placeholder="Senha">
+                     </div>
+                 </div>
+            <?php
+        }
+        ?>
              <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar</button>
          </form>
          <a href="seuPerfil.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela de perfil</button></a>

@@ -9,6 +9,8 @@ $email = mysqli_real_escape_string($conexao, trim($_POST['email']));
 $apelido = mysqli_real_escape_string($conexao, trim($_POST['apelido']));
 $senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
 $rua = mysqli_real_escape_string($conexao, trim($_POST['rua']));
+$novaSenha = mysqli_real_escape_string($conexao, trim($_POST['novaSenha']));
+$confNovaSenha = mysqli_real_escape_string($conexao, trim($_POST['confNovaSenha']));
 
 
 
@@ -25,7 +27,7 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 			$_SESSION['status_cadastro'] = true;
 		}
 
-		header('Location: SeuPerfil.php');
+		header('Location: seuPerfil.php');
 		exit;
 
 	}elseif (isset($_POST['rua'])) {
@@ -35,10 +37,10 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 			$_SESSION['status_cadastro'] = true;
 		}
 
-		header('Location: SeuPerfil.php');
+		header('Location: seuPerfil.php');
 		exit;
 
-	}else{
+	}elseif(isset($_POST['nome_completo']) or isset($_POST['apelido']) or isset($_POST['email'])){
 
 		if (empty($nome_completo) or empty($email) or empty($apelido) or empty($senha)) {
 			$_SESSION['falta_info'] = true;
@@ -80,6 +82,25 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 		header('Location: telaLogin.php');
 		exit;
 
+	}elseif (isset($_POST['novaSenha'])) {
+		
+		if ($novaSenha != $confNovaSenha) {
+	$_SESSION['senhas_diferentes'] = true;
+	header('Location: cadastro.php');
+	exit;
+}
+
+		$sql = "UPDATE usuarios SET senha = '$novaSenha' WHERE cpf = '$row_usuario[cpf]';";
+
+
+		if($conexao->query($sql) === TRUE) {
+			$_SESSION['status_cadastro'] = true;
+		}
+
+		$conexao->close();
+
+		header('Location: telaLogin.php');
+		exit;
 	}
 
 }

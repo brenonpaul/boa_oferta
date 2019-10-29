@@ -33,10 +33,14 @@
 					<div id="middle">
 	    				<a href="alterarInfo.php?info=1"> <div id="textoImgPerfil">Alterar Foto</div></a>
 	  				</div>
-	  				<div class="mt-3">
-	  					<a href="exclusaoConta.php"> <button type="button" class="btn btn-danger">Excluir Conta</button></a>
-
+	  				<div>
+	  				<div class="mt-3 row justify-content-center">
+	  					<a href="alterarInfo.php?info=4"><h6>Alterar Senha</h6></a>
 	  				</div>
+	  				<div class="mt-1">
+	  					<a href="exclusaoConta.php"> <button type="button" class="btn btn-danger">Excluir Conta</button></a>
+	  				</div>
+	  			</div>
 				</div>
 				<div class="col-1"></div>
 				<div class="col-3 ">
