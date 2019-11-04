@@ -173,7 +173,9 @@ $resultado_produto = mysqli_query($conexao, $result_produto);
 					</h6>
 
 					<div>
-						<button type='button' class='btn btn-outline-primary p-0'>Editar</button>
+						<a href="alterarProduto.php?id=<?php echo($row_produto['id_produto']) ?>">
+							<button type='button' class='btn btn-outline-primary p-0'>Editar</button>
+						</a>
 						<button type='button' class='btn btn-outline-danger p-0'>Excluir</button>
 					</div>
 				</div>
