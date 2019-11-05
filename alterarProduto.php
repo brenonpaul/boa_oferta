@@ -17,29 +17,22 @@ require_once("class/conexao.php");
     <script type="text/javascript" src="js/jquery_3_3_1.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 </head>
-
 <body>
-
     <section class="hero is-success is-fullheight">
-
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
-                    <img src="imagens/logo/logo.png" id="logo" style="width: 30%; margin-bottom: 1%;">
-                    
+                    <img src="imagens/logo/logo.png" id="logo" style="width: 30%; margin-bottom: 1%;">                 
                     <h3 class="title has-text-grey-dark">Alterar Informações do Produto</h3>
 
                     <?php
-
-                    $result_produto = "SELECT id_produto, fk_cpf, fk_id_mercado ,fk_id_categoria, foto_produto, nome_produto, data_cadastro, data_visu, preco, likes, deslikes from produtos, usuarios where fk_cpf = cpf and email = '$_SESSION[usuario]'";  
+                    $result_produto = "SELECT id_produto, fk_cpf, fk_id_mercado ,fk_id_categoria, foto_produto, nome_produto, data_cadastro, data_visu, preco, likes, deslikes from produtos, usuarios where fk_cpf = cpf and email = '$_SESSION[usuario]' and id_produto = $_GET[id]";  
                     $resultado_produto = mysqli_query($conexao, $result_produto);
-
-
-
                     while($row_produto = mysqli_fetch_assoc($resultado_produto)){
                         ?>
+
                         <div class="box">
-                            <form action="infoPessoal.php" method="POST">
+                            <form action="infoProduto.php?id=<?php echo($_GET[id]) ?>" method="POST">
                                 <div class="field">
                                     <div class="control">
                                         <label id="labelCadastro">Foto do Produto</label>
@@ -55,78 +48,68 @@ require_once("class/conexao.php");
                                 <div class="field">
                                     <div class="control">
                                         <label id="labelCadastro">Preço</label>
-                                        <input name="email" type="number" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" class="input is-large" value="<?php echo $row_produto['preco']; ?>">
+                                        <input name="preco" type="number" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" class="input is-large" value="<?php echo $row_produto['preco']; ?>">
+                                    </div>
+                                </div>                           
+                                <div class="field">
+                                    <div class="control">
+                                        <label id="labelCadastro">Mercado</label>    
+                                        <select class="input is-large" name="mercado" style="color: rgb(74, 74, 74);">
+                                            <?php
+                                            $sql = "SELECT nome_mercado FROM mercados, produtos WHERE fk_id_mercado = id_mercado AND fk_id_mercado = $row_produto[fk_id_mercado];"; 
+
+                                            $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+                                            $consulta = $resultado->fetch_object(); 
+
+                                            echo '<option value="'.$row_produto['fk_id_mercado'].'">'.$consulta->nome_mercado.'</option>';
+                                            $select = $con->prepare("SELECT * FROM mercados ORDER BY nome_mercado ASC");
+                                            $select->execute();
+                                            $fetchAll = $select->fetchAll();
+                                            foreach($fetchAll as $mercados) {
+                                                echo '<option value="'.$mercados['id_mercado'].'">'.$mercados['nome_mercado'].'</option>';
+                                            } 
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <label id="labelCadastro">Categoria</label>    
+                                        <select class="input is-large" name="categoria" style="color: rgb(74, 74, 74);">
+                                            <?php
+                                            $sql = "SELECT nome_categoria FROM categorias, produtos WHERE fk_id_categoria = id_categoria AND fk_id_categoria = $row_produto[fk_id_categoria];"; 
 
-                                
-                           <div class="field">
-                            <div class="control">
-                                <label id="labelCadastro">Estado residente</label>
-                                <select name="estado" id="estado" class="input is-large" style="color: rgb(74, 74, 74);">  
-                                    <?php
-                                    $select = $con->prepare("SELECT * FROM estados ORDER BY nome_estado ASC");
-                                    $select->execute();
-                                    $fetchAll = $select->fetchAll();
-                                    foreach($fetchAll as $estados) {
-                                        echo '<option value="'.$estados['id_estado'].'">'.$estados['nome_estado'].'</option>';
-                                    } 
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <label id="labelCadastro">Cidade residente</label>
-                                <select name="cidade" id="cidade" class="input is-large" style="color: rgb(74, 74, 74);">
-                                </select>
-                            </div>
-                        </div>
+                                            $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+                                            $consulta = $resultado->fetch_object(); 
 
-                        <div class="field">
-                            <div class="control">
-                                <label id="labelCadastro">Bairro residente</label>
-                                <select name="bairro" id="bairro" class="input is-large" style="color: rgb(74, 74, 74);">
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <div class="control">
-                                <label id="labelCadastro">Rua residente</label>
-                                <select name="rua" id="rua" class="input is-large" style="color: rgb(74, 74, 74);">
-                                </select>
-                            </div>
-                        </div>       
-                        <div class="field">
-                            <div class="control">
-                               <label id="labelCadastro">Antiga Senha</label>
-                               <input name="senha" class="input is-large" type="password" placeholder="Senha">
-                           </div>
-                       </div>
-                       <div class="field">
-                        <div class="control">
-                           <label id="labelCadastro">Nova Senha</label>
-                           <input name="novaSenha" class="input is-large" type="password" placeholder="Senha">
-                       </div>
-                   </div>
-                   <div class="field">
-                    <div class="control">
-                       <label id="labelCadastro">Confirmar Nova Senha</label>
-                       <input name="confNovaSenha" class="input is-large" type="password" placeholder="Senha">
-                   </div>
-               </div>
-               <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar</button>
-           </form>
-           <a href="seuPerfil.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela de perfil</button></a>
-           <?php
-       }
-       ?>
-   </div>
-</div>
-</div>
-</div>
-</section>
+                                            echo '<option value="'.$row_produto['fk_id_categoria'].'">'.$consulta->nome_categoria.'</option>';
+                                            $select = $con->prepare("SELECT * FROM categorias ORDER BY nome_categoria ASC");
+                                            $select->execute();
+                                            $fetchAll = $select->fetchAll();
+                                            foreach($fetchAll as $categorias) {
+                                                echo '<option value="'.$categorias['id_categoria'].'">'.$categorias['nome_categoria'].'</option>';
+                                            } 
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <label id="labelCadastro">Data que você viu</label>
+                                        <input name="data_visu" class="input is-large" type="text" value="<?php echo $row_produto['data_visu']; ?>">
+                                    </div>
+                                </div>
+                                <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar</button>
+                            </form>
+                            <a href="seuPerfil.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela de perfil</button></a>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

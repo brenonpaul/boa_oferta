@@ -127,7 +127,7 @@ if (empty($_SESSION['usuario'])) {
                         <div class="field">
                             <div class="control">
                                <label id="labelCadastro">Data que você viu</label>
-                               <input name="data_visu" class="input is-large" type="date" placeholder="Senha">
+                               <input name="data_visu" class="input is-large" type="date">
                            </div>
                        </div>
 
