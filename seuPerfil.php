@@ -49,13 +49,13 @@
 							<?php echo $row_usuario['apelido']; ?>
 						</h6>
 						<h6 class="mt-4 mb-4"><strong>Nome:</strong>
-						 <?php echo $row_usuario['nome_completo']; ?>
+							<?php echo $row_usuario['nome_completo']; ?>
 						</h6>
 						<h6 class="mt-4 mb-4"><strong>CPF:</strong>
-						 <?php echo $row_usuario['cpf']; ?>
+							<?php echo $row_usuario['cpf']; ?>
 						</h6>
 						<h6 class="mt-4 mb-2"><strong>E-mail:</strong>
-						 <?php echo $row_usuario['email']; ?>
+							<?php echo $row_usuario['email']; ?>
 						</h6>
 						<a href="alterarInfo.php?info=2"> 
 							<button type="button" class="btn btn-outline-primary pl-1 pr-1 p-0">Editar</button>
@@ -65,90 +65,90 @@
 					<div class="col-3">
 						<h6 class="mt-4 mb-4"><strong>Estado:</strong> 
 
-						<?php 
+							<?php 
+							$usuario = $_SESSION['usuario'];
+	                   //$sql = "select nome_completo from usuarios where email = '$usuario' ;";
+							$sql = "SELECT nome_estado FROM estados, cidades, bairros, ruas, usuarios WHERE id_estado = fk_id_estado AND id_cidade = fk_id_bairro AND id_bairro = fk_id_bairro AND id_rua = fk_id_rua_user AND id_rua = '$row_usuario[fk_id_rua_user]' AND apelido = '$row_usuario[apelido]'";
+							$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+							while($consulta = $resultado->fetch_object())
+							{
+								echo $consulta->nome_estado;
+							}
+							?>
+
+						</h6>
+						<h6 class="mt-4 mb-4"><strong>Cidade:</strong> <?php 
+
 						$usuario = $_SESSION['usuario'];
 	                   //$sql = "select nome_completo from usuarios where email = '$usuario' ;";
-						$sql = "SELECT nome_estado FROM estados, cidades, bairros, ruas, usuarios WHERE id_estado = fk_id_estado AND id_cidade = fk_id_bairro AND id_bairro = fk_id_bairro AND id_rua = fk_id_rua_user AND id_rua = '$row_usuario[fk_id_rua_user]' AND apelido = '$row_usuario[apelido]'";
+						$sql = "SELECT nome_cidade from  cidades, bairros, ruas, usuarios where id_cidade = fk_id_cidade and id_bairro = fk_id_bairro and id_rua = fk_id_rua_user and id_rua = '$row_usuario[fk_id_rua_user]' AND apelido = '$row_usuario[apelido]'";
 						$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 						while($consulta = $resultado->fetch_object())
 						{
-							echo $consulta->nome_estado;
+							echo ($consulta->nome_cidade);
 						}
 						?>
 
 					</h6>
-					<h6 class="mt-4 mb-4"><strong>Cidade:</strong> <?php 
+					<h6 class="mt-4 mb-4"><strong>Bairro:</strong> <?php 
 
 					$usuario = $_SESSION['usuario'];
 	                   //$sql = "select nome_completo from usuarios where email = '$usuario' ;";
-					$sql = "SELECT nome_cidade from  cidades, bairros, ruas, usuarios where id_cidade = fk_id_cidade and id_bairro = fk_id_bairro and id_rua = fk_id_rua_user and id_rua = '$row_usuario[fk_id_rua_user]' AND apelido = '$row_usuario[apelido]'";
+					$sql = "SELECT nome_bairro from bairros, ruas, usuarios where id_bairro = fk_id_bairro and id_rua = fk_id_rua_user and id_rua = '$row_usuario[fk_id_rua_user]' AND apelido = '$row_usuario[apelido]'";
 					$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
 					while($consulta = $resultado->fetch_object())
 					{
-						echo ($consulta->nome_cidade);
+						echo ($consulta->nome_bairro);
 					}
 					?>
 
 				</h6>
-				<h6 class="mt-4 mb-4"><strong>Bairro:</strong> <?php 
+				<h6 class="mt-4"><strong>Sua rua:</strong> 
 
-				$usuario = $_SESSION['usuario'];
+					<?php 			
+					$usuario = $_SESSION['usuario'];
 	                   //$sql = "select nome_completo from usuarios where email = '$usuario' ;";
-				$sql = "SELECT nome_bairro from bairros, ruas, usuarios where id_bairro = fk_id_bairro and id_rua = fk_id_rua_user and id_rua = '$row_usuario[fk_id_rua_user]' AND apelido = '$row_usuario[apelido]'";
-				$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
-				while($consulta = $resultado->fetch_object())
-				{
-					echo ($consulta->nome_bairro);
-				}
-				?>
+					$sql = "SELECT nome_rua from ruas, usuarios WHERE id_rua = fk_id_rua_user and id_rua = '$row_usuario[fk_id_rua_user]' and apelido = '$row_usuario[apelido]'";
+					$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
+					while($consulta = $resultado->fetch_object())
+					{
+						echo ($consulta->nome_rua);
+					}
+					?>
 
-			</h6>
-			<h6 class="mt-4"><strong>Sua rua:</strong> 
-
-			<?php 			
-			$usuario = $_SESSION['usuario'];
-	                   //$sql = "select nome_completo from usuarios where email = '$usuario' ;";
-			$sql = "SELECT nome_rua from ruas, usuarios WHERE id_rua = fk_id_rua_user and id_rua = '$row_usuario[fk_id_rua_user]' and apelido = '$row_usuario[apelido]'";
-			$resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
-			while($consulta = $resultado->fetch_object())
-			{
-				echo ($consulta->nome_rua);
-			}
+				</h6>
+				<?php
+			}	  
 			?>
-
-		</h6>
-		<?php
-	}	  
-	?>
-	<a href="alterarInfo.php?info=3"> <button type="button" class="btn btn-outline-primary pl-1 pr-1 p-0">Editar</button></a>
-</div>
-</div>
-
-<?php
-$result_produto = "SELECT * from produtos, usuarios where cpf = fk_cpf and email = '$_SESSION[usuario]' ORDER BY data_visu DESC";
-$resultado_produto = mysqli_query($conexao, $result_produto);
-?>
-
-<div class="row">
-	<div class="col-11 mt-4" style="border: 1px solid #ccc;"></div>
-</div>
-<div class="row d-flex">
+			<a href="alterarInfo.php?info=3"> <button type="button" class="btn btn-outline-primary pl-1 pr-1 p-0">Editar</button></a>
+		</div>
+	</div>
 
 	<?php
-	while($row_produto = mysqli_fetch_assoc($resultado_produto))
-	{
-		?>
+	$result_produto = "SELECT * from produtos, usuarios where cpf = fk_cpf and email = '$_SESSION[usuario]' ORDER BY data_visu DESC";
+	$resultado_produto = mysqli_query($conexao, $result_produto);
+	?>
 
-		<div class='col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 recentes mt-4 rounded border border-secondary'>
-			<div class='row d-flex justify-content-center'>
-				<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='imgProd rounded border-secondary'>
-			</div>
-			<div class='row pl-2' pr-2>
-				<h6><strong> Produto:</strong> 
-					<?php echo ($row_produto['nome_produto']); ?>
-				</h6>
+	<div class="row">
+		<div class="col-11 mt-4" style="border: 1px solid #ccc;"></div>
+	</div>
+	<div class="row d-flex">
+
+		<?php
+		while($row_produto = mysqli_fetch_assoc($resultado_produto))
+		{
+			?>
+
+			<div class='col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 recentes mt-4 rounded border border-secondary'>
+				<div class='row d-flex justify-content-center'>
+					<img src="imagens/alimentos/<?php echo $row_produto['foto_produto']?>" class='imgProd rounded border-secondary'>
 				</div>
-					<div class='row pl-2' pr-2>
+				<div class='row pl-2' pr-2>
+					<h6><strong> Produto:</strong> 
+						<?php echo ($row_produto['nome_produto']); ?>
+					</h6>
+				</div>
+				<div class='row pl-2' pr-2>
 					<h6><strong> Preço:</strong> 
 						R$<?php echo $row_produto['preco']; ?> Kg
 					</h6>
@@ -171,30 +171,21 @@ $resultado_produto = mysqli_query($conexao, $result_produto);
 					<h6><strong> Visto no dia:</strong> 
 						<?php echo $row_produto['data_visu']; ?>
 					</h6>
-
 					<div>
 						<a href="alterarProduto.php?id=<?php echo($row_produto['id_produto']) ?>">
 							<button type='button' class='btn btn-outline-primary p-0'>Editar</button>
 						</a>
-						<button type='button' class='btn btn-outline-danger p-0'>Excluir</button>
+						<a href="exclusaoProduto.php?id=<?php echo($row_produto['id_produto']) ?>">
+							<button type='button' class='btn btn-outline-danger p-0'>Excluir</button>
+						</a>
 					</div>
 				</div>
-
 			</div>
 			<div class='col-1'></div>
 			<?php
 		}
 		?>
 	</div>
-
-
-
-
-
-
-
-</div>
-
 </div>
 
 <?php
