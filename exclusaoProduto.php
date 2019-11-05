@@ -21,19 +21,12 @@
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
                     <img src="imagens/logo/logo.png" id="logo" style="width: 30%; margin-bottom: 1%;">
-                    <h3 class="title has-text-grey-dark">Excluindo Produto</h3>
-
+                    <h3 class="title has-text-grey-dark">Excluir Produto</h3>
                     <div class="box">
                         <form action="excluirProduto.php?id=<?php echo($_GET[id]) ?>" method="POST">
-                    <div class="field">
-                        <div class="control">
-                           <label id="labelCadastro">Senha</label>
-                           <input name="senha" type="password" class="input is-large" placeholder="Sua senha">
-                       </div>
-                   </div>
                    <button type="submit" class="button is-block is-danger is-large is-fullwidth">Excluir</button>
                </form>
-               <a href="index.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela inicial</button></a>
+               <a href="seuPerfil.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar ao seu Perfil</button></a>
            </div>
        </div>
    </div>

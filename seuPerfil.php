@@ -132,6 +132,7 @@
 	<div class="row">
 		<div class="col-11 mt-4" style="border: 1px solid #ccc;"></div>
 	</div>
+			<h2 class="text-center mt-3">Suas Postagens</h2>
 	<div class="row d-flex">
 
 		<?php
