@@ -63,7 +63,7 @@ if($row_apelido['total'] == 1) {
 	exit;
 }
 
-$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_rua_user) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', '$cpf', '$senha', $rua);";
+$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_rua_user, fk_id_tipo) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', '$cpf', '$senha', $rua, 2);";
 
 if($conexao->query($sql) === TRUE) {
 	$_SESSION['status_cadastro'] = true;

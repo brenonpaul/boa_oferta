@@ -5,9 +5,15 @@ include("class/conexao.php");
 
 $senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
 
+$result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
+$resultado_usuario = mysqli_query($conexao, $result_usuario);
 
-$sql = "DELETE FROM produtos WHERE id_produto = '$_GET[id]';";
+while($row_usuario = mysqli_fetch_assoc($resultado_usuario))
+{
 
+	$sql = "DELETE FROM produtos WHERE id_produto = '$_GET[id]' and fk_cpf = '$row_usuario[cpf]';";
+
+}
 if($conexao->query($sql) === TRUE) {
 	$_SESSION['status_cadastro'] = true;
 }

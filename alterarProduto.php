@@ -48,7 +48,7 @@ require_once("class/conexao.php");
                                 <div class="field">
                                     <div class="control">
                                         <label id="labelCadastro">Preço</label>
-                                        <input name="preco" type="number" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" class="input is-large" value="<?php echo $row_produto['preco']; ?>">
+                                        <input name="preco" type="text" type="number" class="input is-large" value="<?php echo $row_produto['preco']; ?>">
                                     </div>
                                 </div>                           
                                 <div class="field">

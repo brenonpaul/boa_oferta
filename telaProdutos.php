@@ -50,7 +50,7 @@ require_once "class/conexao.php";
 						<div class='row pl-2' pr-2>");
 
 						?>
-						<h6> Preço: R$<?php echo $row_produto['preco']; ?> Kg</h6>
+						<h6> Preço: R$<?php echo $row_produto['preco']; ?></h6>
 						<?php
 						echo("</div>
 							<div class='row pl-2' pr-2>");

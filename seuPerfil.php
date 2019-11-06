@@ -151,7 +151,7 @@
 				</div>
 				<div class='row pl-2' pr-2>
 					<h6><strong> Preço:</strong> 
-						R$<?php echo $row_produto['preco']; ?> Kg
+						R$<?php echo $row_produto['preco']; ?>
 					</h6>
 				</div>
 				<div class='row pl-2' pr-2>
