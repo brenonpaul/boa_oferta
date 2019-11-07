@@ -91,6 +91,13 @@ CONSTRAINT fk_tip_user_id_tipo FOREIGN KEY(id_tipo) REFERENCES tipo_usuarios (id
 CONSTRAINT fk_tip_user_cpf FOREIGN KEY(cpf) REFERENCES usuarios (cpf)
 );
 
+CREATE TABLE suporte (
+id_suporte int PRIMARY KEY NOT NULL,
+desc_suporte varchar(250) NOT NULL,
+fk_cpf_sup varchar(14) NOT NULL,
+CONSTRAINT fk_cpf_sup FOREIGN KEY(fk_cpf_sup) REFERENCES usuarios (cpf)
+);
+
 
 
 
@@ -320,7 +327,8 @@ INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_ca
 (85695132122, 1, 'laranja1.jpg', 'Laranja Seleta', '10/11/19', '25/09/19', '1.30', 3, '20', '1'),
 (12345695110, 1, 'iogurte.jpg', 'Iogurte Nestle', '14/03/19', '26/09/19', '2.40', 4, '35', '2');
 
-
+INSERT INTO suporte (desc_suporte, fk_cpf_sup) values
+('problema no software', '12345678998');
 
 
 

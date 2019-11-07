@@ -53,7 +53,7 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 		$result = mysqli_query($conexao, $sql);
 		$row_email = mysqli_fetch_assoc($result);
 
-		if($row_email['total'] == 1 and $email != $_SESSION['usuario']) {
+		if($row_email['total'] == 1 and $email != $_SESSION['usuario'] and $email != $row_usuario['email']) {
 			$_SESSION['email_existe'] = true;
 			header('Location: alterarInfo.php?info=2');
 			exit;
