@@ -32,7 +32,7 @@ require_once("class/conexao.php");
                         ?>
 
                         <div class="box">
-                            <form action="infoProduto.php?id=<?php echo($_GET[id]) ?>" method="POST">
+                            <form action="infoProduto.php?id=<?php echo($_GET['id']) ?>" method="POST">
                                 <div class="field">
                                     <div class="control">
                                         <label id="labelCadastro">Foto do Produto</label>

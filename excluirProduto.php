@@ -3,8 +3,6 @@ session_start();
 
 include("class/conexao.php");
 
-$senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
-
 $result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
 $resultado_usuario = mysqli_query($conexao, $result_usuario);
 
