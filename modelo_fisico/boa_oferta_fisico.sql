@@ -92,10 +92,18 @@ CONSTRAINT fk_tip_user_cpf FOREIGN KEY(cpf) REFERENCES usuarios (cpf)
 );
 
 CREATE TABLE suporte (
-id_suporte int PRIMARY KEY NOT NULL,
+id_suporte int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 desc_suporte varchar(250) NOT NULL,
 fk_cpf_sup varchar(14) NOT NULL,
 CONSTRAINT fk_cpf_sup FOREIGN KEY(fk_cpf_sup) REFERENCES usuarios (cpf)
+);
+
+CREATE TABLE curtidas (
+id_curtida int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+fk_id_prod int NOT NULL,
+fk_cpf_curt varchar(14) NOT NULL,
+CONSTRAINT fk_id_prod FOREIGN KEY(fk_id_prod) REFERENCES produtos (id_produto),
+CONSTRAINT fk_cpf_curt FOREIGN KEY(fk_cpf_curt) REFERENCES usuarios (cpf)
 );
 
 
@@ -330,5 +338,5 @@ INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_ca
 INSERT INTO suporte (desc_suporte, fk_cpf_sup) values
 ('problema no software', '12345678998');
 
-
-
+INSERT INTO curtidas (fk_cpf_curt, fk_id_prod) values
+('12345678998', '1');

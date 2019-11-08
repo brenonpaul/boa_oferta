@@ -2,10 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fdb3794-fd19-480b-9aae-39e61b3101d2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cidades.sql.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cidades.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/boa-oferta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/boa-oferta.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/boa_oferta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/boa_oferta.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alterarInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/alterarInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alterarProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/alterarProduto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busca.php" beforeDir="false" afterPath="$PROJECT_DIR$/busca.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cabecalho.php" beforeDir="false" afterPath="$PROJECT_DIR$/cabecalho.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cadastrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/cadastrar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cadastrarProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/cadastrarProduto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cadastro.php" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cadastroProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/cadastroProduto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categorias.php" beforeDir="false" afterPath="$PROJECT_DIR$/categorias.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/con_reserv.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/con_reserv.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/conexao.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/conexao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/teste.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/protect.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/protect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configEnd.php" beforeDir="false" afterPath="$PROJECT_DIR$/configEnd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configEnd_alt.php" beforeDir="false" afterPath="$PROJECT_DIR$/configEnd_alt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bulma.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bulma.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/estilo.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/estilo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/sb-admin-2.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/sb-admin-2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excluirConta.php" beforeDir="false" afterPath="$PROJECT_DIR$/excluirConta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excluirProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/excluirProduto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exclusaoConta.php" beforeDir="false" afterPath="$PROJECT_DIR$/exclusaoConta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exclusaoProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/exclusaoProduto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infoLog2.php" beforeDir="false" afterPath="$PROJECT_DIR$/infoLog2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infoPessoal.php" beforeDir="false" afterPath="$PROJECT_DIR$/infoPessoal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infoProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/infoProduto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery_3_3_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery_3_3_1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/popper_1_14_7.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/popper_1_14_7.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelo_fisico/bd_3info2_19.sql" beforeDir="false" afterPath="$PROJECT_DIR$/modelo_fisico/bd_3info2_19.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelo_fisico/boa_oferta_fisico.sql" beforeDir="false" afterPath="$PROJECT_DIR$/modelo_fisico/boa_oferta_fisico.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelo_fisico/produto" beforeDir="false" afterPath="$PROJECT_DIR$/modelo_fisico/produto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/database/pdo.sql" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/database/pdo.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdo-mysql-login/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/pdo-mysql-login/update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pesquisa/proc_apagar_usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/pesquisa/proc_apagar_usuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pesquisa/proc_edit_usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/pesquisa/proc_edit_usuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rodape.php" beforeDir="false" afterPath="$PROJECT_DIR$/rodape.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuPerfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/seuPerfil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suporte.php" beforeDir="false" afterPath="$PROJECT_DIR$/suporte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/telaLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telaProdutos.php" beforeDir="false" afterPath="$PROJECT_DIR$/telaProdutos.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,92 +68,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1074959304">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.35" value="1" />
-          <entry key="project.open.time.56" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="css" value="1" />
-          <entry key="php" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="1" />
-          <entry key="PHP" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="24" />
-          <entry key="php" value="70" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="24" />
-          <entry key="PHP" value="70" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-304296777">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.25" value="1" />
-          <entry key="project.open.time.26" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cabecalho.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/estilo.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62713">
-              <caret line="3689" column="2" selection-start-line="3689" selection-start-column="2" selection-end-line="3699" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -108,21 +81,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/cabecalho.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/css/estilo.css" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="PhpServers">
     <servers />
   </component>
@@ -131,30 +89,7 @@
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="boa_oferta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="boa_oferta" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="boa_oferta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="boa_oferta" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
+  <component name="ProjectId" id="1TL4LlHGVqRFuEArW1bgGjaLFcb" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -188,74 +123,22 @@
       <workItem from="1557460797859" duration="10000" />
       <workItem from="1567467222101" duration="10000" />
       <workItem from="1569275033907" duration="14000" />
+      <workItem from="1573225994412" duration="5000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2254000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tmp/5ccb416cd6a22/teste.php" />
-    <entry file="file://$PROJECT_DIR$/cabecalho.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62713">
-          <caret line="3689" column="2" selection-start-line="3689" selection-start-column="2" selection-end-line="3699" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/teste.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/estilo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
