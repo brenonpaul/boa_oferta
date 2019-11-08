@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once "cabecalho.php";
     require_once "class/conexao.php";
 ?>
@@ -7,9 +8,9 @@
     <div class="produto-grid row d-flex justify-content-center">
         <div class="produto col-xl-2 offset-xl-1 col-lg-3 offset-lg-1 col-md-4 offset-md-1 col-sm-4 offset-sm-1 col-6 offset-1 recentes mt-4 rounded border border-secondary" v-for="produto in produtos" :key="produto.id">
             <div class="row d-flex justify-content-center">
-    	    	<img :src="getImgUrl(produto.foto_produto)" class="imgProd rounded border-secondary">
+                <img :src="getImgUrl(produto.foto_produto)" class="imgProd rounded border-secondary">
             </div>
-		    <div class="row d-flex justify-content-center">
+            <div class="row d-flex justify-content-center">
                 <h6><strong>{{produto.nome_produto}}</strong></h6>
             </div>
             <div class="row pl-2 pr-2">
@@ -24,11 +25,22 @@
             <div class="row pl-2 pr-2">
                 <h6><img src="imagens/{{produto.foto_usuario}}" style="width: 15%" class="rounded-circle"> {{produto.nome_completo}}</h6>
             </div>
-            <p><button @click="addLike(produto)">Like</button><strong>{{produto.likes}}</strong></p>
+            <?php
+
+    $result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
+    $resultado_usuario = mysqli_query($conexao, $result_usuario);
+
+    while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
+        $id_produto="SELECT id_curtida, fk_id_prod, fk_cpf_curt FROM curtidas WHERE fk_cpf_curt= '$row_usuario[cpf]'";
+        $resultado = mysqli_query($conexao, $id_produto);
+        $row_produto = mysqli_fetch_assoc($resultado);
+    }
+
+            ?>
+            <p><button v-if='checkCurtida()' @click="addLike(produto)">Like</button><strong>{{produto.likes}}</strong></p>
         </div>
     </div>
 </div>
-
 
 <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
@@ -53,6 +65,16 @@
             }
         },
         methods: {
+            checkCurtida(produto_id) {
+                if(produto_id){
+                    axios.get('utils/veridficar.php',{
+                        params:{
+                            produto_id: produto_id
+                        }
+                    })
+                }
+                
+            },
             getProdutos (cat){
                 if (cat) {
                     axios.get('utils/getProdutos.php', {
@@ -105,5 +127,5 @@
 
 
 <?php
-	require_once "rodape.php";
+    require_once "rodape.php";
 ?>
