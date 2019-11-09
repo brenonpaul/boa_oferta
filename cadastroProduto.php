@@ -61,26 +61,26 @@ if (empty($_SESSION['usuario'])) {
                 <div class="field">
                   <div class="control">
                    <label id="labelCadastro">Nome do Produto</label>
-                   <input name="nome_produto" type="text" class="input is-large" placeholder="Exemplo: Maça, Iogurte, Carne">
+                   <input name="nome_produto" type="text" class="input is-large" placeholder="Exemplo: Maça">
                  </div>
                </div>
 
                <div class="field">
                 <div class="control">
-                 <label id="labelCadastro">Especificação do produto</label>
-                 <input name="marca_produto" type="text" class="input is-large" placeholder="Marca, tipo, etc.">
+                 <label id="labelCadastro">Tipo ou marca</label>
+                 <input name="marca_produto" type="text" class="input is-large" placeholder="Exemplo: Gala">
                </div>
              </div>
              <div class="field">
               <div class="control">
-                <label id="labelCadastro">Preço do produto</label>
-                <input name="preco" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" class="input is-large" placeholder="Com vírgula. Ex.: 5,00 ou 5,50">
+                <label id="labelCadastro">Preço</label>
+                <input name="preco" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" class="input is-large" placeholder="Com vírgula. Ex.: 5,00">
               </div>
             </div>
             <div class="field">
               <div class="control">
-                <label id="labelCadastro">Unidade de preço</label>
-                <input name="unidade" type="text" class="input is-large" placeholder="Com vírgula. Ex.: 5,00 ou 5,50">
+                <label id="labelCadastro">Unidade de medida</label>
+                <input name="unidade" type="text" class="input is-large" placeholder="Exemplo: Kg">
               </div>
             </div>
             
@@ -132,7 +132,7 @@ if (empty($_SESSION['usuario'])) {
 
             <div class="field">
               <div class="control">
-               <label id="labelCadastro">Data que você viu</label>
+               <label id="labelCadastro">Data que você viu o produto</label>
                <input name="data_visu" class="input is-large" type="date">
              </div>
            </div>

@@ -26,22 +26,29 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active ml-3">
-                  <a class="nav-link" href="index.php"><h5>Home</h5> <span class="sr-only">(Página atual)</span></a>
+                  <a class="nav-link" href="index.php" style="font-size: 125%;">Home <span class="sr-only">(Página atual)</span></a>
               </li>
               <li class="nav-item active ml-3">
-                  <a class="nav-link" href="categorias.php"><h5>Categorias</h5></a>
+                  <a class="nav-link" href="categorias.php" style="font-size: 125%;">Categorias</a>
               </li>
               <li class="nav-item active ml-3">
-                  <a class="nav-link" href="cadastroProduto.php"><h5>Cadastrar Produto</h5></a>
+                  <a class="nav-link" href="cadastroProduto.php" style="font-size: 125%;">Cadastrar Produto</a>
               </li>
               <li class="nav-item active ml-3">
-                  <a class="nav-link" href="telaProdutos.php"><h5>Produtos</h5></a>
+                  <a class="nav-link" href="telaProdutos.php" style="font-size: 125%;">Produtos</a>
               </li>
+              <li class="nav-item dropdown active ml-3">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 125%;">
+          Ajuda
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="suporte.php">Suporte Técnico</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Sobre <img src="imagens/info.png" class="float-right" style="width: 20%;"></a>
+        </div>
+      </li>
               <li class="nav-item active ml-3">
-                  <a class="nav-link" href="suporte.php"><h5>Suporte Técnico</h5></a>
-              </li>
-              <li class="nav-item active ml-3">
-                  <a class="nav-link" href="seuPerfil.php"><h5>Seu Perfil</h5></a>
+                  <a class="nav-link" href="seuPerfil.php" style="font-size: 125%;">Seu Perfil</a>
               </li>
           </ul>
 
