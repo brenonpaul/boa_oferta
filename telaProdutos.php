@@ -25,19 +25,9 @@
             <div class="row pl-2 pr-2">
                 <h6><img src="imagens/{{produto.foto_usuario}}" style="width: 15%" class="rounded-circle"> {{produto.nome_completo}}</h6>
             </div>
-            <?php
-
-    $result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
-    $resultado_usuario = mysqli_query($conexao, $result_usuario);
-
-    while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
-        $id_produto="SELECT id_curtida, fk_id_prod, fk_cpf_curt FROM curtidas WHERE fk_cpf_curt= '$row_usuario[cpf]'";
-        $resultado = mysqli_query($conexao, $id_produto);
-        $row_produto = mysqli_fetch_assoc($resultado);
-    }
-
-            ?>
-            <p><button v-if='checkCurtida()' @click="addLike(produto)">Like</button><strong>{{produto.likes}}</strong></p>
+  
+            <p><button v-if='checkCurtida(produto.id_produto)' @click="addLike(produto)">Like</button><strong>{{produto.likes}}</strong></p>
+            <p><button v-if='checkCurtida(produto.id_produto)' @click="subLike(produto)">Deslike</button><strong>{{produto.deslikes}}</strong></p>
         </div>
     </div>
 </div>
@@ -65,15 +55,19 @@
             }
         },
         methods: {
-            checkCurtida(produto_id) {
+            checkCurtida(produto) {
+            produto_id = produto
                 if(produto_id){
-                    axios.get('utils/veridficar.php',{
+                    axios.get('utils/verificar.php',{
                         params:{
                             produto_id: produto_id
                         }
-                    })
+                    }) 
+                    .then(function (response) {
+                        
+                   })
+                 return true
                 }
-                
             },
             getProdutos (cat){
                 if (cat) {
@@ -113,6 +107,21 @@
                 })
                     .then(function (response) {
                         produto.likes++        
+                })
+                    .catch(function (error) {
+                        console.log(error);
+                })
+            }, 
+            subLike(produto) {
+                id = produto.id_produto
+                axios.get('utils/deslikeProduto.php', {
+                    params: {
+                        id: id
+                    }
+                })
+                    .then(function (response) {
+                        produto.deslikes++
+                          
                 })
                     .catch(function (error) {
                         console.log(error);

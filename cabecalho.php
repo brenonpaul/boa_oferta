@@ -44,7 +44,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="suporte.php">Suporte Técnico</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Sobre <img src="imagens/info.png" class="float-right" style="width: 20%;"></a>
+          <a class="dropdown-item" href="sobre.php">Sobre <img src="imagens/info.png" class="float-right" style="width: 20%;"></a>
         </div>
       </li>
               <li class="nav-item active ml-3">
