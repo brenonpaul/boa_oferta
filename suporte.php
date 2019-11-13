@@ -1,6 +1,6 @@
 <?php
 require_once("cabecalho.php");
-if (empty($_SESSION)) {
+if (!isset($_SESSION)) {
 	session_start();
 }
 ?>

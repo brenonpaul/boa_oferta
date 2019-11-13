@@ -32,7 +32,7 @@
     </div>
 </div>
 
-<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script src="js/vue_router.js"></script>
 
 <script>
     const router = new VueRouter({
