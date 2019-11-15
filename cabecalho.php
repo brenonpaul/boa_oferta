@@ -35,42 +35,28 @@
                   <a class="nav-link" href="cadastroProduto.php" style="font-size: 125%;">Cadastrar Produto</a>
               </li>
               <li class="nav-item active ml-3">
-                  <a class="nav-link" href="telaProdutos.php" style="font-size: 125%;">Produtos</a>
+                  <a class="nav-link" href="suporte.php" style="font-size: 125%;">Suporte Técnico</a>
               </li>
-              <li class="nav-item dropdown active ml-3">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 125%;">
-          Ajuda
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="suporte.php">Suporte Técnico</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="sobre.php">Sobre <img src="imagens/info.png" class="float-right" style="width: 20%;"></a>
-        </div>
-      </li>
+              <li class="nav-item active ml-3">
+                  <a class="nav-link" href="sobre.php" style="font-size: 125%;">Sobre</a>
+              </li>
               <li class="nav-item active ml-3">
                   <a class="nav-link" href="seuPerfil.php" style="font-size: 125%;">Seu Perfil</a>
               </li>
           </ul>
 
   <?php
-              if(isset($_SESSION['usuario'])) {  
-                  ?>     
-                  <div id="caixaLogin" class="my-2 my-lg-0">
-                      <a href="class/logout.php">
-                         <button id="botaoLogin">Logout</button>
-                     </a>
-                     <?php 
+              if(isset($_SESSION['usuario'])) { 
 
-                     $sql = "select nome_completo from usuarios where email = '$_SESSION[usuario]' ;";
+                     $sql = "select nome_completo, apelido from usuarios where email = '$_SESSION[usuario]' ;";
                      $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
                      if($consulta = $resultado->fetch_object()){
                       ?>
                       <p style="color: black; text-align: center;">
-                          Olá 
                           <?php
                           echo ($consulta->nome_completo);
-                          ?>
-                          
+                          ?>,
+                          <a href="class/logout.php" style="color: blue;"> sair</a>
                       </p>
                       <?php
                   }

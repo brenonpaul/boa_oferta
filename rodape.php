@@ -6,5 +6,5 @@
 			<img src="imagens/rodape/instagram.svg" class="imgrdp">
 			<img src="imagens/rodape/facebook.svg" class="imgrdp">
 		</section>
-	</footer>
+	</footer>	
 </html>

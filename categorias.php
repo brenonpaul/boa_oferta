@@ -13,7 +13,7 @@ require_once "class/conexao.php";
 			echo ("<div class='col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 recentes mt-4 rounded border border-secondary'>
 				<div class='row'>");
 				?>
-				<a href="telaProdutos.php?cat=<?php echo $row_produto['id_categoria']?>">
+				<a href="index.php?cat=<?php echo $row_produto['id_categoria']?>">
 					<img src="imagens/categorias/<?php echo $row_produto['foto_categoria']?>" class='imgProd rounded border-secondary'>
 					<?php
 					echo ("</div>
