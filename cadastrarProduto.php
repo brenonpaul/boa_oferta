@@ -4,7 +4,6 @@ include("class/conexao.php");
 
 $foto_produto = mysqli_real_escape_string($conexao, trim($_POST['foto_produto']));
 $nome_produto = mysqli_real_escape_string($conexao, trim($_POST['nome_produto']));
-$marca_produto = mysqli_real_escape_string($conexao, trim($_POST['marca_produto']));
 $preco = mysqli_real_escape_string($conexao, trim($_POST['preco']));
 $unidade = mysqli_real_escape_string($conexao, trim($_POST['unidade']));
 $mercado = mysqli_real_escape_string($conexao, trim($_POST['mercado']));
@@ -23,7 +22,7 @@ if (empty($nome_produto) or empty($preco) or empty($data_visu) or $mercado == 'S
 }
 
 
-$sql = "insert into produtos (foto_produto, nome_produto, data_visu, data_cadastro, preco, fk_id_mercado, fk_id_categoria, fk_cpf) values ('$foto_produto', '$nome_produto $marca_produto', '$data_visu', '$data_cadastro', '$preco $unidade', (select id_mercado from mercados where nome_mercado = '$mercado'), (select id_categoria from categorias where nome_categoria = '$categoria'), (select cpf from usuarios where email = '$_SESSION[usuario]'));";
+$sql = "insert into produtos (foto_produto, nome_produto, data_visu, data_cadastro, preco, fk_id_mercado, fk_id_categoria, fk_cpf) values ('$foto_produto', '$nome_produto', '$data_visu', '$data_cadastro', '$preco $unidade', (select id_mercado from mercados where nome_mercado = '$mercado'), (select id_categoria from categorias where nome_categoria = '$categoria'), (select cpf from usuarios where email = '$_SESSION[usuario]'));";
 if($conexao->query($sql) === TRUE) {
 	$_SESSION['status_cadastro'] = true;
 }

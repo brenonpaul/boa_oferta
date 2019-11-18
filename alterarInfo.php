@@ -30,167 +30,177 @@ require_once("class/conexao.php");
                     if ($_GET['info'] == 4) {
                         echo "<h3 class='title has-text-grey-dark'>Alterar Senha</h3>";
                     }else{
-                    ?>
-                    <h3 class="title has-text-grey-dark">Alterar Informações</h3>
-
-                    <?php
-                }
-                    $result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
-                $resultado_usuario = mysqli_query($conexao, $result_usuario);
-
-
-
-            while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
-                
-                        
-                    error_reporting(0);
-                    ini_set(“display_errors”, 0 );
-                    if ($_SESSION['falta_info']):  
                         ?>
-                        <div class="notification is-info">
-                            <p>Existe um campo em branco! Todos eles devem ser devidamente preenchidos, exceto o campo "foto de perfil".</p>
+                        <h3 class="title has-text-grey-dark">Alterar Informações</h3>
+
+                        <?php
+                    }
+                    $result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
+                    $resultado_usuario = mysqli_query($conexao, $result_usuario);
+
+
+
+                    while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
+
+
+                        error_reporting(0);
+                        ini_set(“display_errors”, 0 );
+                        if ($_SESSION['falta_info']):  
+                            ?>
+                            <div class="notification is-info">
+                                <p>Existe um campo em branco! Todos eles devem ser devidamente preenchidos, exceto o campo "foto de perfil".</p>
+                            </div>
+                            <?php 
+                        endif;
+                        unset($_SESSION['falta_info']);
+                        if ($_SESSION['email_existe']):
+                           ?>
+                           <div class="notification is-info">
+                            <p>O E-mail escolhido já existe. Informe outro e tente novamente.</p>
                         </div>
                         <?php 
                     endif;
-                    unset($_SESSION['falta_info']);
-                    if ($_SESSION['email_existe']):
-                     ?>
-                     <div class="notification is-info">
-                        <p>O E-mail escolhido já existe. Informe outro e tente novamente.</p>
+                    unset($_SESSION['email_existe']);
+                    if ($_SESSION['apelido_existe']):
+                       ?>
+                       <div class="notification is-info">
+                        <p>O Apelido escolhido já existe. Informe outro e tente novamente.</p>
                     </div>
                     <?php 
                 endif;
-                unset($_SESSION['email_existe']);
-                if ($_SESSION['apelido_existe']):
-                 ?>
-                 <div class="notification is-info">
-                    <p>O Apelido escolhido já existe. Informe outro e tente novamente.</p>
-                </div>
-                <?php 
-            endif;
-            unset($_SESSION['apelido_existe']);
-            ?>
-            <div class="box">
-                <form action="infoPessoal.php" method="POST">
-                    <?php
-                    if($_GET['info'] == 1) {
-                        ?>
+                unset($_SESSION['apelido_existe']);
+                error_reporting(0);
+                ini_set(“display_errors”, 0 );
+                if ($_SESSION['senha_caracteres']):  
+                    ?>
+                    <div class="notification is-info">
+                        <p>A senha deve ter no minímo 8 caracteres.</p>
+                    </div>
+                    <?php 
+                endif;
+                unset($_SESSION['senha_caracteres']);
+                ?>
+                <div class="box">
+                    <form action="infoPessoal.php" method="POST">
+                        <?php
+                        if($_GET['info'] == 1) {
+                            ?>
 
-                        <div class="field">
+                            <div class="field">
+                                <div class="control">
+                                    <label id="labelCadastro">Foto de Perfil</label>
+                                    <input type="file" name="foto_usuario" class="input is-large"  accept="image/png, image/jpeg" multiple />
+                                </div>
+                            </div>
+
+                            <?php
+                        }elseif ($_GET['info'] == 2) {
+
+                            ?>
+                            <div class="field">
+                                <div class="control">
+                                    <label id="labelCadastro">Nome Completo</label>
+                                    <input name="nome_completo" type="text" class="input is-large" placeholder="Exemplo: João da Silva" value="<?php echo $row_usuario['nome_completo']; ?>">
+                                </div>
+                            </div>               
+
+                            <div class="field">
+                                <div class="control">
+                                    <label id="labelCadastro">E-mail</label>
+                                    <input name="email" type="email" class="input is-large" value="<?php echo $row_usuario['email']; ?>">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                   <label id="labelCadastro">Apelido</label>
+                                   <input name="apelido" type="text" class="input is-large" placeholder="Nome nas postagens" value="<?php echo $row_usuario['apelido']; ?>">
+                               </div>
+                           </div>
+
+
+
+                           <div class="field">
+                            <div class="control">
+                               <label id="labelCadastro">Senha</label>
+                               <input name="senha" class="input is-large" type="password" placeholder="Senha">
+                           </div>
+                       </div>
+
+                       <?php
+                   }if ($_GET['info'] == 3) {
+                       ?>
+                       <div class="field">
                         <div class="control">
-                            <label id="labelCadastro">Foto de Perfil</label>
-                            <input type="file" name="foto_usuario" class="input is-large"  accept="image/png, image/jpeg" multiple />
+                            <label id="labelCadastro">Estado residente</label>
+                            <select name="estado" id="estado" class="input is-large" style="color: rgb(74, 74, 74);">  
+                                <?php
+                                $select = $con->prepare("SELECT * FROM estados ORDER BY nome_estado ASC");
+                                $select->execute();
+                                $fetchAll = $select->fetchAll();
+                                foreach($fetchAll as $estados) {
+                                    echo '<option value="'.$estados['id_estado'].'">'.$estados['nome_estado'].'</option>';
+                                } 
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <label id="labelCadastro">Cidade residente</label>
+                            <select name="cidade" id="cidade" class="input is-large" style="color: rgb(74, 74, 74);">
+                            </select>
                         </div>
                     </div>
 
-                        <?php
-                    }elseif ($_GET['info'] == 2) {
+                    <div class="field">
+                        <div class="control">
+                            <label id="labelCadastro">Bairro residente</label>
+                            <select name="bairro" id="bairro" class="input is-large" style="color: rgb(74, 74, 74);">
+                            </select>
+                        </div>
+                    </div>
 
+                    <div class="field">
+                        <div class="control">
+                            <label id="labelCadastro">Rua residente</label>
+                            <select name="rua" id="rua" class="input is-large" style="color: rgb(74, 74, 74);">
+                            </select>
+                        </div>
+                    </div>       
+                    <?php 
+                }
+                if ($_GET['info'] ==4) {       
                     ?>
                     <div class="field">
                         <div class="control">
-                            <label id="labelCadastro">Nome Completo</label>
-                            <input name="nome_completo" type="text" class="input is-large" placeholder="Exemplo: João da Silva" value="<?php echo $row_usuario['nome_completo']; ?>">
-                        </div>
-                    </div>               
-
-                 <div class="field">
+                           <label id="labelCadastro">Antiga Senha</label>
+                           <input name="senha" class="input is-large" type="password" placeholder="Senha">
+                       </div>
+                   </div>
+                   <div class="field">
                     <div class="control">
-                        <label id="labelCadastro">E-mail</label>
-                        <input name="email" type="email" class="input is-large" value="<?php echo $row_usuario['email']; ?>">
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control">
-                     <label id="labelCadastro">Apelido</label>
-                     <input name="apelido" type="text" class="input is-large" placeholder="Nome nas postagens" value="<?php echo $row_usuario['apelido']; ?>">
-                 </div>
-             </div>
-
-    
-
-                    <div class="field">
-                        <div class="control">
-                         <label id="labelCadastro">Senha</label>
-                         <input name="senha" class="input is-large" type="password" placeholder="Senha">
-                     </div>
-                 </div>
-
-                 <?php
-             }if ($_GET['info'] == 3) {
-                 ?>
-            <div class="field">
+                       <label id="labelCadastro">Nova Senha</label>
+                       <input name="novaSenha" class="input is-large" type="password" placeholder="Senha">
+                   </div>
+               </div>
+               <div class="field">
                 <div class="control">
-                    <label id="labelCadastro">Estado residente</label>
-                    <select name="estado" id="estado" class="input is-large" style="color: rgb(74, 74, 74);">  
-                        <?php
-                        $select = $con->prepare("SELECT * FROM estados ORDER BY nome_estado ASC");
-                        $select->execute();
-                        $fetchAll = $select->fetchAll();
-                        foreach($fetchAll as $estados) {
-                            echo '<option value="'.$estados['id_estado'].'">'.$estados['nome_estado'].'</option>';
-                        } 
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <label id="labelCadastro">Cidade residente</label>
-                    <select name="cidade" id="cidade" class="input is-large" style="color: rgb(74, 74, 74);">
-                    </select>
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="control">
-                    <label id="labelCadastro">Bairro residente</label>
-                    <select name="bairro" id="bairro" class="input is-large" style="color: rgb(74, 74, 74);">
-                    </select>
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="control">
-                    <label id="labelCadastro">Rua residente</label>
-                    <select name="rua" id="rua" class="input is-large" style="color: rgb(74, 74, 74);">
-                    </select>
-                </div>
-            </div>       
-            <?php 
-        }
-        if ($_GET['info'] ==4) {       
-            ?>
-            <div class="field">
-                        <div class="control">
-                         <label id="labelCadastro">Antiga Senha</label>
-                         <input name="senha" class="input is-large" type="password" placeholder="Senha">
-                     </div>
-                 </div>
-                 <div class="field">
-                        <div class="control">
-                         <label id="labelCadastro">Nova Senha</label>
-                         <input name="novaSenha" class="input is-large" type="password" placeholder="Senha">
-                     </div>
-                 </div>
-                 <div class="field">
-                        <div class="control">
-                         <label id="labelCadastro">Confirmar Nova Senha</label>
-                         <input name="confNovaSenha" class="input is-large" type="password" placeholder="Senha">
-                     </div>
-                 </div>
-            <?php
-        }
-        ?>
-             <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar</button>
-         </form>
-         <a href="seuPerfil.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela de perfil</button></a>
-         <?php
-     }
-         ?>
-     </div>
- </div>
+                   <label id="labelCadastro">Confirmar Nova Senha</label>
+                   <input name="confNovaSenha" class="input is-large" type="password" placeholder="Senha">
+               </div>
+           </div>
+           <?php
+       }
+       ?>
+       <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar</button>
+   </form>
+   <a href="seuPerfil.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela de perfil</button></a>
+   <?php
+}
+?>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -259,7 +269,7 @@ require_once("class/conexao.php");
             url: 'configEnd_alt.php',
             type: 'POST',
             data:{id_rua:idRua}
-           
+
         });
     });
 </script>

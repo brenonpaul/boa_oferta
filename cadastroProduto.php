@@ -3,8 +3,9 @@ session_start();
 require_once("class/conexao.php");
 if (empty($_SESSION['usuario'])) {
   require_once("cabecalho.php");
-  echo "<h1 class='text-danger text-center mt-5' style='border: 2px dotted'>Para cadastrar um produto você deve estar logado!</h1>";
   ?>
+  <h1 class="text-danger text-center mt-5" style="border: 2px dotted">Para cadastrar um produto você deve estar logado!</h1>
+  
   <div class="row justify-content-center mt-4">
    <a href="telaLogin.php"><button class="btn button-center btn-success">Logar-se</button></a>
  </div>
@@ -53,24 +54,17 @@ if (empty($_SESSION['usuario'])) {
               <form action="cadastrarProduto.php" method="POST">
                 <div class="field">
                   <div class="control">
-                    <label id="labelCadastro">Foto de Produto</label>
+                    <label id="labelCadastro">Foto do Produto</label>
                     <input type="file" name="foto_produto" class="input is-large"  accept="image/png, image/jpeg" multiple />
                   </div>
                 </div>
 
                 <div class="field">
                   <div class="control">
-                   <label id="labelCadastro">Nome do Produto</label>
-                   <input name="nome_produto" type="text" class="input is-large" placeholder="Exemplo: Maça">
+                   <label id="labelCadastro">O que é o produto?</label>
+                   <input name="nome_produto" type="text" class="input is-large" placeholder="Específique a marca e/ou modelo">
                  </div>
                </div>
-
-               <div class="field">
-                <div class="control">
-                 <label id="labelCadastro">Tipo ou marca</label>
-                 <input name="marca_produto" type="text" class="input is-large" placeholder="Exemplo: Gala">
-               </div>
-             </div>
              <div class="field">
               <div class="control">
                 <label id="labelCadastro">Preço</label>
@@ -79,13 +73,10 @@ if (empty($_SESSION['usuario'])) {
             </div>
             <div class="field">
               <div class="control">
-                <label id="labelCadastro">Unidade de medida</label>
+                <label id="labelCadastro">Unidade de medida do preço</label>
                 <input name="unidade" type="text" class="input is-large" placeholder="Exemplo: Kg">
               </div>
             </div>
-            
-
-
             <div class="field">
               <div class="control">
                 <label id="labelCadastro">Mercado onde viu o produto</label>    

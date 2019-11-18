@@ -13,6 +13,9 @@ if (!isset($_SESSION)) {
 	</div>
 
 	<?php
+	if (isset($_SESSION['usuario'])) {
+		
+	
 		error_reporting(0);
                     ini_set(“display_errors”, 0 );
                     if ($_SESSION['suporte_cadastrado']):  
@@ -38,6 +41,16 @@ if (!isset($_SESSION)) {
 			</div>
 		</div>	
 	</form>
+<?php }else{?>
+	<h1 class="text-danger text-center mt-5" style="border: 2px dotted">Para informar um problema você deve estar logado!</h1>
+  
+	<div class="row justify-content-center mt-4">
+   <a href="telaLogin.php"><button class="btn button-center btn-success">Logar-se</button></a>
+ </div>
+ <div class="row justify-content-center mt-1">
+   <a href="cadastro.php"><button class="btn btn-primary" >Cadastrar-se</button></a>
+ </div>
+<?php } ?>
 </div>
 
 <?php

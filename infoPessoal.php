@@ -85,12 +85,18 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 	}elseif (isset($_POST['novaSenha'])) {
 		
 		if ($novaSenha != $confNovaSenha) {
-	$_SESSION['senhas_diferentes'] = true;
-	header('Location: cadastro.php');
-	exit;
-}
+			$_SESSION['senhas_diferentes'] = true;
+			header('Location: alterarInfo.php?info=4');
+			exit;
+		}
 
 		$sql = "UPDATE usuarios SET senha = '$novaSenha' WHERE cpf = '$row_usuario[cpf]';";
+
+		if (strlen($senha) < 8) {
+			$_SESSION['senha_caracteres'] = true;
+			header('Location: alterarInfo.php?info=4');
+			exit;
+		}
 
 
 		if($conexao->query($sql) === TRUE) {
