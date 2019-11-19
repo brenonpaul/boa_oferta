@@ -54,11 +54,11 @@
 						<h6 class="mt-4 mb-4"><strong>CPF:</strong>
 							<?php echo $row_usuario['cpf']; ?>
 						</h6>
-						<h6 class="mt-4 mb-2"><strong>E-mail:</strong>
+						<h6 class="mt-4 mb-3"><strong>E-mail:</strong>
 							<?php echo $row_usuario['email']; ?>
 						</h6>
 						<a href="alterarInfo.php?info=2"> 
-							<button type="button" class="btn btn-outline-primary pl-1 pr-1 p-0">Editar</button>
+							<img src="imagens/editar.png" id="imgEditar" style="width: 10%;">
 						</a>
 					</div>
 					<div class="col-1"></div>
@@ -103,7 +103,7 @@
 					?>
 
 				</h6>
-				<h6 class="mt-4"><strong>Sua rua:</strong> 
+				<h6 class="mt-4 mb-3"><strong>Sua rua:</strong> 
 
 					<?php 			
 					$usuario = $_SESSION['usuario'];
@@ -120,7 +120,7 @@
 				<?php
 			}	  
 			?>
-			<a href="alterarInfo.php?info=3"> <button type="button" class="btn btn-outline-primary pl-1 pr-1 p-0">Editar</button></a>
+			<a href="alterarInfo.php?info=3"> <img src="imagens/editar.png" style="width: 10%;" id="imgEditar"></a>
 		</div>
 	</div>
 
@@ -168,19 +168,20 @@
 
 					</h6>
 				</div>
-				<div class='row pl-2' pr-2>
+				<div class='row pl-2 pr-2'>
 					<h6><strong> Visto no dia:</strong> 
 						<?php echo $row_produto['data_visu']; ?>
 					</h6>
+				</div>
 					<div>
-						<a href="alterarProduto.php?id=<?php echo($row_produto['id_produto']) ?>">
-							<button type='button' class='btn btn-outline-primary p-0'>Editar</button>
-						</a>
 						<a href="exclusaoProduto.php?id=<?php echo($row_produto['id_produto']) ?>">
-							<button type='button' class='btn btn-outline-danger p-0'>Excluir</button>
+							<img src="imagens/lixeira.png" id="imgExcluir" class="float-right">
+						</a>
+						<a href="alterarProduto.php?id=<?php echo($row_produto['id_produto']) ?>">
+							<img src="imagens/editar.png" id="imgEditar" class="float-right">
 						</a>
 					</div>
-				</div>
+				
 			</div>
 			<div class='col-1'></div>
 			<?php

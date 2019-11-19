@@ -3,12 +3,6 @@ session_start();
 require_once "cabecalho.php";
 require_once "class/conexao.php";
 ?>
-<div class="w-100 row d-flex justify-content-center mt-1">
-    <form class="form-inline my-2 my-lg-0" action="busca.php" method="post">
-      <input class="form-control" type="search" name="buscar" placeholder="Busque por um produto" aria-label="Pesquisar" style="border-radius: 5px 0px 0px 5px">
-      <button class="btn my-2 my-sm-0" type="submit" id="buscar">Buscar</button>
-    </form>
-  </div>
   <?php
 
 if (isset($_SESSION['usuario'])) {
@@ -21,7 +15,15 @@ if (isset($_SESSION['usuario'])) {
 ?>
 <div style="background-color: white;">
 <div class="container">
-    <div class="produto-grid row d-flex justify-content-center">
+<div class="w-100 row d-flex justify-content-center mt-1">
+    <form class="form-inline my-2 my-lg-0" action="" method="post">
+      <input class="form-control" type="search" name="buscar" v-model="buscar" aria-label="Pesquisar" style="border-radius: 5px 0px 0px 5px">
+      <button class="btn my-2 my-sm-0" type="submit" v-on:click.prevent="busca" id="buscar">Buscar</button>
+    </form>
+  </div>
+
+
+    <div class="produto-grid row">
         <div class="produto col-xl-2 offset-xl-1 col-lg-3 offset-lg-1 col-md-4 offset-md-1 col-sm-4 offset-sm-1 col-6 offset-1 recentes mt-4 rounded border border-secondary" v-for="produto in produtos" :key="produto.id" style="background-color: white;">
             <div class="row d-flex justify-content-center">
                 <img :src="getImgUrl(produto.foto_produto)" class="imgProd rounded border-secondary">
@@ -40,7 +42,7 @@ if (isset($_SESSION['usuario'])) {
             </div>
             <div class="row pl-2 pr-2">
                 <?php 
-                if ($row_usuario['fk_id_tipo'] == 3) 
+                if ($row_usuario['fk_id_tipo'] == 1) 
                 {
                  
                 ?>
@@ -60,19 +62,18 @@ if (isset($_SESSION['usuario'])) {
                         <strong class="pl-4">{{produto.likes}}</strong></p>
                     </div>
                     <div class="col-6">
-                        <p><button v-if='checkCurtida(produto.id_produto)' @click="subLike(produto)" class="btn p-1 pl-2m btn-danger" style="color: white;">Errado</button>
+                        <p><button v-if='checkDescurtida(produto.id_produto)' @click="addDesc(produto)" class="btn p-1 pl-2m btn-danger" style="color: white;">Errado</button>
                             <br>
                             <strong class="pl-4">{{produto.deslikes}}</strong></p>
                         </div>
                     </div>
-
                     <?php
                     
-                            if ($row_usuario['fk_id_tipo'] == 3) {                        
+                            if ($row_usuario['fk_id_tipo'] == 1) {                        
                              ?>       
-                             <div class="row pl-2 pr-2" style="margin-top: -8%;"> 
+                             <div class="row text-center mb-1" style="margin-top: -8%;"> 
                              <a :href="getExcluir(produto.id_produto)">
-                                <button type='button' class='btn btn-outline-danger p-0'>Excluir</button>
+                                <img src="imagens/lixeira.png" id="imgExcluir">
                             </a>
                         </div>
                         <?php }
@@ -134,7 +135,8 @@ if (isset($_SESSION['usuario'])) {
             router,
             el: ".container",
             data: {
-                produtos: []
+                produtos: [],
+                buscar: '',
 
             },
             created() {
@@ -150,10 +152,38 @@ if (isset($_SESSION['usuario'])) {
                 handler(event) {
                     
                 },
+                busca() {
+                    axios.get('utils/getProdutos.php', {
+                            params: {
+                                buscar: buscar
+                            }
+                        })
+                        .then(function (response) {
+                            vm.produtos = response.data
+                            console.log(vm.produtos)
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        })
+                },
                 checkCurtida(produto) {
                     produto_id = produto
                     if(produto_id){
-                        axios.get('utils/verificar.php',{
+                        axios.get('utils/verificarCurt.php',{
+                            params:{
+                                produto_id: produto_id
+                            }
+                        }) 
+                        .then(function (response) {
+
+                        })
+                        return true
+                    }
+                },
+                checkDescurtida(produto) {
+                    produto_id = produto
+                    if(produto_id){
+                        axios.get('utils/verificarDesc.php',{
                             params:{
                                 produto_id: produto_id
                             }
@@ -223,14 +253,12 @@ if (isset($_SESSION['usuario'])) {
                             produto.likes++
                         }
 
-
-
                     })
                     .catch(function (error) {
                         console.log(error);
                     })
                 }, 
-                subLike(produto) {
+                addDesc(produto) {
                     id = produto.id_produto
                     axios.get('utils/deslikeProduto.php', {
                         params: {
@@ -238,13 +266,26 @@ if (isset($_SESSION['usuario'])) {
                         }
                     })
                     .then(function (response) {
-                        produto.deslikes++
+                        arrayId = localStorage.getItem('id')
+                        arrayId = (arrayId) ? JSON.parse(arrayId) : [];
+                        if (arrayId.includes(id)) {
+                            index = arrayId.indexOf(id)
+                            arrayId.splice(index, 1)
+                            localStorage.setItem('id', JSON.stringify(arrayId))
+                            produto.deslikes--
+                        }else {
+                            arrayId.push(id)
+                            localStorage.setItem('id', JSON.stringify(arrayId))
+                            produto.deslikes++
+                        }
+
+
 
                     })
                     .catch(function (error) {
                         console.log(error);
                     })
-                }
+                } 
             }
         })
     </script>

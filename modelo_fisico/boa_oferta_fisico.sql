@@ -99,11 +99,17 @@ CONSTRAINT fk_cpf_sup FOREIGN KEY(fk_cpf_sup) REFERENCES usuarios (cpf)
 );
 
 CREATE TABLE curtidas (
-id_curtida int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-fk_id_prod int NOT NULL,
+fk_id_prod_curt int NOT NULL,
 fk_cpf_curt varchar(14) NOT NULL,
-CONSTRAINT fk_id_prod FOREIGN KEY(fk_id_prod) REFERENCES produtos (id_produto),
+CONSTRAINT fk_id_prod_curt FOREIGN KEY(fk_id_prod_curt) REFERENCES produtos (id_produto),
 CONSTRAINT fk_cpf_curt FOREIGN KEY(fk_cpf_curt) REFERENCES usuarios (cpf)
+);
+
+CREATE TABLE descurtidas (
+fk_id_prod_desc int NOT NULL,
+fk_cpf_desc varchar(14) NOT NULL,
+CONSTRAINT fk_id_prod_desc FOREIGN KEY(fk_id_prod_desc) REFERENCES produtos (id_produto),
+CONSTRAINT fk_cpf_desc FOREIGN KEY(fk_cpf_desc) REFERENCES usuarios (cpf)
 );
 
 
@@ -296,17 +302,17 @@ INSERT INTO ruas (fk_id_bairro, nome_rua) Values
 (9, 'Rua Cel. Francisco Gomes');
 
 INSERT INTO usuarios (nome_completo,apelido,email,senha,cpf,fk_id_rua_user, fk_id_tipo ) values 
-('Jhonny James','jhon','jj.s.a.o@gmail.com','wudLGDOR','12497600970', '1', '2'),
-('admin','adm','admin@gmail.com','admin123','12345678998', '2', '2'),
-('Tommy Taffy','tom','toninho005@gmail.com','pgDnm3F1','12345695110', '1', '2'),
-('Michael Jackson','mika','rusbe@gmail.com','senha123','15632478945', '1', '2'), 
-('Denver Duley','den','DeDmonster@gmail.com','4DfM1P6C','45678932156', '1', '2'), 
-('Michelangelo Roly','ang','michelroly@gmai.com','Jqht3d8w','79845612305', '1', '2'), 
-('Marcos Marcelo','marc','mmprofessor@gmail.com','JMGtkL6O','85236974112', '1', '2'), 
-('Marlos Marcos','marlo','marcosM@outlook.com','s6UzAjHm','95715345630', '1', '2'), 
-('Vinicius dos Santos','vini','TCCnaoVouFazer@yahoo.com','JrORX7dI','78945612513', '1', '2'), 
-('Gilberto Filho','gamer','Gilberzf@gmail.com','oqXPQu93','85695132122', '2', '2'), 
-('Joao Wandall','jojo','skyrimOnline@gmail.com','mkFdjXFM','59134562501', '1', '2');
+('Jhonny James','jhon','jj.s.a.o@gmail.com','wudLGDOR','124.976.009-70', '1', '2'),
+('admin','adm','admin@gmail.com','admin123','123.456.789-98', '2', '2'),
+('Tommy Taffy','tom','toninho005@gmail.com','pgDnm3F1','123.456.951-10', '1', '2'),
+('Michael Jackson','mika','rusbe@gmail.com','senha123','156.324.789-45', '1', '2'), 
+('Denver Duley','den','DeDmonster@gmail.com','4DfM1P6C','456.789.321-56', '1', '2'), 
+('Michelangelo Roly','ang','michelroly@gmai.com','Jqht3d8w','798.456.123-05', '1', '2'), 
+('Marcos Marcelo','marc','mmprofessor@gmail.com','JMGtkL6O','852.369.741-12', '1', '2'), 
+('Marlos Marcos','marlo','marcosM@outlook.com','s6UzAjHm','957.153-456-30', '1', '2'), 
+('Vinicius dos Santos','vini','TCCnaoVouFazer@yahoo.com','JrORX7dI','789.456.125-13', '1', '2'), 
+('Gilberto Filho','gamer','Gilberzf@gmail.com','oqXPQu93','856.951.321-22', '2', '2'), 
+('Joao Wandall','jojo','skyrimOnline@gmail.com','mkFdjXFM','591.345.625-01', '1', '2');
 
 
 INSERT INTO categorias (nome_categoria, foto_categoria) Values
@@ -326,17 +332,20 @@ INSERT INTO mercados (fk_id_rua, nome_mercado) Values
 
 
 INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_cadastro, data_visu, preco, fk_id_categoria, likes, deslikes) Values 
-(12345678998, 1, 'maca.jpg', 'Maça Argentina', '04/12/19', '04/09/19', '3.00', 3, '10', '0'),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '07/09/19', '1.40', 3, '5', '2'),
-(85695132122, 2, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '10/08/19', '1.45', 3, '7', '1'),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Vermelha', '10/11/19', '15/09/19', '1.50', 3, '5', '0'),
-(85695132122, 2, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '03/09/19', '1.50', 3, '1', '2'),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '08/09/19', '1.50', 3, '1', '0'),
-(85695132122, 1, 'laranja1.jpg', 'Laranja Seleta', '10/11/19', '25/09/19', '1.30', 3, '20', '1'),
-(12345695110, 1, 'iogurte.jpg', 'Iogurte Nestle', '14/03/19', '26/09/19', '2.40', 4, '35', '2');
+('123.456.789-98', 1, 'maca.jpg', 'Maça Argentina', '04/12/19', '04/09/19', '3.00', 3, '10', '0'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '07/09/19', '1.40', 3, '5', '2'),
+('856.951.321-22', 2, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '10/08/19', '1.45', 3, '7', '1'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Vermelha', '10/11/19', '15/09/19', '1.50', 3, '5', '0'),
+('856.951.321-22', 2, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '03/09/19', '1.50', 3, '1', '2'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '08/09/19', '1.50', 3, '1', '0'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Seleta', '10/11/19', '25/09/19', '1.30', 3, '20', '1'),
+('123.456.951-10', 1, 'iogurte.jpg', 'Iogurte Nestle', '14/03/19', '26/09/19', '2.40', 4, '35', '2');
 
 INSERT INTO suporte (desc_suporte, fk_cpf_sup) values
-('problema no software', '12345678998');
+('problema no software', '123.456.789-98');
 
-INSERT INTO curtidas (fk_cpf_curt, fk_id_prod) values
-('12345678998', '1');
+INSERT INTO curtidas (fk_cpf_curt, fk_id_prod_curt) values
+('123.456.789-98', '1');
+
+INSERT INTO descurtidas (fk_cpf_desc, fk_id_prod_desc) values
+('123.456.789-98', '2');

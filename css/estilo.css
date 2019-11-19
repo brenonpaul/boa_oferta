@@ -178,8 +178,21 @@ li:hover{
   border-radius: 3px;
 }
 
+#imgExcluir{
+  width: 13%; 
+}
+
+#imgExcluir:hover{
+  background-color: #FF6347;
+  border-radius: 3px;
+}
+
+#imgEditar{
+  width: 13%;
+}
+
 #imgEditar:hover{
-  background-color: #ccc;
+  background-color: #C0C0C0;
   border-radius: 3px;
 }
 
