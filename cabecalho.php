@@ -1,11 +1,11 @@
   <?php
 
-  require_once("class/conexao.php");
-  if(!isset($_SESSION))
-    session_start();
-  ?>
-  <!DOCTYPE html>
-  <html>
+require_once("class/conexao.php");
+if(!isset($_SESSION))
+  session_start();
+?>
+<!DOCTYPE html>
+<html>
   <head>
     <title>Boa Oferta</title>
     <meta charset="utf-8">
@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
   </head>
-  <body style="background: white;">
+  <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark" style="background: #fe7e15;">
         <a class="navbar-brand" href="index.php" style="float: left; width: 15%;"><img src="imagens/logo/logo.png" class="w-75"></a>
@@ -80,10 +80,5 @@
       </div>
     </nav>
   </header>
-  <div class="w-100 row d-flex justify-content-center mt-1">
-    <form class="form-inline my-2 my-lg-0" action="busca.php" method="post">
-      <input class="form-control" type="search" name="buscar" placeholder="Busque por um produto" aria-label="Pesquisar" style="border-radius: 5px 0px 0px 5px">
-      <button class="btn my-2 my-sm-0" type="submit" id="buscar">Buscar</button>
-    </form>
-  </div>
+  
   
