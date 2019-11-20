@@ -4,7 +4,8 @@
     if (isset($_GET['cat'])) {
         $result_produto = "SELECT * FROM produtos, categorias, mercados, usuarios WHERE fk_id_mercado = id_mercado AND fk_cpf = cpf AND fk_id_categoria = id_categoria and id_categoria = $_GET[cat] ORDER BY data_visu DESC";
     }elseif (isset($_GET['buscar'])) {
-        $result_produto = "SELECT * FROM produtos WHERE nome_produto LIKE '%$_GET[buscar]%' ORDER BY data_visu DESC";  
+        $busca = $_GET['buscar'];
+        $result_produto = "SELECT * FROM produtos WHERE nome_produto LIKE '%$_GET[buscar]%'";  
     }else {
         $result_produto = "SELECT * FROM produtos, mercados, usuarios WHERE fk_id_mercado= id_mercado AND fk_cpf=cpf ORDER BY data_visu DESC";	
     }

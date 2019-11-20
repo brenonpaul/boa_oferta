@@ -5,7 +5,6 @@ require_once("class/conexao.php");
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,32 +28,33 @@ require_once("class/conexao.php");
                     $result_produto = "SELECT id_produto, fk_cpf, fk_id_mercado ,fk_id_categoria, foto_produto, nome_produto, data_cadastro, data_visu, preco, likes, deslikes from produtos, usuarios where fk_cpf = cpf and email = '$_SESSION[usuario]' and id_produto = $_GET[id]";  
                     $resultado_produto = mysqli_query($conexao, $result_produto);
                     while($row_produto = mysqli_fetch_assoc($resultado_produto)){
-                        ?>
+                    ?>
 
-                        <div class="box">
-                            <form action="infoProduto.php?id=<?php echo($_GET['id']) ?>" method="POST">
-                                <div class="field">
-                                    <div class="control">
-                                        <label id="labelCadastro">Foto do Produto</label>
-                                        <input type="file" name="foto_produto" class="input is-large"  accept="image/png, image/jpeg" multiple />
-                                    </div>
+                    <div class="box">
+                        <form action="infoProduto.php?id=<?php echo($_GET['id']) ?>" method="POST">
+                            <div class="field">
+                                <div class="control">
+                                    <label id="labelCadastro">Foto do Produto</label>
+                                    <input type="file" name="foto_produto" class="input is-large"  accept="image/png, image/jpeg" multiple />
                                 </div>
-                                <div class="field">
-                                    <div class="control">
-                                        <label id="labelCadastro">Nome do Produto</label>
-                                        <input name="nome_produto" type="text" class="input is-large" value="<?php echo $row_produto['nome_produto']; ?>">
-                                    </div>
-                                </div>             
-                                <div class="field">
-                                    <div class="control">
-                                        <label id="labelCadastro">Preço</label>
-                                        <input name="preco" type="text" type="number" class="input is-large" value="<?php echo $row_produto['preco']; ?>">
-                                    </div>
-                                </div>                           
-                                <div class="field">
-                                    <div class="control">
-                                        <label id="labelCadastro">Mercado</label>    
-                                        <select class="input is-large" name="mercado" style="color: rgb(74, 74, 74);">
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <label id="labelCadastro">Nome do Produto</label>
+                                    <input name="nome_produto" type="text" class="input is-large" value="<?php echo $row_produto['nome_produto']; ?>">
+                                </div>
+                            </div>             
+                            <div class="field">
+                                <div class="control">
+                                    <label id="labelCadastro">Preço</label>
+                                    <input name="preco" type="text" type="number" class="input is-large" value="<?php echo $row_produto['preco']; ?>">
+                                </div>
+                            </div>                           
+                            <div class="field">
+                                <div class="control">
+                                    <label id="labelCadastro">Mercado</label>    
+                                    <select class="input is-large" name="mercado" style="color: rgb(74, 74, 74);">
+
                                             <?php
                                             $sql = "SELECT nome_mercado FROM mercados, produtos WHERE fk_id_mercado = id_mercado AND fk_id_mercado = $row_produto[fk_id_mercado];"; 
 
@@ -69,13 +69,14 @@ require_once("class/conexao.php");
                                                 echo '<option value="'.$mercados['id_mercado'].'">'.$mercados['nome_mercado'].'</option>';
                                             } 
                                             ?>
-                                        </select>
-                                    </div>
+                                    </select>
                                 </div>
-                                <div class="field">
-                                    <div class="control">
-                                        <label id="labelCadastro">Categoria</label>    
-                                        <select class="input is-large" name="categoria" style="color: rgb(74, 74, 74);">
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <label id="labelCadastro">Categoria</label>    
+                                    <select class="input is-large" name="categoria" style="color: rgb(74, 74, 74);">
+
                                             <?php
                                             $sql = "SELECT nome_categoria FROM categorias, produtos WHERE fk_id_categoria = id_categoria AND fk_id_categoria = $row_produto[fk_id_categoria];"; 
 
@@ -90,28 +91,29 @@ require_once("class/conexao.php");
                                                 echo '<option value="'.$categorias['id_categoria'].'">'.$categorias['nome_categoria'].'</option>';
                                             } 
                                             ?>
-                                        </select>
-                                    </div>
+                                    </select>
                                 </div>
-                                <div class="field">
-                                    <div class="control">
-                                        <label id="labelCadastro">Data que você viu</label>
-                                        <input name="data_visu" class="input is-large" type="text" value="<?php echo $row_produto['data_visu']; ?>">
-                                    </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <label id="labelCadastro">Data que você viu</label>
+                                    <input name="data_visu" class="input is-large" type="text" value="<?php echo $row_produto['data_visu']; ?>">
                                 </div>
-                                <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar</button>
-                            </form>
-                            <a href="seuPerfil.php"><button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela de perfil</button></a>
-                            <?php
-                        }
-                        ?>
+                            </div>
+                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar</button>
+                        </form>
+                        <a href="seuPerfil.php">
+                            <button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela de perfil</button>
+                        </a>
+
+                            <?php }
+                            ?>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 </body>
-
 </html>
 
 <script>

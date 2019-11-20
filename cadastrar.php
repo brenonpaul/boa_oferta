@@ -1,7 +1,6 @@
 <?php
 session_start();
-
-include("class/conexao.php");
+require_once("class/conexao.php");
 
 $nome_completo = mysqli_real_escape_string($conexao, trim($_POST['nome_completo']));
 $cpf = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
@@ -11,7 +10,6 @@ $foto_usuario = mysqli_real_escape_string($conexao, trim($_POST['foto_usuario'])
 $senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
 $conf_senha = $_POST['conf_senha'];
 $rua = mysqli_real_escape_string($conexao, trim($_POST['rua']));
-
 
 if ($senha != $conf_senha) {
 	$_SESSION['senhas_diferentes'] = true;
@@ -25,6 +23,7 @@ if (empty($nome_completo) or empty($cpf) or empty($email) or empty($apelido) or 
 	exit;
 }
 
+
 $sql = "select count(*) as total from usuarios where cpf = '$cpf'";
 $result = mysqli_query($conexao, $sql);
 $row_cpf = mysqli_fetch_assoc($result);
@@ -34,6 +33,7 @@ if($row_cpf['total'] == 1) {
 	header('Location: cadastro.php');
 	exit;
 }
+
 
 $sql = "select count(*) as total from usuarios where email = '$email'";
 $result = mysqli_query($conexao, $sql);
@@ -52,7 +52,6 @@ if (strlen($senha) < 8) {
 }
 
 
-
 $sql = "select count(*) as total from usuarios where apelido = '$apelido'";
 $result = mysqli_query($conexao, $sql);
 $row_apelido = mysqli_fetch_assoc($result);
@@ -62,6 +61,7 @@ if($row_apelido['total'] == 1) {
 	header('Location: cadastro.php');
 	exit;
 }
+
 
 $sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_rua_user, fk_id_tipo) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', '$cpf', '$senha', $rua, 2);";
 
