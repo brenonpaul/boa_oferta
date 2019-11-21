@@ -83,7 +83,7 @@ if(empty($_SESSION['usuario'])){
                     <option>Selecione o mercado</option> 
 
                   <?php 
-                  $sql = 'select nome_mercado from mercados;';
+                  $sql = 'SELECT nome_mercado FROM mercados ORDER BY nome_mercado;';
                   $resultado = $conexao->query($sql) OR trigger_error($conexao->error, E_USER_ERROR);
                   while($consulta = $resultado->fetch_object()){
 

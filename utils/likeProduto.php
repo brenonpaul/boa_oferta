@@ -19,7 +19,7 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 		$cad_curt = "INSERT INTO curtidas(fk_id_prod_curt, fk_cpf_curt) VALUES ('$_GET[id]', '$row_usuario[cpf]');";
 		$cadastrar_curtida = mysqli_query($conexao, $cad_curt);
 
-		$result_produto = "UPDATE produtos SET likes = likes +1 WHERE id_produto = '$_GET[id]'";
+		$result_produto = "UPDATE produtos SET curtida = curtida +1 WHERE id_produto = '$_GET[id]'";
 		$resultado_produto = mysqli_query($conexao, $result_produto);
 
 	}else{
@@ -30,7 +30,7 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 
 
 
-		$result_produto = "UPDATE produtos SET likes = likes -1 WHERE id_produto = '$_GET[id]'";
+		$result_produto = "UPDATE produtos SET curtida = curtida -1 WHERE id_produto = '$_GET[id]'";
 		$resultado_produto = mysqli_query($conexao, $result_produto);
 
 

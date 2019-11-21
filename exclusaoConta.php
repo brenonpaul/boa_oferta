@@ -39,7 +39,7 @@ require_once("class/conexao.php");
             <form action="excluirConta.php" method="POST">
 
             <?php 
-            if ($row_usuario['fk_id_tipo'] == 3) {   
+            if ($row_usuario['fk_id_tipo'] == 1) {   
             ?>
               <div class="field">
                 <div class="control">
@@ -72,7 +72,7 @@ require_once("class/conexao.php");
               </script>
 
               <?php 
-              if ($row_usuario['fk_id_tipo'] != 3){
+              if ($row_usuario['fk_id_tipo'] != 1){
               ?>
 
               <div class="field">

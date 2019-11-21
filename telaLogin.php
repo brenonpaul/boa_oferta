@@ -3,8 +3,7 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html>
-    
+<html>   
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,6 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bulma.min.css" />
 </head>
-
 <body>
     <section class="hero is-success is-fullheight">
         <div class="hero-body">
@@ -29,6 +27,18 @@ session_start();
                     <?php
                     endif;
                     unset($_SESSION['nao_autenticado']);
+                    error_reporting(0);
+                    ini_set(“display_errors”, 0 );
+                    if ($_SESSION['ban']):  
+                    ?>
+
+                    <div class="notification is-danger">
+                        <p>Você foi banido do site por tempo indeterminado!</p>
+                    </div>
+
+                    <?php 
+                    endif;
+                    unset($_SESSION['ban']);
                     ?>
                     <div class="box">
                         <form action="login.php" method="POST">
@@ -51,5 +61,4 @@ session_start();
         </div>
     </section>
 </body>
-
 </html>

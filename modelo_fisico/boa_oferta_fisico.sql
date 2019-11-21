@@ -53,9 +53,7 @@ foto_categoria varchar(150)
 
 CREATE TABLE mercados (
 id_mercado int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-fk_id_rua int,
-nome_mercado varchar(150),
-CONSTRAINT fk_mercados_id_rua FOREIGN KEY(fk_id_rua) REFERENCES ruas (id_rua)
+nome_mercado varchar(150)
 );
 
 
@@ -70,8 +68,8 @@ nome_produto varchar(50),
 data_cadastro varchar(10),
 data_visu varchar(10),
 preco varchar(25),
-likes varchar(5),
-deslikes varchar(5),
+curtida varchar(5),
+descurtida varchar(5),
 CONSTRAINT fk_produto_cpf FOREIGN KEY(fk_cpf) REFERENCES usuarios (cpf),
 CONSTRAINT fk_produto_id_mercado FOREIGN KEY(fk_id_mercado) REFERENCES mercados (id_mercado),
 CONSTRAINT fk_produto_id_categoria FOREIGN KEY(fk_id_categoria) REFERENCES categorias (id_categoria)
@@ -326,12 +324,60 @@ INSERT INTO categorias (nome_categoria, foto_categoria) Values
 ('Açúcares e Doces', 'doces.jpg');
 
 
-INSERT INTO mercados (fk_id_rua, nome_mercado) Values 
-(6, 'Shopping BIG Americanas'),
-(7, 'Fort Atacadista');
+INSERT INTO mercados (nome_mercado) Values 
+('Grupo Pão de Açúcar'),
+('Carrefour'),
+('Walmart(BIG)'),
+('Ceconsud'),
+('Zaffari'),
+('Irmãos Muffato'),
+('Condor Super Center'),
+('Supermercados BH'),
+('Sonda Supermercado'),
+('Angeloni'),
+('DMA Distribuidoras'),
+('SDB Comércio de Alimentos'),
+('Y. Yamada'),
+('Coop'),
+('Savegnago'),
+('Líder Comércio e Indústria'),
+('Carvalho e Fernandes'),
+('Multi Formato Distribuidora'),
+('Supermercado Zona Sul'),
+('Comercial Zaragoza'),
+('AM/PM comestível'),
+('Giassi & Cia'),
+('Supermercado Bahamas'),
+('Companhia Sulamericana'),
+('Supermercados Irmãos Lopes'),
+('Supermercado Nordestão'),
+('Unidasul Distribuidora Alimentícia'),
+('Formosa Supermercados'),
+('Hortigil'),
+('D’Avó Supermercados'),
+('Empresa Baiana de Alimentos'),
+('Adição Distribuidora Express'),
+('Realmar Distribuidora'),
+('Intercontinental Com. de Alimentos'),
+('Atakarejo'),
+('Jad Zogheib e Cia'),
+('Covabra Supermercados'),
+('Nazaré Comércio de Alimentos'),
+('Latuf Cury e Rocha'),
+('Supermercados Vianense'),
+('Supermercados Imperatriz'),
+('Paulo e Maio Supermercados'),
+('Mercado Torre e Jacarepaguá'),
+('Bonanza Supermercados'),
+('Enxuto Supermercados'),
+('Casa Avenida Comércio e Importação'),
+('Organização Verdemar'),
+('Companhia Beal Alimentos'),
+('Supermercado da Família'),
+('Comercial Oswaldo Cruz');
 
 
-INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_cadastro, data_visu, preco, fk_id_categoria, likes, deslikes) Values 
+INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_cadastro, data_visu, preco, fk_id_categoria, curtida, descurtida) Values 
 ('123.456.789-98', 1, 'maca.jpg', 'Maça Argentina', '04/12/19', '04/09/19', '3.00', 3, '10', '0'),
 ('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '07/09/19', '1.40', 3, '5', '2'),
 ('856.951.321-22', 2, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '10/08/19', '1.45', 3, '7', '1'),

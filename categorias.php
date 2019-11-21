@@ -4,7 +4,7 @@ require_once "class/conexao.php";
 ?>
 
 <div class="container mt-4">
-	<div class="row d-flex justify-content-center">	
+	<div class="row pl-5">	
 
 	<?php
 	$result_produto = "SELECT * FROM categorias ORDER BY nome_categoria ASC";

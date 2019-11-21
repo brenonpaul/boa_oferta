@@ -25,7 +25,7 @@ require_once("class/conexao.php");
                     <h3 class="title has-text-grey-dark">Alterar Informações do Produto</h3>
 
                     <?php
-                    $result_produto = "SELECT id_produto, fk_cpf, fk_id_mercado ,fk_id_categoria, foto_produto, nome_produto, data_cadastro, data_visu, preco, likes, deslikes from produtos, usuarios where fk_cpf = cpf and email = '$_SESSION[usuario]' and id_produto = $_GET[id]";  
+                    $result_produto = "SELECT id_produto, fk_cpf, fk_id_mercado ,fk_id_categoria, foto_produto, nome_produto, data_cadastro, data_visu, preco, curtida, descurtida from produtos, usuarios where fk_cpf = cpf and email = '$_SESSION[usuario]' and id_produto = $_GET[id]";  
                     $resultado_produto = mysqli_query($conexao, $result_produto);
                     while($row_produto = mysqli_fetch_assoc($resultado_produto)){
                     ?>

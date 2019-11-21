@@ -29,6 +29,18 @@ require_once("class/conexao.php");
                     <?php
                     error_reporting(0);
                     ini_set(“display_errors”, 0 );
+                    if ($_SESSION['ban']):  
+                    ?>
+
+                    <div class="notification is-danger">
+                        <p>Você foi banido do site por tempo indeterminado!</p>
+                    </div>
+
+                    <?php 
+                    endif;
+                    unset($_SESSION['ban']);
+                    error_reporting(0);
+                    ini_set(“display_errors”, 0 );
                     if ($_SESSION['senhas_diferentes']):  
                     ?>
 
@@ -101,8 +113,14 @@ require_once("class/conexao.php");
                         <form action="cadastrar.php" method="POST">
                             <div class="field">
                                 <div class="control">
-                                    <label id="labelCadastro">Nome Completo</label>
-                                    <input name="nome_completo" type="text" class="input is-large" placeholder="Exemplo: João da Silva">
+                                    <label id="labelCadastro">Primeiro Nome</label>
+                                    <input name="primeiro_nome" type="text" class="input is-large" placeholder="Exemplo: João">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <label id="labelCadastro">Último Nome</label>
+                                    <input name="ultimo_nome" type="text" class="input is-large" placeholder="Exemplo: Silva">
                                 </div>
                             </div>
                             <div class="field">

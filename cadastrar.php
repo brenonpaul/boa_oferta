@@ -2,7 +2,8 @@
 session_start();
 require_once("class/conexao.php");
 
-$nome_completo = mysqli_real_escape_string($conexao, trim($_POST['nome_completo']));
+$primeiro_nome = mysqli_real_escape_string($conexao, trim($_POST['primeiro_nome']));
+$ultimo_nome = mysqli_real_escape_string($conexao, trim($_POST['ultimo_nome']));
 $cpf = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
 $email = mysqli_real_escape_string($conexao, trim($_POST['email']));
 $apelido = mysqli_real_escape_string($conexao, trim($_POST['apelido']));
@@ -17,12 +18,21 @@ if ($senha != $conf_senha) {
 	exit;
 }
 
-if (empty($nome_completo) or empty($cpf) or empty($email) or empty($apelido) or empty($senha) or empty($rua)) {
+if (empty($primeiro_nome) or empty($ultimo_nome) or empty($cpf) or empty($email) or empty($apelido) or empty($senha) or empty($rua)) {
 	$_SESSION['falta_info'] = true;
 	header('Location: cadastro.php');
 	exit;
 }
 
+$sql = "select count(*) as total from usuarios where cpf = '$cpf' and fk_id_tipo = 3 or email = '$email' and fk_id_tipo = 3";
+$result = mysqli_query($conexao, $sql);
+$row_ban = mysqli_fetch_assoc($result);
+
+if($row_ban['total'] == 1) {
+	$_SESSION['ban'] = true;
+	header('Location: cadastro.php');
+	exit;
+}
 
 $sql = "select count(*) as total from usuarios where cpf = '$cpf'";
 $result = mysqli_query($conexao, $sql);
@@ -63,7 +73,7 @@ if($row_apelido['total'] == 1) {
 }
 
 
-$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_rua_user, fk_id_tipo) values ('$nome_completo', '$foto_usuario', '$apelido', '$email', '$cpf', '$senha', $rua, 2);";
+$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_rua_user, fk_id_tipo) values ('$primeiro_nome $ultimo_nome', '$foto_usuario', '$apelido', '$email', '$cpf', '$senha', $rua, 2);";
 
 if($conexao->query($sql) === TRUE) {
 	$_SESSION['status_cadastro'] = true;

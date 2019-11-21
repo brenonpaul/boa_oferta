@@ -1,7 +1,6 @@
 <?php
 session_start();
-
-include("class/conexao.php");
+require_once("class/conexao.php");
 
 $foto_usuario = mysqli_real_escape_string($conexao, trim($_POST['foto_usuario']));
 $nome_completo = mysqli_real_escape_string($conexao, trim($_POST['nome_completo']));
@@ -13,24 +12,23 @@ $novaSenha = mysqli_real_escape_string($conexao, trim($_POST['novaSenha']));
 $confNovaSenha = mysqli_real_escape_string($conexao, trim($_POST['confNovaSenha']));
 
 
-
 $result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
 $resultado_usuario = mysqli_query($conexao, $result_usuario);
 
-
 while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 
-	if (isset($_POST['foto_usuario'])) {
+	if (isset($_POST['foto_usuario'])){
 		$sql = "UPDATE usuarios SET foto_usuario = '$foto_usuario' WHERE  cpf = '$row_usuario[cpf]';";
 
-		if($conexao->query($sql) === TRUE) {
+		if($conexao->query($sql) === TRUE){
 			$_SESSION['status_cadastro'] = true;
 		}
 
 		header('Location: seuPerfil.php');
 		exit;
 
-	}elseif (isset($_POST['rua'])) {
+
+	}elseif (isset($_POST['rua'])){
 		$sql = "UPDATE usuarios SET fk_id_rua_user = '$rua' WHERE email ='$_SESSION[usuario]';";
 
 		if($conexao->query($sql) === TRUE) {
@@ -39,6 +37,7 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 
 		header('Location: seuPerfil.php');
 		exit;
+
 
 	}elseif(isset($_POST['nome_completo']) or isset($_POST['apelido']) or isset($_POST['email'])){
 
@@ -70,10 +69,10 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 			exit;
 		}
 
+
 		$sql = "UPDATE usuarios SET apelido = '$apelido', nome_completo = '$nome_completo', email = '$email' WHERE  cpf = '$row_usuario[cpf]';";
 
-
-		if($conexao->query($sql) === TRUE) {
+		if($conexao->query($sql) === TRUE){
 			$_SESSION['status_cadastro'] = true;
 		}
 
@@ -82,13 +81,15 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 		header('Location: telaLogin.php');
 		exit;
 
-	}elseif (isset($_POST['novaSenha'])) {
+
+	}elseif (isset($_POST['novaSenha'])){
 		
 		if ($novaSenha != $confNovaSenha) {
 			$_SESSION['senhas_diferentes'] = true;
 			header('Location: alterarInfo.php?info=4');
 			exit;
 		}
+
 
 		$sql = "UPDATE usuarios SET senha = '$novaSenha' WHERE cpf = '$row_usuario[cpf]';";
 
@@ -97,7 +98,6 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 			header('Location: alterarInfo.php?info=4');
 			exit;
 		}
-
 
 		if($conexao->query($sql) === TRUE) {
 			$_SESSION['status_cadastro'] = true;
