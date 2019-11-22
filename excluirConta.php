@@ -2,7 +2,9 @@
 session_start();
 require_once("class/conexao.php");
 
+if (isset($_POST['cpf'])) {
 $cpf = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
+}
 
 if (isset($_POST['senha'])) {
 $senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
@@ -14,6 +16,14 @@ if (isset($_SESSION['usuario'])) {
 	$resultado_usuario = mysqli_query($conexao, $result_usuario);
 
 	while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
+
+		if ($row_usuario['fk_id_tipo'] == 1 and isset($_POST['cpf_lib'])) {
+			$sql = "DELETE FROM usuarios WHERE cpf = '$_POST[cpf_lib]';";
+
+		if($conexao->query($sql) === TRUE){
+			$_SESSION['status_cadastro'] = true;
+		}
+		}else{
 
 		$sql2 = "UPDATE produtos, curtidas SET curtida = curtida -1 WHERE id_produto = fk_id_prod_curt AND fk_cpf_curt = '$cpf';";
 
@@ -50,16 +60,9 @@ if (isset($_SESSION['usuario'])) {
 
 		if ($row_usuario['fk_id_tipo'] == 1){
 
-			if ($_GET['ativar'] == 1) {
-				$sql6 = "DELETE FROM usuarios WHERE cpf = '$cpf';";
-
-			}else{
-
 			$sql6 = "UPDATE usuarios SET fk_id_tipo = 3, apelido = '--' where cpf = '$cpf';";
-		}
 			if($conexao->query($sql6) === TRUE) {
 			}
-
 		}else{
 
 			$sql6 = "DELETE FROM usuarios WHERE cpf = '$cpf' and senha = '$senha';";
@@ -67,6 +70,7 @@ if (isset($_SESSION['usuario'])) {
 				session_destroy();
 			}
 		}
+	}
 	}
 }
 

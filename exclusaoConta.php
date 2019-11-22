@@ -39,7 +39,18 @@ require_once("class/conexao.php");
             <form action="excluirConta.php" method="POST">
 
             <?php 
-            if ($row_usuario['fk_id_tipo'] == 1) {   
+            if ($row_usuario['fk_id_tipo'] == 1) { 
+            if (isset($_GET['ativar']) and $_GET['ativar'] == 1) {
+            ?>
+            <div class="field">
+                <div class="control">
+                  <label id="labelCadastro">CPF</label>
+                  <input name="cpf_lib" id="cpf" type="text" class="input is-large" placeholder="Apenas números" value="<?php echo $_GET['cpf'] ?>">
+                </div>
+              </div>
+
+            <?php 
+              }else{ 
             ?>
               <div class="field">
                 <div class="control">
@@ -47,7 +58,7 @@ require_once("class/conexao.php");
                   <input name="cpf" id="cpf" type="text" class="input is-large" placeholder="Apenas números" value="<?php echo $_GET['cpf'] ?>">
                 </div>
               </div>
-              <?php }else{
+              <?php }}else{
               ?>
               <div class="field">
                 <div class="control">

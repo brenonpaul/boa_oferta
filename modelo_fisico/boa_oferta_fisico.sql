@@ -301,7 +301,7 @@ INSERT INTO ruas (fk_id_bairro, nome_rua) Values
 
 INSERT INTO usuarios (nome_completo,apelido,email,senha,cpf,fk_id_rua_user, fk_id_tipo ) values 
 ('Jhonny James','jhon','jj.s.a.o@gmail.com','wudLGDOR','124.976.009-70', '1', '2'),
-('admin','adm','admin@gmail.com','admin123','123.456.789-98', '2', '2'),
+('admin','adm','admin@gmail.com','admin123','123.456.789-98', '2', '1'),
 ('Tommy Taffy','tom','toninho005@gmail.com','pgDnm3F1','123.456.951-10', '1', '2'),
 ('Michael Jackson','mika','rusbe@gmail.com','senha123','156.324.789-45', '1', '2'), 
 ('Denver Duley','den','DeDmonster@gmail.com','4DfM1P6C','456.789.321-56', '1', '2'), 

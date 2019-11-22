@@ -19,7 +19,7 @@ require_once "class/conexao.php";
   </thead>
   <tbody>
 	<?php
-	$result_usuario = "SELECT * FROM usuarios ORDER BY apelido ASC";
+	$result_usuario = "SELECT * FROM usuarios where fk_id_tipo != 1 ORDER BY apelido ASC";
 	$resultado_usuario = mysqli_query($conexao, $result_usuario);
 	$cont = 0;
 	while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
@@ -36,11 +36,11 @@ require_once "class/conexao.php";
       	<?php 
       		if ($row_usuario['apelido'] == '--') {
       	?>
-      	<a href="exclusaoConta.php?cpf=<?php echo $row_usuario['cpf']; ?>&ativar=1"><button class="btn btn-sm p-0 float-right">Ativar</button></a>
+      	<a href="exclusaoConta.php?cpf=<?php echo $row_usuario['cpf']; ?>&ativar=1"><button class="btn btn-sm p-0 float-right">Liberar</button></a>
       	<?php
       		}else{
       	?>
-      	<a href="exclusaoConta.php?cpf=<?php echo $row_usuario['cpf']; ?>"><button class="btn btn-sm p-0 float-right">Excluir</button></a>
+      	<a href="exclusaoConta.php?cpf=<?php echo $row_usuario['cpf']; ?>"><button class="btn btn-sm p-0 float-right">Banir</button></a>
       	<?php
       }
       ?>
