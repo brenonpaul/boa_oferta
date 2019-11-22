@@ -50,7 +50,13 @@ if (isset($_SESSION['usuario'])) {
 
 		if ($row_usuario['fk_id_tipo'] == 1){
 
+			if ($_GET['ativar'] == 1) {
+				$sql6 = "DELETE FROM usuarios WHERE cpf = '$cpf';";
+
+			}else{
+
 			$sql6 = "UPDATE usuarios SET fk_id_tipo = 3, apelido = '--' where cpf = '$cpf';";
+		}
 			if($conexao->query($sql6) === TRUE) {
 			}
 

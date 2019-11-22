@@ -82,11 +82,11 @@ if (isset($_SESSION['usuario'])){
                             if ($row_usuario['fk_id_tipo'] == 1){                        
                             ?>      
 
-                               <div class="row text-center mb-1" style="margin-top: -8%;"> 
-                                   <a :href="getExcluir(produto.id_produto)">
-                                    <img src="imagens/lixeira.png" id="imgExcluir">
-                                </a>
-                            </div>
+                                <div class="row text-center mb-1" style="margin-top: -8%;"> 
+                                    <a :href="getExcluir(produto.id_produto)">
+                                        <img src="imagens/lixeira.png" id="imgExcluir">
+                                    </a>
+                                </div>
 
                         <?php   }
                             }

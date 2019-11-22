@@ -43,6 +43,25 @@
             <li class="nav-item active ml-3 ">
               <a class="nav-link" href="sobre.php" style="font-size: 125%;">Sobre</a>
             </li>
+
+            <?php
+            if (isset($_SESSION[ 'usuario'])) {
+              
+            
+            $result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
+            $resultado_usuario = mysqli_query($conexao, $result_usuario);
+
+            while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
+              if ($row_usuario['fk_id_tipo'] == 1) {
+            ?>
+            <li class="nav-item active ml-3 ">
+              <a class="nav-link" href="usuarios.php" style="font-size: 125%;">Usuários</a>
+            </li>
+            <?php
+              }
+            }
+          }
+            ?>
           </ul>
           <ul class="navbar-nav  mt-2 mt-lg-0 float-right">   
           <?php
