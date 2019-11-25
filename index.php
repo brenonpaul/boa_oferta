@@ -28,13 +28,19 @@ if (isset($_SESSION['usuario'])){
                             <h6><strong>{{produto.nome_produto}}</strong></h6>
                         </div>
                         <div class="row pl-2 pr-2">
-                            <h6> Preço: {{produto.preco}}</h6>
+                            <h6> Preço: R$ {{produto.preco}}</h6>
                         </div>
                         <div class="row pl-2 pr-2">
                             <h6> Mercado: {{produto.nome_mercado}}</h6>
                         </div>
                         <div class="row pl-2 pr-2">
-                            <h6> Visto em:{{produto.data_visu}} </h6>
+                            <h6> Visto em: 
+                                <?php 
+                                $data_visu = "{{produto.data_visu}}";
+                            
+                                echo $data_visu;
+                             ?> 
+                             </h6>
                         </div>
                         <div class="row pl-2 pr-2">
 
@@ -59,18 +65,19 @@ if (isset($_SESSION['usuario'])){
                             ?>
 
                         </div>
+                        <p class="text-center">Preço atualizado?</p>
                         <div class="row pl-2 pr-2">
                             <div class="col-6">
                                 <p>
-                                    <button v-if='checkCurtida(produto.id_produto)' @click="addLike(produto)" class="btn p-1" style="background-color: #000080; color: white;">Correto
+                                    <button v-if='checkCurtida(produto.id_produto)' @click="addLike(produto)" class="btn p-1" style="background-color: #000080; color: white;">Sim
                                     </button>
                                     <br>
-                                    <strong class="pl-4">{{produto.curtida}}</strong>
+                                    <strong class="pl-2">{{produto.curtida}}</strong>
                                 </p>
                             </div>
                             <div class="col-6">
                                 <p>
-                                    <button v-if='checkDescurtida(produto.id_produto)' @click="addDesc(produto)" class="btn p-1 pl-2m btn-danger" style="color: white;">Errado
+                                    <button v-if='checkDescurtida(produto.id_produto)' @click="addDesc(produto)" class="btn p-1 pl-2m btn-danger" style="color: white;">Não
                                     </button>
                                     <br>
                                     <strong class="pl-4">{{produto.descurtida}}</strong>
@@ -116,13 +123,26 @@ if (isset($_SESSION['usuario'])){
                             <h6><strong>{{produto.nome_produto}}</strong></h6>
                         </div>
                         <div class="row pl-2 pr-2">
-                            <h6> Preço: {{produto.preco}}</h6>
+                            <h6> Preço: R$ {{produto.preco}}</h6>
                         </div>
                         <div class="row pl-2 pr-2">
                             <h6> Mercado: {{produto.nome_mercado}}</h6>
                         </div>
                         <div class="row pl-2 pr-2">
-                            <h6> Visto em:{{produto.data_visu}} </h6>
+                            <?php
+                            
+                            
+
+
+                            ?>
+                            <h6> Visto em: 
+                            <?php 
+                                $data_visu = "{{produto.data_visu}}";
+                            
+                                echo $data_visu;
+                             ?> 
+
+                        </h6>
                         </div>
                         <div class="row pl-2 pr-2">
                             <h6>   

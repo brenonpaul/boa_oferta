@@ -101,7 +101,7 @@ require_once("class/conexao.php");
                     ?>
 
                     <div class="notification is-info">
-                        <p>A senha deve ter no minímo 8 caracteres.</p>
+                        <p>A senha deve ter no minímo 4 caracteres.</p>
                     </div>
 
                     <?php 
@@ -114,13 +114,13 @@ require_once("class/conexao.php");
                             <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">Primeiro Nome</label>
-                                    <input name="primeiro_nome" type="text" class="input is-large" placeholder="Exemplo: João">
+                                    <input name="primeiro_nome" type="text" class="input is-large" placeholder="Exemplo: João" value="<?php echo($_GET['nome']); ?>">
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">Último Nome</label>
-                                    <input name="ultimo_nome" type="text" class="input is-large" placeholder="Exemplo: Silva">
+                                    <input name="ultimo_nome" type="text" class="input is-large" placeholder="Exemplo: Silva" value="<?php echo($_GET['sobrenome']); ?>">
                                 </div>
                             </div>
                             <div class="field">
@@ -132,7 +132,7 @@ require_once("class/conexao.php");
                             <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">CPF</label>
-                                    <input name="cpf" id="cpf" type="text" class="input is-large" placeholder="Apenas números">
+                                    <input name="cpf" id="cpf" type="text" class="input is-large" placeholder="Apenas números" value="<?php echo($_GET['cpf']); ?>">
                                 </div>
                             </div>
                             <script>
@@ -149,13 +149,13 @@ require_once("class/conexao.php");
                             <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">E-mail</label>
-                                    <input name="email" type="email" class="input is-large">
+                                    <input name="email" type="email" class="input is-large" value="<?php echo($_GET['email']); ?>">
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">Apelido</label>
-                                    <input name="apelido" type="text" class="input is-large" placeholder="Nome nas postagens">
+                                    <input name="apelido" type="text" class="input is-large" placeholder="Nome nas postagens" value="<?php echo($_GET['apelido']); ?>">
                                 </div>
                             </div>
                             <div class="field">
@@ -206,7 +206,7 @@ require_once("class/conexao.php");
                                     <input name="conf_senha" class="input is-large" type="password" placeholder="Confirmar Senha">
                                 </div>
                             </div>
-                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
+                            <button type="submit" class="button is-block is-link is-large is-fullwidth" name="enviar">Cadastrar</button>
                         </form>
                         <a href="index.php">
                             <button class="button is-block is-link is-fullwidth" style="margin-top: 4%; background-color: #28a745;">Voltar à tela inicial</button>

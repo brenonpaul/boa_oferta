@@ -47,6 +47,12 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 			exit;
 		}
 
+		if (strlen($senha) < 4) {
+			$_SESSION['senha_caracteres'] = true;
+			header('Location: alterarInfo.php?info=2');
+			exit;
+		}
+
 
 		$sql = "select count(*) as total from usuarios where email = '$email'";
 		$result = mysqli_query($conexao, $sql);
@@ -93,7 +99,7 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 
 		$sql = "UPDATE usuarios SET senha = '$novaSenha' WHERE cpf = '$row_usuario[cpf]';";
 
-		if (strlen($senha) < 8) {
+		if (strlen($senha) < 4) {
 			$_SESSION['senha_caracteres'] = true;
 			header('Location: alterarInfo.php?info=4');
 			exit;

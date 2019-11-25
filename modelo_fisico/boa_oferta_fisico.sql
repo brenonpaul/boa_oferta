@@ -66,8 +66,9 @@ fk_id_categoria int,
 foto_produto varchar(150),
 nome_produto varchar(50),
 data_cadastro varchar(10),
-data_visu varchar(10),
+data_visu date,
 preco varchar(25),
+descricao varchar(50),
 curtida varchar(5),
 descurtida varchar(5),
 CONSTRAINT fk_produto_cpf FOREIGN KEY(fk_cpf) REFERENCES usuarios (cpf),
@@ -378,14 +379,14 @@ INSERT INTO mercados (nome_mercado) Values
 
 
 INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_cadastro, data_visu, preco, fk_id_categoria, curtida, descurtida) Values 
-('123.456.789-98', 1, 'maca.jpg', 'Maça Argentina', '04/12/19', '04/09/19', '3.00', 3, '10', '0'),
-('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '07/09/19', '1.40', 3, '5', '2'),
-('856.951.321-22', 2, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '10/08/19', '1.45', 3, '7', '1'),
-('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Vermelha', '10/11/19', '15/09/19', '1.50', 3, '5', '0'),
-('856.951.321-22', 2, 'laranja1.jpg', 'Laranja Bahia', '07/11/19', '03/09/19', '1.50', 3, '1', '2'),
-('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Lima', '06/11/19', '08/09/19', '1.50', 3, '1', '0'),
-('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Seleta', '10/11/19', '25/09/19', '1.30', 3, '20', '1'),
-('123.456.951-10', 1, 'iogurte.jpg', 'Iogurte Nestle', '14/03/19', '26/09/19', '2.40', 4, '35', '2');
+('123.456.789-98', 1, 'maca.jpg', 'Maça Argentina', '04-12-19', '19-09-19', '3.00', 3, '10', '0'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Bahia', '07-11-19', '19-09-06', '1.40', 3, '5', '2'),
+('856.951.321-22', 2, 'laranja1.jpg', 'Laranja Lima', '06-11-19', '19-09-18', '1.45', 3, '7', '1'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Vermelha', '10-11-19', '19-09-22', '1.50', 3, '5', '0'),
+('856.951.321-22', 2, 'laranja1.jpg', 'Laranja Bahia', '07-11-19', '18-09-19', '1.50', 3, '1', '2'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Lima', '06-11-19', '19-09-25', '1.50', 3, '1', '0'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Seleta', '10-11-19', '19-09-26', '1.30', 3, '20', '1'),
+('123.456.951-10', 1, 'iogurte.jpg', 'Iogurte Nestle', '14-03-19', '19-09-30', '2.40', 4, '35', '2');
 
 INSERT INTO suporte (desc_suporte, fk_cpf_sup) values
 ('problema no software', '123.456.789-98');

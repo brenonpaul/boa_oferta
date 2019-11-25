@@ -9,7 +9,7 @@ $id_produto=$_GET['produto_id'];
 
  while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 
- 	$valor="SELECT COUNT(*) FROM `curtidas` WHERE `fk_cpf_curt` = '$row_usuario[cpf]'  AND `fk_id_prod` = $id_produto";
+ 	$valor="SELECT COUNT(*) FROM `curtidas` WHERE `fk_cpf_curt` = '$row_usuario[cpf]'  AND `fk_id_prod_curt` = $id_produto";
  		$resultado_valor = mysqli_query($conexao, $valor);
 
     		while($row_valor = mysqli_fetch_assoc($resultado_valor)){

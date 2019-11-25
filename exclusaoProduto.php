@@ -1,4 +1,10 @@
+<?php 
+if (!isset($_SESSION)) {
+  session_start();
+}
+if (isset($_SESSION['usuario'])) {
 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -33,3 +39,8 @@
   </section>
 </body>
 </html>
+<?php
+}else{
+  header('Location: index.php');
+}
+?>

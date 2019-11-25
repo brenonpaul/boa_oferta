@@ -3,6 +3,8 @@ if (!isset($_SESSION)) {
   session_start();
 }
 require_once("class/conexao.php");
+if (isset($_SESSION['usuario'])) {
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -113,3 +115,9 @@ require_once("class/conexao.php");
 ?>
 </body>
 </html>
+<?php
+}else{
+  header('Location: index.php');
+
+}
+?>

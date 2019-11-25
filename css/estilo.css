@@ -1,3 +1,16 @@
+.carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  
+.carouselIndex{
+  width: 60%;
+  margin-left: 17%;
+  margin-top: 3%;
+  border: 2px solid black;
+}
+
+
 #logo {
   width: 100%;
   border-radius: 10px;

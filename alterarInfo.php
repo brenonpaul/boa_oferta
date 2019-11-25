@@ -75,7 +75,7 @@ require_once("class/conexao.php");
                     ?>
 
                         <div class="notification is-info">
-                            <p>A senha deve ter no minímo 8 caracteres.</p>
+                            <p>A senha deve ter no minímo 4 caracteres.</p>
                         </div>
 
                     <?php 
