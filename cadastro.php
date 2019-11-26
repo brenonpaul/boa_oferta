@@ -149,7 +149,7 @@ require_once("class/conexao.php");
                             <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">E-mail</label>
-                                    <input name="email" type="email" class="input is-large" value="<?php echo($_GET['email']); ?>">
+                                    <input name="email" type="email" class="input is-large" placeholder="seu e-mail" value="<?php echo($_GET['email']); ?>">
                                 </div>
                             </div>
                             <div class="field">

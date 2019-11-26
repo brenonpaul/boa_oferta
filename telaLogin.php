@@ -54,6 +54,7 @@ session_start();
                                 </div>
                             </div>
                             <button type="submit" class="button is-block is-link is-large is-fullwidth">Entrar</button>
+                            <a  href="cadastro.php"><p>cadastrar-se</p></a>
                         </form>
                     </div>
                 </div>

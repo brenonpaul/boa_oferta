@@ -1,5 +1,9 @@
 <?php
+    if (!isset($_SESSION)) {
+        session_start();
+    }
     include("../class/conexao.php");
+
 
     if (isset($_GET['cat'])) {
         $result_produto = "SELECT * FROM produtos, categorias, mercados, usuarios WHERE fk_id_mercado = id_mercado AND fk_cpf = cpf AND fk_id_categoria = id_categoria and id_categoria = $_GET[cat] ORDER BY data_visu DESC";

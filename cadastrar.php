@@ -7,15 +7,15 @@ require_once("class/conexao.php");
 
 
 
-$primeiro_nome = mysqli_real_escape_string($conexao, trim($_POST['primeiro_nome']));
-$ultimo_nome = mysqli_real_escape_string($conexao, trim($_POST['ultimo_nome']));
-$cpf = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
-$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
-$apelido = mysqli_real_escape_string($conexao, trim($_POST['apelido']));
-$foto_usuario = mysqli_real_escape_string($conexao, trim($_POST['foto_usuario']));
-$senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
+$primeiro_nome = mysqli_real_escape_string($conexao, ucfirst($_POST['primeiro_nome']));
+$ultimo_nome = mysqli_real_escape_string($conexao, ucfirst($_POST['ultimo_nome']));
+$cpf = mysqli_real_escape_string($conexao, ucfirst($_POST['cpf']));
+$email = mysqli_real_escape_string($conexao, ucfirst($_POST['email']));
+$apelido = mysqli_real_escape_string($conexao, ucfirst($_POST['apelido']));
+$foto_usuario = mysqli_real_escape_string($conexao, ucfirst($_POST['foto_usuario']));
+$senha = mysqli_real_escape_string($conexao, ucfirst($_POST['senha']));
 $conf_senha = $_POST['conf_senha'];
-$rua = mysqli_real_escape_string($conexao, trim($_POST['rua']));
+$rua = mysqli_real_escape_string($conexao, ucfirst($_POST['rua']));
 
 if ($foto_usuario == '') {
 	$foto_usuario = 'usuario.jpg';
@@ -23,13 +23,13 @@ if ($foto_usuario == '') {
 
 if ($senha != $conf_senha) {
 	$_SESSION['senhas_diferentes'] = true;
-	header('Location: cadastro.php');
+	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido&email=$email");
 	exit;
 }
 
 if (empty($primeiro_nome) or empty($ultimo_nome) or empty($cpf) or empty($email) or empty($apelido) or empty($senha) or empty($rua)) {
 	$_SESSION['falta_info'] = true;
-	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido");
+	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido&email=$email");
 	exit;
 }
 
@@ -49,7 +49,7 @@ $row_cpf = mysqli_fetch_assoc($result);
 
 if($row_cpf['total'] == 1) {
 	$_SESSION['cpf_existe'] = true;
-	header('Location: cadastro.php');
+	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido&email=$email");
 	exit;
 }
 
@@ -60,13 +60,13 @@ $row_email = mysqli_fetch_assoc($result);
 
 if($row_email['total'] == 1) {
 	$_SESSION['email_existe'] = true;
-	header('Location: cadastro.php');
+	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido&email=$email");
 	exit;
 }
 
 if (strlen($senha) < 4) {
 	$_SESSION['senha_caracteres'] = true;
-	header('Location: cadastro.php');
+	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido&email=$email");
 	exit;
 }
 
@@ -77,7 +77,7 @@ $row_apelido = mysqli_fetch_assoc($result);
 
 if($row_apelido['total'] == 1) {
 	$_SESSION['apelido_existe'] = true;
-	header('Location: cadastro.php');
+	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido&email=$email");
 	exit;
 }
 
