@@ -301,17 +301,17 @@ INSERT INTO ruas (fk_id_bairro, nome_rua) Values
 (9, 'Rua Cel. Francisco Gomes');
 
 INSERT INTO usuarios (nome_completo,apelido,email,senha,cpf,fk_id_rua_user, fk_id_tipo ) values 
-('Jhonny James','jhon','jj.s.a.o@gmail.com','wudLGDOR','124.976.009-70', '1', '2'),
-('admin','adm','admin@gmail.com','admin123','123.456.789-98', '2', '1'),
-('Tommy Taffy','tom','toninho005@gmail.com','pgDnm3F1','123.456.951-10', '1', '2'),
-('Michael Jackson','mika','rusbe@gmail.com','senha123','156.324.789-45', '1', '2'), 
-('Denver Duley','den','DeDmonster@gmail.com','4DfM1P6C','456.789.321-56', '1', '2'), 
-('Michelangelo Roly','ang','michelroly@gmai.com','Jqht3d8w','798.456.123-05', '1', '2'), 
-('Marcos Marcelo','marc','mmprofessor@gmail.com','JMGtkL6O','852.369.741-12', '1', '2'), 
-('Marlos Marcos','marlo','marcosM@outlook.com','s6UzAjHm','957.153-456-30', '1', '2'), 
-('Vinicius dos Santos','vini','TCCnaoVouFazer@yahoo.com','JrORX7dI','789.456.125-13', '1', '2'), 
-('Gilberto Filho','gamer','Gilberzf@gmail.com','oqXPQu93','856.951.321-22', '2', '2'), 
-('Joao Wandall','jojo','skyrimOnline@gmail.com','mkFdjXFM','591.345.625-01', '1', '2');
+('Jhonny James','Jhon','jj.s.a.o@gmail.com','wudLGDOR','124.976.009-70', '1', '2'),
+('Administrador','Adm','admin@gmail.com','admin123','123.456.789-98', '2', '1'),
+('Tommy Taffy','Tom','toninho005@gmail.com','pgDnm3F1','123.456.951-10', '1', '2'),
+('Michael Jackson','Mika','rusbe@gmail.com','senha123','156.324.789-45', '1', '2'), 
+('Denver Duley','Den','DeDmonster@gmail.com','4DfM1P6C','456.789.321-56', '1', '2'), 
+('Michelangelo Roly','Ang','michelroly@gmai.com','Jqht3d8w','798.456.123-05', '1', '2'), 
+('Marcos Marcelo','Marc','mmprofessor@gmail.com','JMGtkL6O','852.369.741-12', '1', '2'), 
+('Marlos Marcos','Marlo','marcosM@outlook.com','s6UzAjHm','957.153-456-30', '1', '2'), 
+('Vinicius dos Santos','Vini','TCCnaoVouFazer@yahoo.com','JrORX7dI','789.456.125-13', '1', '2'), 
+('Gilberto Filho','Gamer','Gilberzf@gmail.com','oqXPQu93','856.951.321-22', '2', '2'), 
+('Joao Wandall','Jojo','skyrimOnline@gmail.com','mkFdjXFM','591.345.625-01', '1', '2');
 
 
 INSERT INTO categorias (nome_categoria, foto_categoria) Values
@@ -379,14 +379,14 @@ INSERT INTO mercados (nome_mercado) Values
 
 
 INSERT INTO produtos (fk_cpf, fk_id_mercado, foto_produto, nome_produto, data_cadastro, data_visu, preco, fk_id_categoria, curtida, descurtida) Values 
-('123.456.789-98', 1, 'maca.jpg', 'Maça Argentina', '04-12-19', '19-09-19', '3.00', 3, '10', '0'),
-('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Bahia', '07-11-19', '19-09-06', '1.40', 3, '5', '2'),
-('856.951.321-22', 2, 'laranja1.jpg', 'Laranja Lima', '06-11-19', '19-09-18', '1.45', 3, '7', '1'),
-('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Vermelha', '10-11-19', '19-09-22', '1.50', 3, '5', '0'),
-('856.951.321-22', 2, 'laranja1.jpg', 'Laranja Bahia', '07-11-19', '18-09-19', '1.50', 3, '1', '2'),
-('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Lima', '06-11-19', '19-09-25', '1.50', 3, '1', '0'),
-('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Seleta', '10-11-19', '19-09-26', '1.30', 3, '20', '1'),
-('123.456.951-10', 1, 'iogurte.jpg', 'Iogurte Nestle', '14-03-19', '19-09-30', '2.40', 4, '35', '2');
+('123.456.789-98', 1, 'maca.jpg', 'Maça Argentina', '04-12-19', '19-09-19', '3.00', 3, '1', '0'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Bahia', '07-11-19', '19-09-06', '1.40', 3, '0', '1'),
+('856.951.321-22', 2, 'laranja1.jpg', 'Laranja Lima', '06-11-19', '19-09-18', '1.45', 3, '0', '0'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Vermelha', '10-11-19', '19-09-22', '1.50', 3, '0', '0'),
+('856.951.321-22', 2, 'laranja1.jpg', 'Laranja Bahia', '07-11-19', '18-09-19', '1.50', 3, '0', '0'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Lima', '06-11-19', '19-09-25', '1.50', 3, '0', '0'),
+('856.951.321-22', 1, 'laranja1.jpg', 'Laranja Seleta', '10-11-19', '19-09-26', '1.30', 3, '0', '0'),
+('123.456.951-10', 1, 'iogurte.jpg', 'Iogurte Nestle', '14-03-19', '19-09-30', '2.40', 4, '0', '0');
 
 INSERT INTO suporte (desc_suporte, fk_cpf_sup) values
 ('problema no software', '123.456.789-98');
