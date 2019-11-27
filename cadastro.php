@@ -44,7 +44,7 @@ require_once("class/conexao.php");
                     if ($_SESSION['senhas_diferentes']):  
                     ?>
 
-                    <div class="notification is-info">
+                    <div class="notification is-danger">
                         <p>As senhas não batem!</p>
                     </div>
 
@@ -56,7 +56,7 @@ require_once("class/conexao.php");
                     if ($_SESSION['falta_info']):  
                     ?>
 
-                    <div class="notification is-info">
+                    <div class="notification is-danger">
                         <p>Existe um campo em branco! Todos eles devem ser devidamente preenchidos, exceto o campo "foto de perfil".</p>
                     </div>
 
@@ -68,7 +68,7 @@ require_once("class/conexao.php");
                     if ($_SESSION['cpf_existe']):  
                     ?>
                 
-                    <div class="notification is-info">
+                    <div class="notification is-danger">
                         <p>O CPF escolhido já existe. Informe outro e tente novamente.</p>
                     </div>
 
@@ -78,7 +78,7 @@ require_once("class/conexao.php");
                     if ($_SESSION['email_existe']):
                     ?>
 
-                    <div class="notification is-info">
+                    <div class="notification is-danger">
                         <p>O E-mail escolhido já existe. Informe outro e tente novamente.</p>
                     </div>
 
@@ -88,7 +88,7 @@ require_once("class/conexao.php");
                     if ($_SESSION['apelido_existe']):
                     ?>
 
-                    <div class="notification is-info">
+                    <div class="notification is-danger">
                         <p>O Apelido escolhido já existe. Informe outro e tente novamente.</p>
                     </div>
 
@@ -100,7 +100,7 @@ require_once("class/conexao.php");
                     if ($_SESSION['senha_caracteres']):  
                     ?>
 
-                    <div class="notification is-info">
+                    <div class="notification is-danger">
                         <p>A senha deve ter no minímo 4 caracteres.</p>
                     </div>
 

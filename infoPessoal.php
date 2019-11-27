@@ -18,6 +18,9 @@ $rua = mysqli_real_escape_string($conexao, trim($_POST['rua']));
 $novaSenha = mysqli_real_escape_string($conexao, trim($_POST['novaSenha']));
 $confNovaSenha = mysqli_real_escape_string($conexao, trim($_POST['confNovaSenha']));
 
+if ($image == '') {
+	$newfilename = 'usuario.jpg';
+}
 
 $result_usuario = "SELECT * FROM usuarios where email = '$_SESSION[usuario]'";  
 $resultado_usuario = mysqli_query($conexao, $result_usuario);
@@ -57,11 +60,6 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 			exit;
 		}
 
-		if (strlen($senha) < 4) {
-			$_SESSION['senha_caracteres'] = true;
-			header('Location: alterarInfo.php?info=2');
-			exit;
-		}
 
 
 		$sql = "select count(*) as total from usuarios where email = '$email'";
@@ -106,14 +104,14 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 			exit;
 		}
 
-
-		$sql = "UPDATE usuarios SET senha = '$novaSenha' WHERE cpf = '$row_usuario[cpf]';";
-
-		if (strlen($senha) < 4) {
+		if (strlen($novaSenha) < 4) {
 			$_SESSION['senha_caracteres'] = true;
 			header('Location: alterarInfo.php?info=4');
 			exit;
 		}
+
+		$sql = "UPDATE usuarios SET senha = '$novaSenha' WHERE cpf = '$row_usuario[cpf]';";
+
 
 
 		if($conexao->query($sql) === TRUE) {

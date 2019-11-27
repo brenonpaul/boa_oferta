@@ -17,6 +17,10 @@ $categoria = mysqli_real_escape_string($conexao, trim($_POST['categoria']));
 $data_visu = mysqli_real_escape_string($conexao, trim($_POST['data_visu']));
 
 
+if ($image == '') {
+	$newfilename = 'imagem.png';
+}
+
 $result_produto = "SELECT * FROM produtos WHERE id_produto = $_GET[id]";  
 $resultado_produto = mysqli_query($conexao, $result_produto);
 

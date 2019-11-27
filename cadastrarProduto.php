@@ -8,6 +8,10 @@ $target = "imagens/alimentos/";
 $temp = explode(".", $_FILES["foto_produto"]["name"]);
 $newfilename = round(microtime(true)) . '.' . end($temp);
   
+
+if ($image == '') {
+	$newfilename = 'imagem.png';
+}
 	
 $nome_produto = mysqli_real_escape_string($conexao, ucfirst($_POST['nome_produto']));
 $preco = mysqli_real_escape_string($conexao, ucfirst($_POST['preco']));

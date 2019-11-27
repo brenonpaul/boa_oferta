@@ -19,6 +19,12 @@ if (isset($_SESSION['usuario'])){
                         <button class="btn my-2 my-sm-0" type="submit" v-on:click.prevent="busca" id="buscar">Buscar</button>
                     </form>
                 </div>
+                <div v-if="produtos.length===0">
+                    <h2 class="text-danger text-center mt-5">Ainda não existe nenhum produtos cadastrado nesta categoria, que tal ser o primeiro?</h2>
+                    <div class="row justify-content-center mt-4">
+                        <a href="cadastrarProduto.php"><button class="btn button-center" style="background-color: #a52a2a; color: white;">Cadastrar Produto</button></a>
+                    </div>
+                </div>
                 <div class="produto-grid row">
                     <div class="produto col-xl-2 offset-xl-1 col-lg-3 offset-lg-1 col-md-4 offset-md-1 col-sm-4 offset-sm-1 col-6 offset-1 recentes mt-4 rounded border border-secondary" v-for="produto in produtos" :key="produto.id" style="background-color: white;">
                         <div class="row d-flex justify-content-center">
@@ -77,10 +83,10 @@ if (isset($_SESSION['usuario'])){
                             </div>
                             <div class="col-6">
                                 <p>
-                                    <button v-if='checkDescurtida(produto.id_produto)' @click="addDesc(produto)" class="btn p-1 pl-2m btn-danger" style="color: white;">Não
+                                    <button v-if='checkDescurtida(produto.id_produto)' @click="addDesc(produto)" class="btn p-1 pl-2 btn-danger" style="color: white;">Não
                                     </button>
                                     <br>
-                                    <strong class="pl-4">{{produto.descurtida}}</strong>
+                                    <strong class="pl-3">{{produto.descurtida}}</strong>
                                 </p>
                             </div>
                         </div>
@@ -113,6 +119,15 @@ if (isset($_SESSION['usuario'])){
                         <input class="form-control" type="search" name="buscar" v-model="buscar" aria-label="Pesquisar" style="border-radius: 5px 0px 0px 5px" placeholder="Busque por um produto">
                         <button class="btn my-2 my-sm-0" type="submit" v-on:click.prevent="busca" id="buscar">Buscar</button>
                     </form>
+                </div>
+                <div v-if="produtos.length===0">
+                    <h2 class="text-danger text-center mt-5">Ainda não existe nenhum produtos cadastrado nesta categoria, que tal ser o primeiro?</h2>
+                    <div class="row justify-content-center mt-4">
+                        <a href="telaLogin.php"><button class="btn button-center" style="background-color: #a52a2a; color: white;">Logar-se</button></a>
+                    </div>
+                    <div class="row justify-content-center mt-1">
+                        <a href="cadastro.php"><button class="btn" >Cadastrar-se</button></a>
+                        </div>
                 </div>
                 <div class="produto-grid row">
                     <div class="produto col-xl-2 offset-xl-1 col-lg-3 offset-lg-1 col-md-4 offset-md-1 col-sm-4 offset-sm-1 col-6 offset-1 recentes mt-4 rounded border border-secondary" v-for="produto in produtos" :key="produto.id" style="background-color: white;">
@@ -159,14 +174,14 @@ if (isset($_SESSION['usuario'])){
                                     <button class="btn p-1" style="background-color: #000080; color: white;">Sim
                                     </button>
                                     <br>
-                                    <strong class="pl-4">{{produto.curtida}}</strong>
+                                    <strong class="pl-2">{{produto.curtida}}</strong>
                                 </p>
                             </div>
                             <div class="col-6">
                                 <p>
                                     <button class="btn p-1 pl-2m btn-danger" style="color: white;">Não</button>
                                     <br>
-                                    <strong class="pl-4">{{produto.descurtida}}</strong>
+                                    <strong class="pl-3">{{produto.descurtida}}</strong>
                                 </p>
                             </div>
                         </div>

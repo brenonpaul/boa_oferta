@@ -6,12 +6,12 @@ if(empty($_SESSION['usuario'])){
   require_once("cabecalho.php");
 ?>
 
-  <h1 class="text-danger text-center mt-5" style="border: 2px dotted">Para cadastrar um produto você deve estar logado!</h1> 
+  <h2 class="text-danger text-center mt-5">Para cadastrar um produto você deve estar logado!</h2> 
   <div class="row justify-content-center mt-4">
-    <a href="telaLogin.php"><button class="btn button-center btn-success">Logar-se</button></a>
+    <a href="telaLogin.php"><button class="btn button-center btn-succes" style="background-color: #a52a2a; color: white;">Logar-se</button></a>
   </div>
   <div class="row justify-content-center mt-1">
-    <a href="cadastro.php"><button class="btn btn-primary" >Cadastrar-se</button></a>
+    <a href="cadastro.php"><button class="btn" >Cadastrar-se</button></a>
   </div>
 <?php
 }else{
@@ -41,7 +41,7 @@ if(empty($_SESSION['usuario'])){
           if ($_SESSION['falta_info']):  
           ?>
 
-          <div class="notification is-info">
+          <div class="notification is-danger">
             <p>Preencha todos os campos!</p>
           </div>
 
@@ -72,7 +72,7 @@ if(empty($_SESSION['usuario'])){
               </div>
               <div class="field">
                 <div class="control">
-                  <label id="labelCadastro">Unidade de medida do preço</label>
+                  <label id="labelCadastro">Unidade de medida do preço (opcional)</label>
                   <input name="unidade" type="text" class="input is-large" placeholder="Exemplo: Kg">
                 </div>
               </div>

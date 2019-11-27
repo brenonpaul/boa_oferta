@@ -3,6 +3,9 @@ if (!isset($_SESSION)) {
     session_start();
 }
 require_once("class/conexao.php");
+if ($_GET['info'] <1 or $_GET['info'] >4) {
+    header('Location: index.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +45,7 @@ require_once("class/conexao.php");
                         if ($_SESSION['falta_info']):  
                             ?>
 
-                        <div class="notification is-info">
+                        <div class="notification is-danger">
                             <p>Existe um campo em branco! Todos eles devem ser devidamente preenchidos, exceto o campo "foto de perfil".</p>
                         </div>
 
@@ -52,7 +55,7 @@ require_once("class/conexao.php");
                     if ($_SESSION['email_existe']):
                     ?>
 
-                        <div class="notification is-info">
+                        <div class="notification is-danger">
                             <p>O E-mail escolhido já existe. Informe outro e tente novamente.</p>
                         </div>
 
@@ -62,7 +65,7 @@ require_once("class/conexao.php");
                     if ($_SESSION['apelido_existe']):
                     ?>
 
-                        <div class="notification is-info">
+                        <div class="notification is-danger">
                             <p>O Apelido escolhido já existe. Informe outro e tente novamente.</p>
                         </div>
 
@@ -74,13 +77,25 @@ require_once("class/conexao.php");
                     if ($_SESSION['senha_caracteres']):  
                     ?>
 
-                        <div class="notification is-info">
+                        <div class="notification is-danger">
                             <p>A senha deve ter no minímo 4 caracteres.</p>
                         </div>
 
                     <?php 
                     endif;
                     unset($_SESSION['senha_caracteres']);
+                    error_reporting(0);
+                    ini_set(“display_errors”, 0 );
+                    if ($_SESSION['senhas_diferentes']):  
+                    ?>
+
+                        <div class="notification is-danger">
+                            <p>As senhas não batem!.</p>
+                        </div>
+
+                    <?php 
+                    endif;
+                    unset($_SESSION['senhas_diferentes']);
                     ?>
 
                     <div class="box">

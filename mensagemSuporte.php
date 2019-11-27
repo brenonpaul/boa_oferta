@@ -4,7 +4,7 @@ require_once("cabecalho.php");
 
 <div class="container">
   <h3 class="mt-4 text-center">Mensagens Enviadas pelos Usuários</h3>
-  <div class="row">
+  <div class="d-flex justify-content-center">
 	<table class="table table-striped table-responsive mt-5">
   <thead>
     <tr>

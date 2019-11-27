@@ -21,8 +21,8 @@ $senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
 $conf_senha = $_POST['conf_senha'];
 $rua = mysqli_real_escape_string($conexao, trim($_POST['rua']));
 
-if ($foto_usuario == '') {
-	$foto_usuario = 'usuario.jpg';
+if ($image == '') {
+	$newfilename = 'usuario.jpg';
 }
 
 if ($senha != $conf_senha) {
@@ -33,7 +33,7 @@ if ($senha != $conf_senha) {
 
 if (empty($primeiro_nome) or empty($ultimo_nome) or empty($cpf) or empty($email) or empty($apelido) or empty($senha) or empty($rua)) {
 	$_SESSION['falta_info'] = true;
-	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido");
+	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido&email=$email");
 	exit;
 }
 

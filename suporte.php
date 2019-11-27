@@ -40,8 +40,8 @@ if (!isset($_SESSION)) {
 		ini_set(“display_errors”, 0 );
 		if ($_SESSION['suporte_cadastrado']):  
 		?>
-		<div class="alert alert-primary row justify-content-center mt-3" role="alert">
-			<p class="text-center">Seu problema foi informado à nossa equipe!</p>
+		<div class="alert alert-primary mt-3 p-0" role="alert">
+			<p class="text-center mt-3">Seu problema foi informado à nossa equipe!</p>
 		</div>
 		<?php 
 		endif;
@@ -51,12 +51,12 @@ if (!isset($_SESSION)) {
 	}else{
 		?>
 	</div>
-		<h1 class="text-danger text-center mt-5" style="border: 2px dotted">Para informar um problema você deve estar logado!</h1>
+		<h2 class="text-danger text-center mt-5">Para informar um problema você deve estar logado!</h2>
 		<div class="row justify-content-center mt-4">
-			<a href="telaLogin.php"><button class="btn button-center btn-success">Logar-se</button></a>
+			<a href="telaLogin.php"><button class="btn button-center" style="background-color: #a52a2a; color: white;">Logar-se</button></a>
 		</div>
 		<div class="row justify-content-center mt-1">
-			<a href="cadastro.php"><button class="btn btn-primary" >Cadastrar-se</button></a>
+			<a href="cadastro.php"><button class="btn" >Cadastrar-se</button></a>
 		</div>
 		<?php }
 		?>
