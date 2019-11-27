@@ -152,10 +152,11 @@ if (isset($_SESSION['usuario'])){
                         <div class="row justify-content-center"> 
                             <p class="text-danger text-center">Entre em sua conta e avalie este produto!</p>
                         </div>
+                        <p class="text-center">Preço atualizado?</p>
                         <div class="row pl-2 pr-2">
                             <div class="col-6">
                                 <p>
-                                    <button class="btn p-1" style="background-color: #000080; color: white;">Correto
+                                    <button class="btn p-1" style="background-color: #000080; color: white;">Sim
                                     </button>
                                     <br>
                                     <strong class="pl-4">{{produto.curtida}}</strong>
@@ -163,7 +164,7 @@ if (isset($_SESSION['usuario'])){
                             </div>
                             <div class="col-6">
                                 <p>
-                                    <button class="btn p-1 pl-2m btn-danger" style="color: white;">Errado</button>
+                                    <button class="btn p-1 pl-2m btn-danger" style="color: white;">Não</button>
                                     <br>
                                     <strong class="pl-4">{{produto.descurtida}}</strong>
                                 </p>

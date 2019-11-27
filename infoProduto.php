@@ -3,6 +3,12 @@ session_start();
 
 include("class/conexao.php");
 
+$image = $_FILES['foto_produto']['name'];
+//Diretório da imagem
+$target = "imagens/alimentos/";
+$temp = explode(".", $_FILES["foto_produto"]["name"]);
+$newfilename = round(microtime(true)) . '.' . end($temp);
+
 $foto_produto = mysqli_real_escape_string($conexao, trim($_POST['foto_produto']));
 $nome_produto = mysqli_real_escape_string($conexao, trim($_POST['nome_produto']));
 $preco = mysqli_real_escape_string($conexao, trim($_POST['preco']));
@@ -27,9 +33,10 @@ while($row_produto = mysqli_fetch_assoc($resultado_produto)){
 	}
 
 
-	$sql = "UPDATE produtos SET foto_produto = '$foto_produto', nome_produto = '$nome_produto', preco = '$preco', fk_id_mercado = '$mercado', fk_id_categoria = '$categoria', data_visu = '$data_visu' WHERE  id_produto = '$_GET[id]';";
+	$sql = "UPDATE produtos SET foto_produto = '$newfilename', nome_produto = '$nome_produto', preco = '$preco', fk_id_mercado = '$mercado', fk_id_categoria = '$categoria', data_visu = '$data_visu' WHERE  id_produto = '$_GET[id]';";
 
 	if($conexao->query($sql) === TRUE) {
+		move_uploaded_file($_FILES['foto_produto']['tmp_name'], $target.$newfilename);
 		$_SESSION['status_cadastro'] = true;
 	}
 

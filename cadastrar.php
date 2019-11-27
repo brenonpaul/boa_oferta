@@ -5,17 +5,21 @@ if (!isset($_SESSION)) {
 
 require_once("class/conexao.php");
 
+$image = $_FILES['foto_usuario']['name'];
+//Diretório da imagem
+$target = "imagens/";
+$temp = explode(".", $_FILES["foto_usuario"]["name"]);
+$newfilename = round(microtime(true)) . '.' . end($temp);
 
-
-$primeiro_nome = mysqli_real_escape_string($conexao, ucfirst($_POST['primeiro_nome']));
-$ultimo_nome = mysqli_real_escape_string($conexao, ucfirst($_POST['ultimo_nome']));
-$cpf = mysqli_real_escape_string($conexao, ucfirst($_POST['cpf']));
-$email = mysqli_real_escape_string($conexao, ucfirst($_POST['email']));
-$apelido = mysqli_real_escape_string($conexao, ucfirst($_POST['apelido']));
-$foto_usuario = mysqli_real_escape_string($conexao, ucfirst($_POST['foto_usuario']));
-$senha = mysqli_real_escape_string($conexao, ucfirst($_POST['senha']));
+$primeiro_nome = mysqli_real_escape_string($conexao, trim($_POST['primeiro_nome']));
+$ultimo_nome = mysqli_real_escape_string($conexao, trim($_POST['ultimo_nome']));
+$cpf = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
+$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
+$apelido = mysqli_real_escape_string($conexao, trim($_POST['apelido']));
+$foto_usuario = mysqli_real_escape_string($conexao, trim($_POST['foto_usuario']));
+$senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
 $conf_senha = $_POST['conf_senha'];
-$rua = mysqli_real_escape_string($conexao, ucfirst($_POST['rua']));
+$rua = mysqli_real_escape_string($conexao, trim($_POST['rua']));
 
 if ($foto_usuario == '') {
 	$foto_usuario = 'usuario.jpg';
@@ -29,7 +33,7 @@ if ($senha != $conf_senha) {
 
 if (empty($primeiro_nome) or empty($ultimo_nome) or empty($cpf) or empty($email) or empty($apelido) or empty($senha) or empty($rua)) {
 	$_SESSION['falta_info'] = true;
-	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido&email=$email");
+	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido");
 	exit;
 }
 
@@ -39,7 +43,7 @@ $row_ban = mysqli_fetch_assoc($result);
 
 if($row_ban['total'] == 1) {
 	$_SESSION['ban'] = true;
-	header('Location: cadastro.php');
+	header("Location: cadastro.php?nome=$primeiro_nome&sobrenome=$ultimo_nome&cpf=$cpf&apelido=$apelido&email=$email");
 	exit;
 }
 
@@ -82,9 +86,11 @@ if($row_apelido['total'] == 1) {
 }
 
 
-$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_rua_user, fk_id_tipo) values ('$primeiro_nome $ultimo_nome', '$foto_usuario', '$apelido', '$email', '$cpf', '$senha', $rua, 2);";
+$sql = "insert into usuarios(nome_completo, foto_usuario, apelido, email, cpf, senha, fk_id_rua_user, fk_id_tipo) values ('$primeiro_nome $ultimo_nome', '$newfilename', '$apelido', '$email', '$cpf', '$senha', $rua, 2);";
 
 if($conexao->query($sql) === TRUE) {
+
+	move_uploaded_file($_FILES['foto_usuario']['tmp_name'], $target.$newfilename);
 	$_SESSION['status_cadastro'] = true;
 }
 

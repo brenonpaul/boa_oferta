@@ -84,7 +84,7 @@ require_once("class/conexao.php");
                     ?>
 
                     <div class="box">
-                        <form action="infoPessoal.php" method="POST">
+                        <form action="infoPessoal.php" method="POST" enctype="multipart/form-data" autocomplete="off">
                     <?php
                     if($_GET['info'] == 1) {
                     ?>
@@ -92,7 +92,7 @@ require_once("class/conexao.php");
                             <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">Foto de Perfil</label>
-                                    <input type="file" name="foto_usuario" class="input is-large"  accept="image/png, image/jpeg" multiple />
+                                    <input type="file" name="foto_usuario" class="input is-large"  accept="image/*" multiple />
                                 </div>
                             </div>
 

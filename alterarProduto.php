@@ -31,11 +31,11 @@ require_once("class/conexao.php");
                     ?>
 
                     <div class="box">
-                        <form action="infoProduto.php?id=<?php echo($_GET['id']) ?>" method="POST">
+                        <form action="infoProduto.php?id=<?php echo($_GET['id']) ?>" method="POST" enctype="multipart/form-data" autocomplete="off">
                             <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">Foto do Produto</label>
-                                    <input type="file" name="foto_produto" class="input is-large"  accept="image/png, image/jpeg" multiple />
+                                    <input type="file" name="foto_produto" class="input is-large"  accept="image/*" multiple />
                                 </div>
                             </div>
                             <div class="field">

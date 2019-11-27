@@ -2,7 +2,14 @@
 session_start();
 require_once("class/conexao.php");
 
-$foto_usuario = mysqli_real_escape_string($conexao, trim($_POST['foto_usuario']));
+$image = $_FILES['foto_usuario']['name'];
+//Diretório da imagem
+$target = "imagens/";
+$temp = explode(".", $_FILES["foto_usuario"]["name"]);
+$newfilename = round(microtime(true)) . '.' . end($temp);
+
+echo $newfilename;
+
 $nome_completo = mysqli_real_escape_string($conexao, trim($_POST['nome_completo']));
 $email = mysqli_real_escape_string($conexao, trim($_POST['email']));
 $apelido = mysqli_real_escape_string($conexao, trim($_POST['apelido']));
@@ -17,10 +24,13 @@ $resultado_usuario = mysqli_query($conexao, $result_usuario);
 
 while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 
-	if (isset($_POST['foto_usuario'])){
-		$sql = "UPDATE usuarios SET foto_usuario = '$foto_usuario' WHERE  cpf = '$row_usuario[cpf]';";
+	if (isset($_FILES['foto_usuario'])){
+		$sql = "UPDATE usuarios SET foto_usuario = '$newfilename' WHERE  cpf = '$row_usuario[cpf]';";
 
 		if($conexao->query($sql) === TRUE){
+
+			move_uploaded_file($_FILES['foto_usuario']['tmp_name'], $target.$newfilename);
+			
 			$_SESSION['status_cadastro'] = true;
 		}
 
@@ -104,6 +114,7 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
 			header('Location: alterarInfo.php?info=4');
 			exit;
 		}
+
 
 		if($conexao->query($sql) === TRUE) {
 			$_SESSION['status_cadastro'] = true;

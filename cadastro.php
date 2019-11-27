@@ -110,7 +110,7 @@ require_once("class/conexao.php");
                     ?>
 
                     <div class="box">
-                        <form action="cadastrar.php" method="POST">
+                        <form action="cadastrar.php" method="POST" enctype="multipart/form-data" autocomplete="off">
                             <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">Primeiro Nome</label>
@@ -126,7 +126,7 @@ require_once("class/conexao.php");
                             <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">Foto de Perfil</label>
-                                    <input type="file" name="foto_usuario" class="input is-large"  accept="image/png, image/jpeg" multiple />
+                                  <input type="file" name="foto_usuario" class="input is-large"  accept="image/*" multiple />
                                 </div>
                             </div>
                             <div class="field">
@@ -149,7 +149,7 @@ require_once("class/conexao.php");
                             <div class="field">
                                 <div class="control">
                                     <label id="labelCadastro">E-mail</label>
-                                    <input name="email" type="email" class="input is-large" placeholder="seu e-mail" value="<?php echo($_GET['email']); ?>">
+                                    <input name="email" type="email" class="input is-large" placeholder="Seu e-mail" value="<?php echo($_GET['email']); ?>">
                                 </div>
                             </div>
                             <div class="field">
