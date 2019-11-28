@@ -56,25 +56,20 @@ if (isset($_SESSION['usuario'])) {
 			}
 
 
-			$sql8 = "DELETE  FROM curtidas WHERE fk_cpf_curt = '$cpf';";
+			$sql8 = "DELETE FROM curtidas WHERE fk_cpf_curt = '$cpf';";
 
 			if($conexao->query($sql8) === TRUE){
 				$_SESSION['status_cadastro'] = true;
 			}
 
 
-			$sql9 = "DELETE  FROM descurtidas WHERE fk_cpf_desc = '$cpf';";
+			$sql9 = "DELETE FROM descurtidas WHERE fk_cpf_desc = '$cpf';";
 
 			if($conexao->query($sql9) === TRUE){
 				$_SESSION['status_cadastro'] = true;
 			}
 
 
-			$sql5 = "DELETE  FROM descurtidas WHERE fk_id_prod_desc = (SELECT id_produto FROM produtos WHERE fk_cpf = '$cpf');";
-
-			if($conexao->query($sql5) === TRUE){
-				$_SESSION['status_cadastro'] = true;
-			}
 
 
 			$sql = "DELETE FROM produtos WHERE fk_cpf = '$cpf';";

@@ -10,8 +10,8 @@
   <title>Boa Oferta</title>
   <meta charset="utf-8">
   <!-- os 3 scrips abaixo são necessários por conta do carousel da página index -->
-  <script src="https://unpkg.com/vue"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../js/vue.js"></script>
+  <script src="../js/axios.js"></script>
   <script src="../js/jquery_3_3_1.js"></script>
   <script src="../js/popper_1_14_7.js"></script>
   <script src="../js/bootstrap.min.js"></script>
